@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Automatron02": {
-      "commandName": "Project",
-      "commandLineArgs": "W:\\dcoen\\game04 W:\\dcoen\\game04\\support\\s01_d3dx12_engine\\Automatron02\\TasksTest"
-    }
-  }
-}
