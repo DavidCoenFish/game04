@@ -1,0 +1,6 @@
+{
+   "Factory": "TaskRunTest",
+   "Skip": false,
+   "Priority": 0,
+   "Dependency": [ "BuildUnitTestDebug" ]
+}
