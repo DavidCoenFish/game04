@@ -1,0 +1,68 @@
+{
+  "FileVersion": 2,
+  "Id": "470231f0-9e07-40d4-bad1-a45eb0710811",
+  "Items": [
+    {
+      "Id": "d369b04d-d49e-4a6b-a438-f350745eebc3",
+      "Command": "Empty"
+    },
+    {
+      "Id": "4dd0cd4c-b665-4f7e-932e-25d6a52631dc",
+      "Command": "MultipleEmptyWindow"
+    },
+    {
+      "Id": "53189eee-64de-4198-8a77-1f8c138f3cba",
+      "Command": "TestTriangle"
+    },
+    {
+      "Id": "90c3ed90-3489-4802-ab7b-dec0d3bcb8b8",
+      "Command": "TestTriangleJson"
+    },
+    {
+      "Id": "2663dae8-ca75-4831-85e1-f13cc6c88ec0",
+      "Command": "TestTriangleMove"
+    },
+    {
+      "Id": "0011d49a-006d-47ce-8568-bf5113a80d39",
+      "Command": "TestTriangleDag"
+    },
+    {
+      "Id": "1084b9de-80ed-45fb-b1e9-d5ff865cb4bd",
+      "Command": "TestTexture"
+    },
+    {
+      "Id": "9f353cf1-ab01-4e9a-97a5-f99d9a698a9e",
+      "Command": "TestTextureJson"
+    },
+    {
+      "Id": "30fde3f0-3d3e-470e-990b-422a56845205",
+      "Command": "TestTextureMove"
+    },
+    {
+      "Id": "00f2eceb-af2b-440f-bbe3-d2d9a6dacb27",
+      "Command": "TestTextureDag"
+    },
+    {
+      "Id": "785f3f93-b100-4b0f-adf6-6c7c1c438eb6",
+      "Command": "DisplayList"
+    },
+    {
+      "Id": "1465c824-a4bc-44aa-801f-5035d11f3cca",
+      "Command": "DisplayListSimple"
+    },
+    {
+      "Id": "73868604-9d43-462c-83ab-b71b6dbd5089",
+      "Command": "DisplayListGrid"
+    },
+    {
+      "Id": "32e17af4-8d98-463f-97d8-5fd3fb5e4b2e",
+      "Command": "broken",
+      "Items": [
+        {
+          "Id": "6756a291-e761-4ae0-8e77-687f03781022",
+          "Command": "ComputeShader"
+        }
+      ]
+    }
+  ]
+}

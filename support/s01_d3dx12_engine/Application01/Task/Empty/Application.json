@@ -1,0 +1,15 @@
+{
+   "tasks":[
+      {
+         "factory": "Window",
+         "data": [
+            {
+               "name": "Empty",
+               "fullScreen": false,
+               "width": 800,
+               "height": 600
+            }
+         ]
+      }
+   ]
+}

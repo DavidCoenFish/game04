@@ -1,0 +1,28 @@
+{
+   "valueArray": [
+      {
+         "name": "__BASE_NAME__Geometry",
+         "type": "Geometry",
+         "data": {
+            "inputElementDesc": [
+               {
+                  "semantic": "POSITION",
+                  "format": "DXGI_FORMAT_R32G32_FLOAT"
+               },
+               {
+                  "semantic": "TEXCOORD",
+                  "format": "DXGI_FORMAT_R32G32_FLOAT"
+               }
+            ],
+            "floatPerVertex": 4,
+            "vertexData": [
+               1.0, -1.0,  1.0, 1.0,
+               -1.0,  -1.0,  0.0, 1.0,
+               1.0, 1.0, 1.0, 0.0,
+               -1.0,  1.0, 0.0, 0.0
+            ],
+            "topology": "D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP"
+         }
+      }
+   ]
+}

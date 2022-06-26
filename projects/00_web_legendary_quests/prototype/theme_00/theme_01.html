@@ -1,0 +1,253 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>theme 01</title>
+<link rel="stylesheet" href="css/reset.css" />
+
+<style>
+
+:root {
+  /* Palette */  
+  --colour-white: #fff;
+  --colour-black: #42413d;  
+  --colour-green-h: 81;
+  --colour-green-s: 50%;
+  --colour-green-l: 41%;
+
+  --colour-red-h: 2;
+  --colour-red-s: 50%;
+  --colour-red-l: 45%;
+
+  --colour-blue-h: 183;
+  --colour-blue-s: 19%;
+  --colour-blue-l: 27%;
+
+  --colour-grey-h: 0;
+  --colour-grey-s: 0%;
+  --colour-grey-l: 50%;
+
+  /* all theme colour, use .js to swap app usage*/
+  --theme-0-colour-sixty-text : #000;
+  --theme-0-colour-sixty-background : hsl(var(--colour-grey-h), var(--colour-grey-s), calc(var(--colour-grey-l) - 20%));
+  --theme-0-colour-sixty-after : hsl(var(--colour-grey-h), var(--colour-grey-s), calc(var(--colour-grey-l) - 30%));
+  --theme-0-colour-sixty-before : hsl(var(--colour-grey-h), var(--colour-grey-s), calc(var(--colour-grey-l) - 25%));
+ 
+  --theme-0-colour-thirty-text : #000;
+  --theme-0-colour-thirty-background : hsl(var(--colour-grey-h), var(--colour-grey-s), calc(var(--colour-grey-l) - 5%));
+  --theme-0-colour-thirty-after : hsl(var(--colour-grey-h), var(--colour-grey-s), calc(var(--colour-grey-l) - 15%));
+  --theme-0-colour-thirty-before : hsl(var(--colour-grey-h), var(--colour-grey-s), calc(var(--colour-grey-l) - 10%));
+ 
+  --theme-0-colour-ten-text : var(--colour-black);
+  --theme-0-colour-ten-background : #efe8e9;
+  --theme-0-colour-ten-after : #777;
+  --theme-0-colour-ten-before : #999;
+
+  --theme-0-gradient-gem_a : linear-gradient(
+      45deg, 
+      hsla(var(--colour-blue-h), var(--colour-blue-s), calc(var(--colour-blue-l) + 50%), 0.8),
+      hsla(var(--colour-blue-h), var(--colour-blue-s), calc(var(--colour-blue-l) - 20%), 0.4) 60%, 
+      hsla(var(--colour-blue-h), var(--colour-blue-s), calc(var(--colour-blue-l) + 0%), 0.8)
+      );
+  --theme-0-gradient-gem_b : linear-gradient(
+      0deg, 
+      hsla(var(--colour-blue-h), var(--colour-blue-s), calc(var(--colour-blue-l) + 10%), 0.8),
+      hsla(var(--colour-blue-h), var(--colour-blue-s), calc(var(--colour-blue-l) + 0%), 0.8)
+      );
+
+  /* App */
+  --colour-sixty-text: var(--theme-0-colour-sixty-text);
+  --colour-sixty-background: var(--theme-0-colour-sixty-background);
+  --colour-sixty-after: var(--theme-0-colour-sixty-after);
+  --colour-sixty-before: var(--theme-0-colour-sixty-before);
+
+  --colour-thirty-text: var(--theme-0-colour-thirty-text);
+  --colour-thirty-background: var(--theme-0-colour-thirty-background);
+  --colour-thirty-after: var(--theme-0-colour-thirty-after);
+  --colour-thirty-before: var(--theme-0-colour-thirty-before);
+
+  --colour-ten-text: var(--theme-0-colour-ten-text);
+  --colour-ten-background: var(--theme-0-colour-ten-background);
+  --colour-ten-after: var(--theme-0-colour-ten-after);
+  --colour-ten-before: var(--theme-0-colour-ten-before);
+
+  --gradient-gem_a: var(--theme-0-gradient-gem_a);
+  --gradient-gem_b: var(--theme-0-gradient-gem_b);
+
+}
+
+html, body {
+  height:100%;
+  /* background-color: red; */
+}
+
+.app {
+  font-family: "Helvetica", sans-serif;  
+  height:100%;
+  padding:1.0em;
+}
+
+.app, .app .theme-sixty, .app .theme-sixty * {
+  background-color: var(--colour-sixty-background);
+  color:var(--colour-sixty-text);
+}
+
+.app .theme-sixty *::after {
+  background-color: var(--colour-sixty-after);
+}
+.app .theme-sixty *::before {
+  background-color: var(--colour-sixty-before);
+}
+
+
+.app .theme-thirty, .app .theme-thirty * {
+  background-color: var(--colour-thirty-background);
+  color:var(--colour-thirty-text);
+}
+
+.app .theme-thirty *::after, .app .theme-thirty::after {
+  background-color: var(--colour-thirty-after);
+}
+
+.app .theme-thirty *::before, .app .theme-thirty::before {
+  background-color: var(--colour-thirty-before);
+}
+
+
+.app .theme-ten, .app .theme-ten * {
+  background-color: var(--colour-ten-background);
+  color:var(--colour-ten-text);
+}
+
+.app .theme-ten *::after, .app .theme-ten::after {
+  background-color: var(--colour-ten-after);
+}
+
+.app .theme-ten *::before, .app .theme-ten::before {
+  background-color: var(--colour-ten-before);
+}
+
+
+.frame {
+	position: relative;
+	z-index:1;
+	top: -0.5em; left: -0.5em; bottom: 0; right: 0;
+  padding: 0.5em 0 0 0.5em;
+}
+
+.frame:before {
+	position: absolute;
+	content: "";
+	width:0.5em;
+	height:100%;
+	top:0.25em;
+	right:-0.5em;
+	transform: skewY(45deg);
+}
+
+.frame:after {
+	position: absolute;
+	content: "";
+	width:100.0%;
+	height:0.5em;
+	bottom:-0.5em;
+	right:-0.29em;
+	transform: skewX(45deg);
+}
+
+/* 
+--gradient-gem_a
+--gradient-gem_b 
+*/
+
+.gem-front {
+	/* position: relative; */
+	position: relative;
+	width:100%;
+	height:100%;
+	top:-0.5em;
+	left:-0.5em;
+	z-index:1;
+  background-color: --gradient-gem_a;
+  background-color: red;
+}
+.gem-front:before {
+	position: absolute;
+	content: "";
+	width:0.5em;
+	height:100%;
+	top:0.25em;
+	right:-0.5em;
+	transform: skewY(45deg);
+  background-color: --gradient-gem_b;
+	/* z-index:1; */
+}
+.gem-front:after {
+	position: absolute;
+	content: "";
+	width:100%;
+	height:0.5em;
+	bottom:-0.5em;
+	right:-0.25em;
+	transform: skewX(45deg);
+  background-color: --gradient-gem_b;
+	/* z-index:1; */
+}
+
+.gem-back {
+  position: relative;
+	/* z-index:1; */
+  margin:0.5em 0 0 1.0em;
+  background-color: --gradient-gem_a;
+}
+.gem-back:before {
+	position: absolute;
+	content: "";
+	width:0.5em;
+	height:100%;
+	top:-0.25em;
+	left:-0.5em;
+	transform: skewY(45deg);
+	z-index:0;
+  background-color: --gradient-gem_b;
+}
+.gem-back:after {
+	position: absolute;
+	content: "";
+	width:100%;
+	height:0.5em;
+	top:-0.5em;
+	right:0.25em;
+	transform: skewX(45deg);
+	z-index:0;
+  background-color: --gradient-gem_b;
+}
+
+
+</style>
+
+<!-- https://www.smashingmagazine.com/2020/08/application-color-schemes-css-custom-properties/ -->
+
+<div class="app">
+  <div class="theme-sixty">
+    <div class="frame" style=" width:10em;">
+        sixty frame
+    </div>
+    <br/>
+    <div class="frame theme-thirty" style=" width:10em;">
+        thirty frame
+    </div>
+    <br/>
+    <div class="frame theme-ten" style="width:10em;">
+        ten frame
+    </div>
+    <br/>
+    <button style="position:relative;">
+      <div class="gem-front">as</div>
+      <div style="position:relative;padding:0.5em 0 0 0.5em;z-index: 1;">content</div>
+    <!-- 
+      <div class="gem-back"></div>
+     -->
+    </button>
+
+  </div>
+</div>
+

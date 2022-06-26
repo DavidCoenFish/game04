@@ -1,0 +1,91 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>dialog 00</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+<style>
+html, body {
+  height:100%;
+}
+.dialog {
+  display: grid;
+  /* width: 100%;
+  height: 250px;
+  grid-template-areas: "head head"
+                       "nav  main"
+                       "nav  foot";
+  grid-template-rows: 50px 1fr 30px;
+  grid-template-columns: 150px 1fr; */
+  grid-template-areas: "head head main"
+                        "left . main"
+                        "left nav  nav"
+                        "bott bott bott";
+  grid-template-columns: 0.5em auto 1fr;
+  grid-template-rows: 2em 1fr auto 0.5em;
+  background-color: #555;
+  position:relative;
+  /* box-shadow: 0.5em 0.5em #222; */
+}
+
+.head {
+  grid-area: head;
+}
+
+.main {
+  grid-area: main;
+}
+
+.nav {
+  grid-area: nav;
+}
+.left {
+  grid-area: left;
+}
+.bott {
+  grid-area: bott;
+}
+
+.thirty {
+  background-color: #efe8e9;
+}
+.thirty:after {
+  background-color: #777;
+}
+.thirty:before {
+  background-color: #999;
+}
+
+
+</style>
+
+<!-- <section id="page">
+  <header>Header</header>
+  <nav>Navigation</nav>
+  <main>Main area</main>
+  <footer>Footer</footer>
+</section> -->
+
+<div style="padding:1em;background-color: #2f2829;height: 100%;" class="flex-center">
+
+  <div class="dialog frame" style="width:30em">
+    <div class="head frame thirty" style="padding:0.5em">Dialog Box</div>
+    <div class="main" style="padding:1.0em">Now is the time for all good men to come to the aid of the party. Now is the time for all good men to come to the aid of the party.</div>
+    <div class="nav flex-right" style="padding:0 0 0em 0;">
+      <button class="gem-back interactive" style="width:6em;height:2em">
+        <div class="gem-front interactive"></div>
+        <p>Reset</p>
+        <div class="highlight"></div>
+      </button>
+      <button class="gem-back interactive" style="width:6em;height:2em">
+        <div class="gem-front interactive"></div>
+        <p>Commit</p>
+        <div class="highlight"></div>
+      </button>
+    </div>
+    <div class="left frame thirty"></div>
+    <div class="bott frame thirty"></div>
+
+  </div>
+
+</div>

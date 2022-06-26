@@ -1,0 +1,45 @@
+{
+   "valueArray": [
+      {
+         "name": "__BASE_NAME__Value",
+         "type": "RenderTarget",
+         "data": {
+            "targetFormatDataArray": [
+               {
+                  "format": "DXGI_FORMAT_B8G8R8A8_UNORM",
+                  "clearColor": [ __COLOUR__ ]
+               }
+            ],
+            "targetDepthData": null,
+            "width": 32,
+            "height": 32,
+            "resizeWithScreen": false
+         }
+      }
+   ],
+   "calculateArray": [
+      {
+         "name": "__BASE_NAME__DrawList",
+         "type": "StackDraw",
+         "stackInput": [
+         ]
+      },
+      {
+         "name": "__BASE_NAME__IRenderTarget",
+         "type": "IRenderTargetFromRenderTargetTexture",
+         "orderedInput": [
+            "__BASE_NAME__Value"
+         ]
+      },
+
+      {
+         "name": "__BASE_NAME__",
+         "type": "RenderList",
+         "orderedInput": [
+            "_DrawSystemFrame",
+            "__BASE_NAME__IRenderTarget",
+            "__BASE_NAME__DrawList"
+         ]
+      }
+   ]
+}

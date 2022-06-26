@@ -1,0 +1,62 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>tooltip 00</title>
+
+<style>
+  [data-tooltip]:before {
+    /* needed - do not touch */
+    content: attr(data-tooltip);
+    position: absolute;
+    max-width: 20em;
+    opacity: 0;
+    
+    /* customizable */
+    padding: 0.5em;
+    box-shadow: 0.25em 0.25em 0 #444;    
+    background: #888;
+    top:100%;
+    z-index: 1;
+}
+
+[data-tooltip]:hover:before {
+    /* needed - do not touch */
+    opacity: 1;
+    
+    /* customizable */
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+    pointer-events: none;
+}
+
+/* FOR TEST PURPOSES ONLY */
+.tooltip-host {
+    position: relative;
+    border: 1px solid silver;
+    background: #ddd;
+    margin: 20px;
+    padding: 10px;
+}
+</style>
+
+https://stackoverflow.com/questions/7117073/add-a-tooltip-to-a-div
+
+<div>Standard div, no tooltip here</div>
+
+
+<div class="tooltip-host" data-tooltip="Hi, I'm a tooltip. Pretty easy uh ? ;)">
+  Div with standard tooltip. Hover me to see the tooltip.
+  <br/>Hovering the tooltip doesn't matter:
+  <br/>if you hover out of my boundaries, the tooltip will disappear.
+</div>
+
+
+<div class="tooltip-host" data-tooltip="Hi, I'm a persistent tooltip. I won't disappear when hovering me even if out of my parent boundaries. I'll also prevent other tooltips to fire :)" data-tooltip-persistent="foo">
+  Div with persistent tooltip. Hover me to see the tooltip.
+  <br/>The tooltip won't expire until you hover on me OR it.
+</div>
+
+<div class="tooltip-host" data-tooltip="Hi, I'm a persistent tooltip. I won't disappear when hovering me even if out of my parent boundaries. I'll also prevent other tooltips to fire :)" data-tooltip-persistent="foo">
+  Div with persistent tooltip. Hover me to see the tooltip.
+  <br/>The tooltip won't expire until you hover on me OR it.
+</div>

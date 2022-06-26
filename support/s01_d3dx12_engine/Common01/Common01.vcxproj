@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Gaming.Desktop.x64">
+      <Configuration>Release</Configuration>
+      <Platform>Gaming.Desktop.x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Gaming.Desktop.x64">
+      <Configuration>Profile</Configuration>
+      <Platform>Gaming.Desktop.x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Gaming.Desktop.x64">
+      <Configuration>Debug</Configuration>
+      <Platform>Gaming.Desktop.x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Common01.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\CommonPCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Gaming.Desktop.x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Gaming.Desktop.x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|Gaming.Desktop.x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationComputeShader.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationDisplayList.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationTexture.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationTextureJson.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationTextureMove.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationTriangle.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationTriangleJson.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationTriangleMove.cpp" />
+    <ClCompile Include="Source\Common\Application\CommandLine.cpp" />
+    <ClCompile Include="Source\Common\Application\IApplication.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationHolder.cpp" />
+    <ClCompile Include="Source\Common\Application\WindowHelper.cpp" />
+    <ClCompile Include="Source\Common\DAG\DagCollection.cpp" />
+    <ClCompile Include="Source\Common\DAG\DagNodeCalculate.cpp" />
+    <ClCompile Include="Source\Common\DAG\DagNodeValue.cpp" />
+    <ClCompile Include="Source\Common\DAG\DagValue.cpp" />
+    <ClCompile Include="Source\Common\DAG\DagValueVariant.cpp" />
+    <ClCompile Include="Source\Common\DAG\iDagNode.cpp" />
+    <ClCompile Include="Source\Common\DAG\iDagValue.cpp" />
+    <ClCompile Include="Source\Common\DirectXTK12\DirectXHelpers.cpp" />
+    <ClCompile Include="Source\Common\DirectXTK12\GraphicsMemory.cpp" />
+    <ClCompile Include="Source\Common\DirectXTK12\LinearAllocator.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\CustomCommandList.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\DeviceResources.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\DrawSystem.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\DrawSystemFrame.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Geometry\Geometry.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Geometry\GeometryGeneric.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Geometry\IGeometry.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapper.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapperItem.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapperPage.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\IResource.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\IRenderTarget.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\RenderTargetBackbuffer.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\RenderTargetDepthData.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\RenderTargetFormatData.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\RenderTargetTexture.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\ScreenSizeResources.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Shader\Shader.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ConstantBuffer.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ConstantBufferInfo.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ShaderPipelineStateData.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ShaderResourceInfo.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ShaderResource.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Shader\UnorderedAccess.cpp" />
+    <ClCompile Include="Source\Common\DrawSystem\Shader\UnorderedAccessInfo.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\ComponentFileMap.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\ComponentFound.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\FileSystem.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\FoundDynamicFile.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\FoundDynamicFolder.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\FoundStaticFile.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\FoundStaticFolder.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\IFileSystemProvider.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\IFileSystemVisitorFound.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\IFileSystemVisitorProvider.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\OverlayFileSystem.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\ProviderDisk.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\ProviderMemory.cpp" />
+    <ClCompile Include="Source\Common\FileSystem\ProviderMods.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONDagCollection.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONDrawSystem.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONDrawSystemEnum.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONGeometry.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONInputElementDesc.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONRenderTarget.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONShader.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONConstantBufferInfo.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONShaderResourceInfo.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONShaderResource.cpp" />
+    <ClCompile Include="Source\Common\JSON\JSONVector.cpp" />
+    <ClCompile Include="Source\Common\Log\ILogConsumer.cpp" />
+    <ClCompile Include="Source\Common\Log\Log.cpp" />
+    <ClCompile Include="Source\Common\Log\LogConsumerConsole.cpp" />
+    <ClCompile Include="Source\Common\Log\LogConsumerWriteToFile.cpp" />
+    <ClCompile Include="Source\Common\Log\LogEnum.cpp" />
+    <ClCompile Include="Source\Common\Log\LogScope.cpp" />
+    <ClCompile Include="Source\Common\Math\VectorFloat4.cpp" />
+    <ClCompile Include="Source\Common\Task\ITask.cpp" />
+    <ClCompile Include="Source\Common\Task\TaskWindow.cpp" />
+    <ClCompile Include="Source\Common\UISystem\IUISystem.cpp" />
+    <ClCompile Include="Source\Common\UISystem\IUISystemDataSource.cpp" />
+    <ClCompile Include="Source\Common\Util\Utf8.cpp" />
+    <ClCompile Include="Source\Common\Worker\JobFinished.cpp" />
+    <ClCompile Include="Source\Common\Worker\JobFinishedToken.cpp" />
+    <ClCompile Include="Source\Common\Worker\WorkerCollection.cpp" />
+    <ClCompile Include="Source\Common\Worker\WorkerTask.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Common.h" />
+    <ClInclude Include="Source\CommonPCH.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationComputeShader.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationDisplayList.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationTexture.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationTextureJson.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationTextureMove.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationTriangle.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationTriangleJson.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationTriangleMove.h" />
+    <ClInclude Include="Source\Common\Application\CommandLine.h" />
+    <ClInclude Include="Source\Common\Application\IApplication.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationHolder.h" />
+    <ClInclude Include="Source\Common\Application\WindowHelper.h" />
+    <ClInclude Include="Source\Common\DAG\DagCollection.h" />
+    <ClInclude Include="Source\Common\DAG\DagNodeCalculate.h" />
+    <ClInclude Include="Source\Common\DAG\DagNodeValue.h" />
+    <ClInclude Include="Source\Common\DAG\DagValue.h" />
+    <ClInclude Include="Source\Common\DAG\DagValueVariant.h" />
+    <ClInclude Include="Source\Common\DAG\iDagNode.h" />
+    <ClInclude Include="Source\Common\DAG\iDagValue.h" />
+    <ClInclude Include="Source\Common\DirectXTK12\DirectXHelpers.h" />
+    <ClInclude Include="Source\Common\DirectXTK12\GraphicsMemory.h" />
+    <ClInclude Include="Source\Common\DirectXTK12\LinearAllocator.h" />
+    <ClInclude Include="Source\Common\DrawSystem\CustomCommandList.h" />
+    <ClInclude Include="Source\Common\DrawSystem\d3dx12.h" />
+    <ClInclude Include="Source\Common\DrawSystem\DeviceResources.h" />
+    <ClInclude Include="Source\Common\DrawSystem\DrawSystem.h" />
+    <ClInclude Include="Source\Common\DrawSystem\DrawSystemFrame.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Geometry\Geometry.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Geometry\GeometryGeneric.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Geometry\IGeometry.h" />
+    <ClInclude Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapper.h" />
+    <ClInclude Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapperItem.h" />
+    <ClInclude Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapperPage.h" />
+    <ClInclude Include="Source\Common\DrawSystem\IResource.h" />
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\IRenderTarget.h" />
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetBackbuffer.h" />
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetDepthData.h" />
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetFormatData.h" />
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetTexture.h" />
+    <ClInclude Include="Source\Common\DrawSystem\ScreenSizeResources.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Shader\Shader.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ConstantBuffer.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ConstantBufferInfo.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ShaderPipelineStateData.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ShaderResourceInfo.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ShaderResource.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Shader\UnorderedAccess.h" />
+    <ClInclude Include="Source\Common\DrawSystem\Shader\UnorderedAccessInfo.h" />
+    <ClInclude Include="Source\Common\FileSystem\ComponentFileMap.h" />
+    <ClInclude Include="Source\Common\FileSystem\ComponentFound.h" />
+    <ClInclude Include="Source\Common\FileSystem\FileSystem.h" />
+    <ClInclude Include="Source\Common\FileSystem\FoundDynamicFile.h" />
+    <ClInclude Include="Source\Common\FileSystem\FoundDynamicFolder.h" />
+    <ClInclude Include="Source\Common\FileSystem\FoundStaticFile.h" />
+    <ClInclude Include="Source\Common\FileSystem\FoundStaticFolder.h" />
+    <ClInclude Include="Source\Common\FileSystem\IFileSystemProvider.h" />
+    <ClInclude Include="Source\Common\FileSystem\IFileSystemVisitorFound.h" />
+    <ClInclude Include="Source\Common\FileSystem\IFileSystemVisitorProvider.h" />
+    <ClInclude Include="Source\Common\FileSystem\OverlayFileSystem.h" />
+    <ClInclude Include="Source\Common\FileSystem\ProviderDisk.h" />
+    <ClInclude Include="Source\Common\FileSystem\ProviderMemory.h" />
+    <ClInclude Include="Source\Common\FileSystem\ProviderMods.h" />
+    <ClInclude Include="Source\Common\JSON\JSONDagCollection.h" />
+    <ClInclude Include="Source\Common\JSON\JSONDrawSystem.h" />
+    <ClInclude Include="Source\Common\JSON\JSONDrawSystemEnum.h" />
+    <ClInclude Include="Source\Common\JSON\JSONGeometry.h" />
+    <ClInclude Include="Source\Common\JSON\JSONInputElementDesc.h" />
+    <ClInclude Include="Source\Common\JSON\JSONRenderTarget.h" />
+    <ClInclude Include="Source\Common\JSON\JSONShader.h" />
+    <ClInclude Include="Source\Common\JSON\JSONConstantBufferInfo.h" />
+    <ClInclude Include="Source\Common\JSON\JSONShaderResourceInfo.h" />
+    <ClInclude Include="Source\Common\JSON\JSONShaderResource.h" />
+    <ClInclude Include="Source\Common\JSON\JSONVector.h" />
+    <ClInclude Include="Source\Common\Log\ILogConsumer.h" />
+    <ClInclude Include="Source\Common\Log\Log.h" />
+    <ClInclude Include="Source\Common\Log\LogConsumerConsole.h" />
+    <ClInclude Include="Source\Common\Log\LogConsumerWriteToFile.h" />
+    <ClInclude Include="Source\Common\Log\LogEnum.h" />
+    <ClInclude Include="Source\Common\Log\LogScope.h" />
+    <ClInclude Include="Source\Common\Macro.h" />
+    <ClInclude Include="Source\Common\Math\VectorFloat4.h" />
+    <ClInclude Include="Source\Common\Task\ITask.h" />
+    <ClInclude Include="Source\Common\Task\TaskWindow.h" />
+    <ClInclude Include="Source\Common\UISystem\IUISystem.h" />
+    <ClInclude Include="Source\Common\UISystem\IUISystemDataSource.h" />
+    <ClInclude Include="Source\Common\Util\Utf8.h" />
+    <ClInclude Include="Source\Common\Worker\JobFinished.h" />
+    <ClInclude Include="Source\Common\Worker\JobFinishedToken.h" />
+    <ClInclude Include="Source\Common\Worker\WorkerCollection.h" />
+    <ClInclude Include="Source\Common\Worker\WorkerCount.h" />
+    <ClInclude Include="Source\Common\Worker\WorkerTask.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <RootNamespace>Common01</RootNamespace>
+    <ProjectGuid>{3de01963-e730-4a3f-9d8a-76dc5a1f1683}</ProjectGuid>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <Keyword>Win32Proj</Keyword>
+    <!-- - - - -->
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+    <TargetRuntime>Native</TargetRuntime>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Gaming.Desktop.x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Gaming.Desktop.x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Gaming.Desktop.x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Gaming.Desktop.x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Common01.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Gaming.Desktop.x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Common01.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Gaming.Desktop.x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Common01.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Gaming.Desktop.x64'">
+    <LibraryPath>$(Console_SdkLibPath);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(Console_SdkIncludeRoot);$(IncludePath)</IncludePath>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Gaming.Desktop.x64'">
+    <LibraryPath>$(Console_SdkLibPath);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(Console_SdkIncludeRoot);$(IncludePath)</IncludePath>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Gaming.Desktop.x64'">
+    <LibraryPath>$(Console_SdkLibPath);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(Console_SdkIncludeRoot);$(IncludePath)</IncludePath>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Gaming.Desktop.x64'">
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(Console_Libs);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>NDEBUG;__WRL_NO_DEFAULT_LIB__;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Gaming.Desktop.x64'">
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(Console_Libs);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>NDEBUG;__WRL_NO_DEFAULT_LIB__;_LIB;PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Gaming.Desktop.x64'">
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(Console_Libs);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <MinimalRebuild>false</MinimalRebuild>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;__WRL_NO_DEFAULT_LIB__;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

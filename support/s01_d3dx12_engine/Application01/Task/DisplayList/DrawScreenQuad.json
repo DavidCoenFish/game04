@@ -1,0 +1,76 @@
+{
+   "valueArray": [
+      {
+         "name": "__BASE_NAME__Geometry",
+         "type": "Geometry",
+         "data": {
+            "inputElementDesc": [
+               {
+                  "semantic": "POSITION",
+                  "format": "DXGI_FORMAT_R32G32_FLOAT"
+               },
+               {
+                  "semantic": "TEXCOORD",
+                  "format": "DXGI_FORMAT_R32G32_FLOAT"
+               }
+            ],
+            "floatPerVertex": 4,
+            "vertexData": [
+               __X_HIGH__, __Y_LOW__,  1.0, 1.0,
+               __X_LOW__,  __Y_LOW__,  0.0, 1.0,
+               __X_HIGH__, __Y_HIGH__, 1.0, 0.0,
+               __X_LOW__,  __Y_HIGH__, 0.0, 0.0
+            ],
+            "topology": "D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP"
+         }
+      }
+   ],
+   "calculateArray": [
+      {
+         "name": "__BASE_NAME__Shader",
+         "type": "Shader",
+         "orderedInput": [
+            "__INPUT__"
+         ],
+         "data": {
+            "pipelineState": {
+               "inputElementDesc": [
+                  {
+                     "semantic": "POSITION",
+                     "format": "DXGI_FORMAT_R32G32_FLOAT"
+                  },
+                  {
+                     "semantic": "TEXCOORD",
+                     "format": "DXGI_FORMAT_R32G32_FLOAT"
+                  }
+               ],
+               "topologyType": "D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE",
+               "renderTargetFormat": [ "DXGI_FORMAT_B8G8R8A8_UNORM" ]
+            },
+            "resourceInfo": [
+               {
+                  "shaderVisibility": "D3D12_SHADER_VISIBILITY_PIXEL",
+                  "dataSamplerDesc": "true"
+               }
+            ],
+            "vertexShader": "VertexShaderDrawScreenQuad.cso",
+            "pixelShader": "PixelShaderDrawScreenQuad.cso"
+         }
+      },
+      {
+         "name": "__BASE_NAME__GeometryList",
+         "type": "StackGeometry",
+         "stackInput": [
+            "__BASE_NAME__Geometry"
+         ]
+      },
+      {
+         "name": "__BASE_NAME__",
+         "type": "Draw",
+         "orderedInput": [
+            "__BASE_NAME__Shader",
+            "__BASE_NAME__GeometryList"
+         ]
+      }
+   ]
+}

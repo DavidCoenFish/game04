@@ -1,0 +1,13 @@
+{
+   "Factory": "TaskFileDevenv",
+   "Skip": false,
+   "Priority": 0,
+   "Dependency": [],
+   "DevEnv": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv.com",
+   "Clean": false,
+   "FilePath": "..\\SolutionBuild\\Application01\\Gaming.Desktop.x64\\Release\\output\\Application01.exe",
+   "Solution": "Solution.sln",
+   "Project": "Application01",
+   "Configuration": "Release",
+   "Platform": "Gaming.Desktop.x64"
+}

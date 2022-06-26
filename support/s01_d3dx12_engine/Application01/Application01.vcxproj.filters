@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{a13cd47d-4d8a-443e-ad54-a908a3d69fc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{0413a7eb-f8ac-4ba0-b421-44a1c5255dfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task">
+      <UniqueIdentifier>{59217c21-31d8-4082-af79-37f03dd0cce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\Empty">
+      <UniqueIdentifier>{4a289a82-6ba3-4423-b4f2-ef8b779450d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTriangle">
+      <UniqueIdentifier>{151b22a2-58c6-42f6-811f-4dd2ef591b32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\DisplayList">
+      <UniqueIdentifier>{3212a2f8-08c5-4d19-a644-33a44dbec0bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\MultipleEmptyWindow">
+      <UniqueIdentifier>{d7550a5b-10c0-46f0-852a-6e3a667c1360}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTriangleJson">
+      <UniqueIdentifier>{8b21a776-967d-4646-92d1-3972fd10c5c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTriangleMove">
+      <UniqueIdentifier>{bb9d23f3-a209-4a04-b93e-fdc0a74ee5b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\DisplayListBurn00">
+      <UniqueIdentifier>{5cb1bf3b-ad77-4960-9c85-8d88b9cdc1c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{1f8e7a32-d8b2-413f-a516-ec68a0727607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTexture">
+      <UniqueIdentifier>{00901434-30f2-41e9-8c3f-67042813a35a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTextureJson">
+      <UniqueIdentifier>{30c2d5f2-8e70-4b3d-b0c9-0d38d379d17b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTriangleDag">
+      <UniqueIdentifier>{6e0e1cb3-a340-4c06-b775-cc08d8187c70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTextureDag">
+      <UniqueIdentifier>{627be12b-2096-4b11-a19e-9d8e34663b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\DisplayListSimple">
+      <UniqueIdentifier>{33d8a53d-9722-4451-ae8f-73c107e1f818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\ComputeShader">
+      <UniqueIdentifier>{12ecac22-14bb-4fdf-8211-611e7f3b8ec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTextureMove">
+      <UniqueIdentifier>{4bfc2862-d72f-4b05-9f6e-d2384b099292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\DisplayListGrid">
+      <UniqueIdentifier>{92a54fb4-f9b5-4b5e-ac27-41f846790b90}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\ApplicationPCH.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Build.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HostDefine.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ApplicationPCH.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Build.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MGCCompile Include="MicrosoftGame.Config" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Resources\StoreLogo.png">
+      <Filter>Resources</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\Empty\Application.json">
+      <Filter>Task\Empty</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Resources\GraphicsLogo.png">
+      <Filter>Resources</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Resources\SmallLogo.png">
+      <Filter>Resources</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Resources\SplashScreen.png">
+      <Filter>Resources</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTriangle\Application.json">
+      <Filter>Task\TestTriangle</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayList\Application.json">
+      <Filter>Task\DisplayList</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayList\DisplayListMaster.json">
+      <Filter>Task\DisplayList</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\MultipleEmptyWindow\Application.json">
+      <Filter>Task\MultipleEmptyWindow</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTriangleJson\Application.json">
+      <Filter>Task\TestTriangleJson</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTriangleMove\Application.json">
+      <Filter>Task\TestTriangleMove</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListBurn00\Application.json">
+      <Filter>Task\DisplayListBurn00</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListBurn00\DagGrid.json">
+      <Filter>Task\DisplayListBurn00</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListBurn00\DagMaster.json">
+      <Filter>Task\DisplayListBurn00</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListBurn00\DagPresent.json">
+      <Filter>Task\DisplayListBurn00</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTexture\Application.json">
+      <Filter>Task\TestTexture</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTextureJson\Application.json">
+      <Filter>Task\TestTextureJson</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTriangleDag\Application.json">
+      <Filter>Task\TestTriangleDag</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTriangleDag\Data0.json">
+      <Filter>Task\TestTriangleDag</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTextureDag\Data0.json">
+      <Filter>Task\TestTextureDag</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTextureDag\Application.json">
+      <Filter>Task\TestTextureDag</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayList\DrawScreenQuad.json">
+      <Filter>Task\DisplayList</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayList\StackHeapWrapperRenderTarget.json">
+      <Filter>Task\DisplayList</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayList\RenderTargetWash.json">
+      <Filter>Task\DisplayList</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayList\RenderTargetTriangle.json">
+      <Filter>Task\DisplayList</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListSimple\Application.json">
+      <Filter>Task\DisplayListSimple</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListSimple\DisplayListMaster.json">
+      <Filter>Task\DisplayListSimple</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListSimple\DrawScreenQuad.json">
+      <Filter>Task\DisplayListSimple</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListSimple\RenderTargetTriangle.json">
+      <Filter>Task\DisplayListSimple</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListSimple\RenderTargetWash.json">
+      <Filter>Task\DisplayListSimple</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListSimple\StackHeapWrapperRenderTarget.json">
+      <Filter>Task\DisplayListSimple</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayList\RenderTargetPoint.json">
+      <Filter>Task\DisplayList</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\ComputeShader\Application.json">
+      <Filter>Task\ComputeShader</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTextureMove\Application.json">
+      <Filter>Task\TestTextureMove</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListGrid\Application.json">
+      <Filter>Task\DisplayListGrid</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListGrid\DisplayList.json">
+      <Filter>Task\DisplayListGrid</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListGrid\ScreenQuad.json">
+      <Filter>Task\DisplayListGrid</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application01.props" />
+    <None Include="Script\prebuild.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Script\util_make_build_version.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Script\util_make_build_description.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Script\util_make_build_date.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Script\util_make_resource.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Script\util_search_replace.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Script\util_make_host_define.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Application01.rc.template" />
+    <None Include="MicrosoftGame.Config.template" />
+    <None Include="Script\util_make_microsoft_game_config.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Task\DisplayListGrid\Polar.hlsli">
+      <Filter>Task\DisplayListGrid</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Task\TestTriangle\PixelShader.hlsl">
+      <Filter>Task\TestTriangle</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangle\VertexShader.hlsl">
+      <Filter>Task\TestTriangle</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayList\PixelShaderDrawScreenQuad.hlsl">
+      <Filter>Task\DisplayList</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayList\VertexShaderDrawScreenQuad.hlsl">
+      <Filter>Task\DisplayList</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangleJson\PixelShader.hlsl">
+      <Filter>Task\TestTriangleJson</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangleJson\VertexShader.hlsl">
+      <Filter>Task\TestTriangleJson</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangleMove\PixelShader.hlsl">
+      <Filter>Task\TestTriangleMove</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangleMove\VertexShader.hlsl">
+      <Filter>Task\TestTriangleMove</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListBurn00\PixelShaderGrid.hlsl">
+      <Filter>Task\DisplayListBurn00</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListBurn00\PixelShaderPresent.hlsl">
+      <Filter>Task\DisplayListBurn00</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListBurn00\VertexShaderGrid.hlsl">
+      <Filter>Task\DisplayListBurn00</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListBurn00\VertexShaderPresent.hlsl">
+      <Filter>Task\DisplayListBurn00</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTexture\PixelShader.hlsl">
+      <Filter>Task\TestTexture</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTexture\VertexShader.hlsl">
+      <Filter>Task\TestTexture</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTextureJson\PixelShader.hlsl">
+      <Filter>Task\TestTextureJson</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTextureJson\VertexShader.hlsl">
+      <Filter>Task\TestTextureJson</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangleDag\PixelShader.hlsl">
+      <Filter>Task\TestTriangleDag</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangleDag\VertexShader.hlsl">
+      <Filter>Task\TestTriangleDag</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTextureDag\PixelShader.hlsl">
+      <Filter>Task\TestTextureDag</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTextureDag\VertexShader.hlsl">
+      <Filter>Task\TestTextureDag</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayList\PixelShaderRenderTargetTriangle.hlsl">
+      <Filter>Task\DisplayList</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayList\VertexShaderRenderTargetTriangle.hlsl">
+      <Filter>Task\DisplayList</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListSimple\PixelShaderDrawScreenQuad.hlsl">
+      <Filter>Task\DisplayListSimple</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListSimple\PixelShaderRenderTargetTriangle.hlsl">
+      <Filter>Task\DisplayListSimple</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListSimple\VertexShaderDrawScreenQuad.hlsl">
+      <Filter>Task\DisplayListSimple</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListSimple\VertexShaderRenderTargetTriangle.hlsl">
+      <Filter>Task\DisplayListSimple</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\ComputeShader\ComputeShader.hlsl">
+      <Filter>Task\ComputeShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\ComputeShader\PixelShaderTriangleMove.hlsl">
+      <Filter>Task\ComputeShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\ComputeShader\VertexShaderTriangleMove.hlsl">
+      <Filter>Task\ComputeShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\ComputeShader\PixelShaderParticle.hlsl">
+      <Filter>Task\ComputeShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\ComputeShader\VertexShaderParticle.hlsl">
+      <Filter>Task\ComputeShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\ComputeShader\PixelShaderScreenQuad.hlsl">
+      <Filter>Task\ComputeShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\ComputeShader\VertexShaderScreenQuad.hlsl">
+      <Filter>Task\ComputeShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTextureMove\PixelShader.hlsl">
+      <Filter>Task\TestTextureMove</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTextureMove\VertexShader.hlsl">
+      <Filter>Task\TestTextureMove</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListGrid\PixelShaderGrid.hlsl">
+      <Filter>Task\DisplayListGrid</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListGrid\VertexShaderGrid.hlsl">
+      <Filter>Task\DisplayListGrid</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Application01.rc" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,29 @@
+{
+   "valueArray": [
+      {
+         "name": "ScreenQuad",
+         "type": "Geometry",
+         "data": {
+            "inputElementDesc": [
+               {
+                  "semantic": "POSITION",
+                  "format": "DXGI_FORMAT_R32G32_FLOAT"
+               }
+            ],
+            "floatPerVertex": 2,
+            "vertexData": [
+               -1.0, -1.0,
+               -1.0, 1.0,
+               1.0, -1.0,
+               1.0, 1.0
+            ],
+            "topology": "D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP"
+         }
+      }
+   ],
+
+   "fileArray": [
+      "DagGrid.json",
+      "DagPresent.json"
+   ]
+}

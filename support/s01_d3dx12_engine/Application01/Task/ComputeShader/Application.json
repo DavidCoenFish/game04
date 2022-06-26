@@ -1,0 +1,16 @@
+{
+   "tasks": [
+      {
+         "factory": "Window",
+         "data": [
+            {
+               "name": "ComputeShader",
+               "fullScreen": false,
+               "width": 800,
+               "height": 600,
+               "factory": "ComputeShader"
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,126 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>attibutes 00</title>
+
+<!-- https://stackoverflow.com/questions/53036998/creating-new-instances-of-custom-html-elements -->
+
+<style>
+.table {
+  display: grid;
+  grid-template-columns: 4.875em 4.875em 4.875em 4.875em 4.875em;
+  grid-template-rows: 3em 3em 3em 3em 1px;
+  /* background-color: blue; */
+}
+
+/* .table > div{
+  background-color: red;
+  text-align: center;
+  vertical-align: middle;
+} */
+
+.borderTop {
+  border-width:1px;
+  border-top-style: solid;
+}
+
+.borderLeft {
+  border-width:1px;
+  border-left-style: solid;
+}
+
+.borderTopLeft {
+  border-width:1px;
+  border-top-style: solid;
+  border-left-style: solid;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.item {
+  flex:auto;
+  text-align: center;
+}
+
+</style>
+
+https://dev.to/anuradha9712/create-reusable-web-components-in-html-1llc
+
+<div class="table">
+    <div style="grid-column-start:3; grid-row-start: 1;">HE:__</div>
+    <div style="grid-column-start:4; grid-row-start: 1;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="position: absolute; top: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;left: 0.3em;font-size: 0.7em;">FA</div>
+    </div>
+    <div style="grid-column-start:5; grid-row-start: 1;" class="borderLeft container"></div>
+
+    <div style="grid-column-start:2; grid-row-start: 2;">VG:__</div>
+    <div style="grid-column-start:3; grid-row-start: 2;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="position: absolute; top: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;left: 0.3em;font-size: 0.7em;">PC</div>
+    </div>
+    <div style="grid-column-start:4; grid-row-start: 2;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="position: absolute; top: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;left: 0.3em;font-size: 0.7em;">WP</div>
+    </div>
+    <div style="grid-column-start:5; grid-row-start: 2;" class="borderLeft">IN:__</div>
+
+    <div style="grid-column-start:1; grid-row-start: 3;">CD:__</div>
+    <div style="grid-column-start:2; grid-row-start: 3;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="position: absolute; top: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;left: 0.3em;font-size: 0.7em;">AG</div>
+    </div>
+    <div style="grid-column-start:3; grid-row-start: 3;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="position: absolute; top: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;left: 0.3em;font-size: 0.7em;">MD</div>
+    </div>
+    <div style="grid-column-start:4; grid-row-start: 3;" class="borderTopLeft">CH:__</div>
+
+    <div style="grid-column-start:1; grid-row-start: 4;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="position: absolute; top: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;left: 0.3em;font-size: 0.7em;">ST</div>
+    </div>
+    <div style="grid-column-start:2; grid-row-start: 4;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="position: absolute; top: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+      <div style="position: absolute; bottom: 0;left: 0.3em;font-size: 0.7em;">PS</div>
+    </div>
+    <div style="grid-column-start:3; grid-row-start: 4;" class="borderTopLeft">BR:__</div>
+
+    <div style="grid-column-start:1; grid-row-start: 5; background-color: black;" ></div>
+    <div style="grid-column-start:2; grid-row-start: 5; background-color: black;" ></div>
+
+</div>
+<br/>
+<div class="container" style="width:4.875em;height:3em;position: relative;border-style: solid;border-width: 1px;">
+  <div class="item" style="font-size: 2em;">99.9</div>
+  <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+  <div style="position: absolute; top: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+  <div style="position: absolute; bottom: 0;right: 0; width:1.0em;height: 1.0em; background-color: green;"></div>
+  <div style="position: absolute; bottom: 0;left: 0.3em;font-size: 0.7em;">MD</div>
+</div>
+

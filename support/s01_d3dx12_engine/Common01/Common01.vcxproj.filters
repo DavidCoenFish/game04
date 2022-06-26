@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{b384da31-24cf-4cc8-b78c-e70607b34bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common">
+      <UniqueIdentifier>{68582a0b-3a86-4b27-83af-1b9cd6eaabde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\Util">
+      <UniqueIdentifier>{2769eefc-0acd-4ab3-ac13-a9d61ebd851a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\Application">
+      <UniqueIdentifier>{41bf7e93-1aa9-4ba3-a024-657592fd1e19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\Log">
+      <UniqueIdentifier>{f176c3df-4a3b-4189-a4d8-2bcc21f831df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\FileSystem">
+      <UniqueIdentifier>{7e3ea876-3e4e-4697-9b54-9ce69694fcc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DrawSystem">
+      <UniqueIdentifier>{8126853a-72e9-4888-8fc4-365a515b2c24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DrawSystem\Shader">
+      <UniqueIdentifier>{c0c0c18d-7117-4d36-a8b5-ff20fa2ff147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DrawSystem\HeapWrapper">
+      <UniqueIdentifier>{ba6bbab7-c5a7-42a8-8be0-14a3836744fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DirectXTK12">
+      <UniqueIdentifier>{42a62fbf-2ca5-419b-bfd7-8803247cb1b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DrawSystem\Geometry">
+      <UniqueIdentifier>{914c4fdb-615f-412b-839f-cf4fa6d03723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DrawSystem\RenderTarget">
+      <UniqueIdentifier>{0013fa15-a403-475c-8496-b1ed8b000d00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DrawSystem\Math">
+      <UniqueIdentifier>{8b2ec63e-b3b9-4cc0-85b3-edfad31a8934}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\JSON">
+      <UniqueIdentifier>{b91b92c2-545d-4aa0-ae7b-769e864214bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DAG">
+      <UniqueIdentifier>{6ecae4f4-4fef-4a84-9079-3da7e34a447f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\UISystem">
+      <UniqueIdentifier>{ce1bbc6f-a396-4fd4-9043-56caa9ac7c3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\Worker">
+      <UniqueIdentifier>{502c2fa6-ef43-4725-a29a-745cb5db607e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\Task">
+      <UniqueIdentifier>{3e8fec76-9387-4fca-807e-b15eeb625d45}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Common01.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\CommonPCH.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\WindowHelper.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Util\Utf8.cpp">
+      <Filter>Source\Common\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\CommandLine.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Log\LogConsumerConsole.cpp">
+      <Filter>Source\Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Log\LogConsumerWriteToFile.cpp">
+      <Filter>Source\Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Log\LogScope.cpp">
+      <Filter>Source\Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Log\Log.cpp">
+      <Filter>Source\Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Log\ILogConsumer.cpp">
+      <Filter>Source\Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\IFileSystemProvider.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationHolder.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\IApplication.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\DrawSystem.cpp">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\DeviceResources.cpp">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\DrawSystemFrame.cpp">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\ScreenSizeResources.cpp">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\IResource.cpp">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ShaderPipelineStateData.cpp">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Shader\Shader.cpp">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ShaderResourceInfo.cpp">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ConstantBufferInfo.cpp">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapperItem.cpp">
+      <Filter>Source\Common\DrawSystem\HeapWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapperPage.cpp">
+      <Filter>Source\Common\DrawSystem\HeapWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapper.cpp">
+      <Filter>Source\Common\DrawSystem\HeapWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DirectXTK12\GraphicsMemory.cpp">
+      <Filter>Source\Common\DirectXTK12</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DirectXTK12\LinearAllocator.cpp">
+      <Filter>Source\Common\DirectXTK12</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DirectXTK12\DirectXHelpers.cpp">
+      <Filter>Source\Common\DirectXTK12</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\CustomCommandList.cpp">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ConstantBuffer.cpp">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Geometry\Geometry.cpp">
+      <Filter>Source\Common\DrawSystem\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Geometry\IGeometry.cpp">
+      <Filter>Source\Common\DrawSystem\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Geometry\GeometryGeneric.cpp">
+      <Filter>Source\Common\DrawSystem\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Shader\ShaderResource.cpp">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\RenderTargetBackbuffer.cpp">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\RenderTargetDepthData.cpp">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\RenderTargetFormatData.cpp">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\RenderTargetTexture.cpp">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\RenderTarget\IRenderTarget.cpp">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Math\VectorFloat4.cpp">
+      <Filter>Source\Common\DrawSystem\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONDrawSystemEnum.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONRenderTarget.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONVector.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONDrawSystem.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\DagNodeCalculate.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\DagNodeValue.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\DagValue.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\DagValueVariant.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\iDagNode.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\iDagValue.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\DagCollection.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONDagCollection.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONShader.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONInputElementDesc.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONGeometry.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\UISystem\IUISystem.cpp">
+      <Filter>Source\Common\UISystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\UISystem\IUISystemDataSource.cpp">
+      <Filter>Source\Common\UISystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Log\LogEnum.cpp">
+      <Filter>Source\Common\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\ComponentFileMap.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\FoundStaticFolder.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\FoundStaticFile.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Worker\WorkerTask.cpp">
+      <Filter>Source\Common\Worker</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Worker\WorkerCollection.cpp">
+      <Filter>Source\Common\Worker</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\FoundDynamicFile.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\FoundDynamicFolder.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\IFileSystemVisitorFound.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\IFileSystemVisitorProvider.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\ProviderDisk.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\ProviderMemory.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\ProviderMods.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\ComponentFound.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Worker\JobFinished.cpp">
+      <Filter>Source\Common\Worker</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Worker\JobFinishedToken.cpp">
+      <Filter>Source\Common\Worker</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Task\ITask.cpp">
+      <Filter>Source\Common\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Task\TaskWindow.cpp">
+      <Filter>Source\Common\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\OverlayFileSystem.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\FileSystem\FileSystem.cpp">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationTriangle.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationTriangleJson.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationTriangleMove.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONConstantBufferInfo.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationDisplayList.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationTexture.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationTextureJson.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONShaderResource.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\JSON\JSONShaderResourceInfo.cpp">
+      <Filter>Source\Common\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationComputeShader.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Shader\UnorderedAccessInfo.cpp">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DrawSystem\Shader\UnorderedAccess.cpp">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationTextureMove.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\CommonPCH.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\WindowHelper.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Util\Utf8.h">
+      <Filter>Source\Common\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\CommandLine.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Log\LogConsumerConsole.h">
+      <Filter>Source\Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Log\LogConsumerWriteToFile.h">
+      <Filter>Source\Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Log\LogScope.h">
+      <Filter>Source\Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Log\Log.h">
+      <Filter>Source\Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Log\ILogConsumer.h">
+      <Filter>Source\Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\IFileSystemProvider.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationHolder.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\IApplication.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\DrawSystem.h">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\DeviceResources.h">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\d3dx12.h">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\DrawSystemFrame.h">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\ScreenSizeResources.h">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\IResource.h">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Shader\Shader.h">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ShaderPipelineStateData.h">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ShaderResourceInfo.h">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ConstantBufferInfo.h">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapperItem.h">
+      <Filter>Source\Common\DrawSystem\HeapWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapperPage.h">
+      <Filter>Source\Common\DrawSystem\HeapWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\HeapWrapper\HeapWrapper.h">
+      <Filter>Source\Common\DrawSystem\HeapWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DirectXTK12\GraphicsMemory.h">
+      <Filter>Source\Common\DirectXTK12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DirectXTK12\LinearAllocator.h">
+      <Filter>Source\Common\DirectXTK12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DirectXTK12\DirectXHelpers.h">
+      <Filter>Source\Common\DirectXTK12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\CustomCommandList.h">
+      <Filter>Source\Common\DrawSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ConstantBuffer.h">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Geometry\Geometry.h">
+      <Filter>Source\Common\DrawSystem\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Geometry\IGeometry.h">
+      <Filter>Source\Common\DrawSystem\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Geometry\GeometryGeneric.h">
+      <Filter>Source\Common\DrawSystem\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Shader\ShaderResource.h">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\IRenderTarget.h">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetBackbuffer.h">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetDepthData.h">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetFormatData.h">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetTexture.h">
+      <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Math\VectorFloat4.h">
+      <Filter>Source\Common\DrawSystem\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONDrawSystemEnum.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONRenderTarget.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONVector.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONDrawSystem.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Macro.h">
+      <Filter>Source\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\DagCollection.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\DagNodeCalculate.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\DagNodeValue.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\DagValue.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\DagValueVariant.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\iDagNode.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\iDagValue.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONDagCollection.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONShader.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONInputElementDesc.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONGeometry.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\UISystem\IUISystem.h">
+      <Filter>Source\Common\UISystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\UISystem\IUISystemDataSource.h">
+      <Filter>Source\Common\UISystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Log\LogEnum.h">
+      <Filter>Source\Common\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\ComponentFileMap.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\FoundStaticFile.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\FoundStaticFolder.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Worker\WorkerCollection.h">
+      <Filter>Source\Common\Worker</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Worker\WorkerTask.h">
+      <Filter>Source\Common\Worker</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\FoundDynamicFile.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\FoundDynamicFolder.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Worker\WorkerCount.h">
+      <Filter>Source\Common\Worker</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\IFileSystemVisitorFound.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\IFileSystemVisitorProvider.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\ProviderDisk.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\ProviderMemory.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\ProviderMods.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\ComponentFound.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Worker\JobFinished.h">
+      <Filter>Source\Common\Worker</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Worker\JobFinishedToken.h">
+      <Filter>Source\Common\Worker</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Task\ITask.h">
+      <Filter>Source\Common\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Task\TaskWindow.h">
+      <Filter>Source\Common\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\OverlayFileSystem.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\FileSystem\FileSystem.h">
+      <Filter>Source\Common\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationTriangle.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationTriangleJson.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationTriangleMove.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONConstantBufferInfo.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationDisplayList.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationTexture.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationTextureJson.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONShaderResource.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\JSON\JSONShaderResourceInfo.h">
+      <Filter>Source\Common\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationComputeShader.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Shader\UnorderedAccessInfo.h">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DrawSystem\Shader\UnorderedAccess.h">
+      <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationTextureMove.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

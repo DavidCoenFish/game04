@@ -1,0 +1,50 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>tooltip 01</title>
+<link rel="stylesheet" href="css/reset.css" />
+
+<style>
+.tooltip-host {
+  position:relative;
+  border-bottom-style: dotted;
+  border-width: 2px;
+  color: blue;
+}
+.tooltip-host > * {
+  color: black;
+}
+.tooltip-host > span {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #444;
+    padding:0.25em;
+    visibility: hidden;
+    position: absolute;
+    box-shadow: 0.5em 0.5em 0 #444;    
+    background: #888;
+    width: 15em;
+    top:100%;
+    left:0;
+    z-index: 1;
+    text-align: center;
+    transform: translate(-25%, 0);
+}
+
+.tooltip-host:hover >span {
+    visibility: visible;
+}
+
+
+</style>
+
+<span>the quick brown 
+  <span class="tooltip-host">fox<span> a b c d 
+      <span class="tooltip-host">host
+        <span>blah blah blah and blah blah blah blah blah blah blah</span>
+      </span> e f g and the <span class="tooltip-host">text 
+        <span>2blah blah blah and blah blah blah blah blah blah blah</span>
+      </span>goes on and on
+    </span>
+  </span> jumps over the lazy dog
+</span>
+

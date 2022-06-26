@@ -1,0 +1,10 @@
+x finished
+\ in progress
+_ not started
+
+
+
+\ pathfind attribute ui
+_ character titlecard
+_ character portrait placeholder
+_ dialog box

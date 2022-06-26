@@ -1,0 +1,84 @@
+{
+   "valueArray": [
+      {
+         "name": "Geometry0",
+         "type": "Geometry",
+         "data": {
+            "inputElementDesc": [
+               {
+                  "semantic": "POSITION",
+                  "format": "DXGI_FORMAT_R32G32_FLOAT"
+               },
+               {
+                  "semantic": "COLOR",
+                  "format": "DXGI_FORMAT_R32G32B32A32_FLOAT"
+               }
+            ],
+            "floatPerVertex": 6,
+            "vertexData": [
+               0.0, 0.5,  1.0, 0.0, 0.0, 1.0, 
+               0.5, -0.5,   0.0, 1.0, 0.0, 1.0, 
+               -0.5, -0.5,  0.0, 0.0, 1.0, 1.0 
+            ],
+            "topology": "D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST"
+         }
+      }
+   ],
+   "calculateArray": [
+      {
+         "name": "Shader0",
+         "type": "Shader",
+         "orderedInput": [
+         ],
+         "data": {
+            "pipelineState": {
+               "inputElementDesc": [
+                  {
+                     "semantic": "POSITION",
+                     "format": "DXGI_FORMAT_R32G32_FLOAT"
+                  },
+                  {
+                     "semantic": "COLOR",
+                     "format": "DXGI_FORMAT_R32G32B32A32_FLOAT"
+                  }
+               ],
+               "topologyType": "D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE",
+               "renderTargetFormat": [ "DXGI_FORMAT_B8G8R8A8_UNORM" ]
+            },
+            "vertexShader": "VertexShader.cso",
+            "pixelShader": "PixelShader.cso"
+         }
+      },
+      {
+         "name": "GeometryList0",
+         "type": "StackGeometry",
+         "stackInput": [
+            "Geometry0"
+         ]
+      },
+      {
+         "name": "Draw0",
+         "type": "Draw",
+         "orderedInput": [
+            "Shader0",
+            "GeometryList0"
+         ]
+      },
+      {
+         "name": "DrawList0",
+         "type": "StackDraw",
+         "stackInput": [
+            "Draw0"
+         ]
+      },
+      {
+         "name": "_Render",
+         "type": "RenderList",
+         "orderedInput": [
+            "_DrawSystemFrame",
+            "_BackBuffer",
+            "DrawList0"
+         ]
+      }
+   ]
+}

@@ -1,0 +1,83 @@
+{
+   "tasks": [
+      {
+         "factory": "Window",
+         "data": [
+            {
+               "name": "TriangleMove",
+               "fullScreen": false,
+               "width": 800,
+               "height": 600,
+               "factory": "TriangleMove",
+               "data": {
+                  "drawSystem": {
+                     "targetFormatData": {
+                        "format": "DXGI_FORMAT_B8G8R8A8_UNORM",
+                        "clearOnSet": true,
+                        "clearColor": [ 0.5, 0.5, 0.5, 1.0 ]
+                     }
+                  },
+                  "shader": {
+                     "pipelineState": {
+                        "inputElementDesc": [
+                           {
+                              "semantic": "POSITION",
+                              "format": "DXGI_FORMAT_R32G32_FLOAT"
+                           },
+                           {
+                              "semantic": "COLOR",
+                              "format": "DXGI_FORMAT_R32G32B32A32_FLOAT"
+                           }
+                        ],
+                        "topologyType": "D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE",
+                        "renderTargetFormat": [ "DXGI_FORMAT_B8G8R8A8_UNORM" ]
+                     },
+                     "vertexShader": "VertexShader.cso",
+                     "pixelShader": "PixelShader.cso",
+                     "constantInfo": [
+                        {
+                           "floatCount": 4,
+                           "visiblity": "D3D12_SHADER_VISIBILITY_VERTEX"
+                        }
+                     ]
+                  },
+                  "geometry": {
+                     "inputElementDesc": [
+                        {
+                           "semantic": "POSITION",
+                           "format": "DXGI_FORMAT_R32G32_FLOAT"
+                        },
+                        {
+                           "semantic": "COLOR",
+                           "format": "DXGI_FORMAT_R32G32B32A32_FLOAT"
+                        }
+                     ],
+                     "floatPerVertex": 6,
+                     "vertexData": [
+                        0.0,
+                        0.5,
+                        1.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.5,
+                        -0.5,
+                        0.0,
+                        1.0,
+                        0.0,
+                        1.0,
+                        -0.5,
+                        -0.5,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.0
+                     ],
+                     "topology": "D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST"
+                  }
+               }
+            }
+         ]
+      }
+   ]
+}

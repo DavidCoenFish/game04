@@ -1,0 +1,9 @@
+https://github.com/DavidCoenFish/game04.git
+
+git remote add origin https://github.com/DavidCoenFish/game04.git
+git branch -M main
+git push -u origin main
+
+w:\bin\Git\cmd\git.exe remote add origin https://github.com/DavidCoenFish/game04.git
+w:\bin\Git\cmd\git.exe branch -M main
+w:\bin\Git\cmd\git.exe push -u origin main

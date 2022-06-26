@@ -1,0 +1,22 @@
+{
+   "calculateArray": [
+      {
+         "name": "__BASE_NAME__HeapWrapper",
+         "type": "HeapWrapperFromIRenderTarget",
+         "data": {
+            "useShaderResource": true,
+            "shaderResourceIndex": 0
+         },
+         "orderedInput": [
+            "__INPUT__"
+         ]
+      },
+      {
+         "name": "__BASE_NAME__",
+         "type": "StackHeapWrapper",
+         "stackInput": [
+            "__BASE_NAME__HeapWrapper"
+         ]
+      }
+   ]
+}

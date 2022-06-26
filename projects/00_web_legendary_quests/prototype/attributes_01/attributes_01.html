@@ -1,0 +1,180 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>attibutes 01</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+<!-- https://stackoverflow.com/questions/53036998/creating-new-instances-of-custom-html-elements -->
+
+<style>
+.table {
+  display: grid;
+  grid-template-columns: 4.875em 4.875em 4.875em 4.875em 4.875em;
+  grid-template-rows: 3em 3em 3em 3em 3em;
+  /* background-color: blue; */
+  position: relative;
+}
+
+/* .table > div{
+  background-color: red;
+  text-align: center;
+  vertical-align: middle;
+} */
+
+.borderTop {
+  border-width:1px;
+  border-top-style: solid;
+}
+
+.borderLeft {
+  border-width:1px;
+  border-left-style: solid;
+}
+
+.borderTopLeft {
+  border-width:1px;
+  border-top-style: solid;
+  border-left-style: solid;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.item {
+  flex:auto;
+  text-align: center;
+}
+
+.up {
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #0000EE;
+}
+.down {
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #0000EE;
+}
+
+</style>
+
+<div style="display: flex;">
+<div class="frame" style="margin:1.0em 0.5em 0.5em 1.0em;padding:0.5em">
+<div style="font-size: 1.5em;">Attributes</div>
+<div class="table">
+
+    <div style="grid-column-start:1; grid-row-start: 1;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Strength</div>
+      <button style="position: absolute; top: 0;right: 0; margin:0.1em;" class="up"></button>
+      <button style="position: absolute; bottom: 0;right: 0; margin:0.1em;" class="down"></button>
+    </div>
+    <div style="grid-column-start:2; grid-row-start: 1;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Stamina</div>
+      <button style="position: absolute; top: 0;right: 0; margin:0.1em;" class="up"></button>
+      <button style="position: absolute; bottom: 0;right: 0; margin:0.1em;" class="down"></button>
+    </div>
+    <div style="grid-column-start:3; grid-row-start: 1;" class="borderLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute;left: 0;font-size: 0.7em;">&gt;</div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Brawn</div>
+    </div>
+    <div style="grid-column-start:5; grid-row-start: 1;" class="container">
+      <div class="item" style="font-size: 2em;color: #0000EE">21</div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Unspent</div>
+    </div>
+
+
+    <div style="grid-column-start:1; grid-row-start: 2;" class="borderTop"></div>
+    <div style="grid-column-start:2; grid-row-start: 2;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Agility</div>
+      <button style="position: absolute; top: 0;right: 0; margin:0.1em;" class="up"></button>
+      <button style="position: absolute; bottom: 0;right: 0; margin:0.1em;" class="down"></button>
+    </div>
+    <div style="grid-column-start:3; grid-row-start: 2;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Dexterity</div>
+      <button style="position: absolute; top: 0;right: 0; margin:0.1em;" class="up"></button>
+      <button style="position: absolute; bottom: 0;right: 0; margin:0.1em;" class="down"></button>
+    </div>
+    <div style="grid-column-start:4; grid-row-start: 2;" class="borderLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute;left: 0;font-size: 0.7em;">&gt;</div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Coordination</div>
+    </div>
+
+    <div style="grid-column-start:2; grid-row-start: 3;" class="borderTop container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute;top: -0.4em;font-size: 0.7em;left:0;right:0;text-align: center;">V</div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Vigor</div>
+    </div>
+
+
+    <div style="grid-column-start:3; grid-row-start: 3;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Perception</div>
+      <button style="position: absolute; top: 0;right: 0; margin:0.1em;" class="up"></button>
+      <button style="position: absolute; bottom: 0;right: 0; margin:0.1em;" class="down"></button>
+    </div>
+    <div style="grid-column-start:4; grid-row-start: 3;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Willpower</div>
+      <button style="position: absolute; top: 0;right: 0; margin:0.1em;" class="up"></button>
+      <button style="position: absolute; bottom: 0;right: 0; margin:0.1em;" class="down"></button>
+    </div>
+    <div style="grid-column-start:5; grid-row-start: 3;" class="borderLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute;left: 0;font-size: 0.7em;">&gt;</div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Intelegence</div>
+    </div>
+
+    <div style="grid-column-start:3; grid-row-start: 4;" class="borderTop container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute;top: -0.4em;font-size: 0.7em;left:0;right:0;text-align: center;">V</div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Reflexes</div>
+    </div>
+
+    <div style="grid-column-start:4; grid-row-start: 4;" class="borderTopLeft container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute; top: 0;left: 0; width:0.8em;height: 0.8em; border-right-style: solid;border-bottom-style: solid;border-width: 1px;display: flex;  align-items: center;"><span style="text-align: center; flex:auto;font-size: 0.9em;">3</span></div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Faith</div>
+      <button style="position: absolute; top: 0;right: 0; margin:0.1em;" class="up"></button>
+      <button style="position: absolute; bottom: 0;right: 0; margin:0.1em;" class="down"></button>
+    </div>
+    <div style="grid-column-start:5; grid-row-start: 4;" class="borderLeft container"></div>
+
+    <div style="grid-column-start:4; grid-row-start: 5;" class="borderTop container">
+      <div class="item" style="font-size: 2em;">99.9</div>
+      <div style="position: absolute;top: -0.4em;font-size: 0.7em;left:0;right:0;text-align: center;">V</div>
+      <div style="font-size: 0.7em;position: absolute;bottom: 0;left: 0;right:0;text-align: center;">Charisma</div>
+    </div>
+
+</div>
+<div class="flex-right" style="padding:0 0 0 0;visibility: hidden;">
+  <button class="gem-back interactive" style="width:6em;height:2em">
+    <div class="gem-front interactive"></div>
+    <p>Reset</p>
+    <div class="highlight"></div>
+  </button>
+  <button class="gem-back interactive" style="width:6em;height:2em">
+    <div class="gem-front interactive"></div>
+    <p>Commit</p>
+    <div class="highlight"></div>
+  </button>
+</div>
+
+
+</div>
+
+</div>

@@ -1,0 +1,102 @@
+{
+   "fileArray": [
+      {
+         "file": "RenderTargetWash.json",
+         "searchReplace": {
+            "__BASE_NAME__": "RenderTargetWashGreen",
+            "__COLOUR__": "0.0, 1.0, 0.0, 1.0"
+         }
+      },
+      {
+         "file": "StackHeapWrapperRenderTarget.json",
+         "searchReplace": {
+            "__BASE_NAME__": "StackHeapWrapperRenderTargetGreen",
+            "__INPUT__": "RenderTargetWashGreen"
+         }
+      },
+      {
+         "file": "DrawScreenQuad.json",
+         "searchReplace": {
+            "__BASE_NAME__": "DrawScreenQuad0",
+            "__X_LOW__": "-1.0",
+            "__X_HIGH__": "-0.5",
+            "__Y_LOW__": "-0.5",
+            "__Y_HIGH__": "-0.0",
+            "__INPUT__": "StackHeapWrapperRenderTargetGreen"
+         }
+      },
+
+      {
+         "file": "RenderTargetTriangle.json",
+         "searchReplace": {
+            "__BASE_NAME__": "RenderTargetTriangle"
+         }
+      },
+      {
+         "file": "StackHeapWrapperRenderTarget.json",
+         "searchReplace": {
+            "__BASE_NAME__": "StackHeapWrapperRenderTargetTriangle",
+            "__INPUT__": "RenderTargetTriangle"
+         }
+      },
+      {
+         "file": "DrawScreenQuad.json",
+         "searchReplace": {
+            "__BASE_NAME__": "DrawScreenQuad1",
+            "__X_LOW__": "-1.0",
+            "__X_HIGH__": "-0.5",
+            "__Y_LOW__": "-0.5",
+            "__Y_HIGH__": "0.0",
+            "__INPUT__": "StackHeapWrapperRenderTargetTriangle"
+         }
+      },
+
+      {
+         "file": "RenderTargetPoint.json",
+         "searchReplace": {
+            "__BASE_NAME__": "RenderTargetPoint"
+         }
+      },
+      {
+         "file": "StackHeapWrapperRenderTarget.json",
+         "searchReplace": {
+            "__BASE_NAME__": "StackHeapWrapperRenderTargetPoint",
+            "__INPUT__": "RenderTargetPoint"
+         }
+      },
+      {
+         "file": "DrawScreenQuad.json",
+         "searchReplace": {
+            "__BASE_NAME__": "DrawScreenQuad2",
+            "__X_LOW__": "-1.0",
+            "__X_HIGH__": "-0.5",
+            "__Y_LOW__": "0.0",
+            "__Y_HIGH__": "0.5",
+            "__INPUT__": "StackHeapWrapperRenderTargetPoint"
+         }
+      }
+
+   ],
+   "valueArray": [
+   ],
+   "calculateArray": [
+      {
+         "name": "DrawList0",
+         "type": "StackDraw",
+         "stackInput": [
+            "DrawScreenQuad0",
+            "DrawScreenQuad1",
+            "DrawScreenQuad2"
+         ]
+      },
+      {
+         "name": "_Render",
+         "type": "RenderList",
+         "orderedInput": [
+            "_DrawSystemFrame",
+            "_BackBuffer",
+            "DrawList0"
+         ]
+      }
+   ]
+}

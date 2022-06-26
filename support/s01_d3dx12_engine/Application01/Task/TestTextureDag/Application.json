@@ -1,0 +1,26 @@
+{
+   "tasks": [
+      {
+         "factory": "Window",
+         "data": [
+            {
+               "name": "TestTextureDag",
+               "fullScreen": false,
+               "width": 800,
+               "height": 600,
+               "factory": "DisplayList",
+               "data": {
+                  "file": "Data0.json",
+                  "drawSystem": {
+                     "targetFormatData": {
+                        "format": "DXGI_FORMAT_B8G8R8A8_UNORM",
+                        "clearOnSet": true,
+                        "clearColor": [ 0.5, 0.5, 0.5, 1.0 ]
+                     }
+                  }
+               }
+            }
+         ]
+      }
+   ]
+}

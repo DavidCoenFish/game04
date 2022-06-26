@@ -1,0 +1,61 @@
+{
+   "tasks": [
+      {
+         "factory": "Window",
+         "data": [
+            {
+               "name": "DisplayListGrid",
+               "fullScreen": false,
+               "width": 800,
+               "height": 600,
+               "factory": "DisplayList",
+               "data": {
+                  "file": "DisplayList.json",
+                  "drawSystem": {
+                     "targetFormatData": {
+                        "format": "DXGI_FORMAT_B8G8R8A8_UNORM",
+                        "clearOnSet": true,
+                        "clearColor": [ 0.5, 0.5, 0.5, 1.0 ]
+                     }
+                  },
+                  "update": [
+                     {
+                        "type": "SetScreenWidthHeightToDagFloatArray",
+                        "target": {
+                           "name": "FloatArray0",
+                           "offset": [ 12, 13 ]
+                        }
+                     },
+                     {
+                        "type": "InputRotateToDagFloatArray",
+                        "source": {
+                           "keypad": [ "arrow_up", "arrow_left", "arrow_down", "arrow_right", "pageup", "pagedown" ],
+                           "velocity": 90.0
+                        },
+                        "target": {
+                           "name": "FloatArray0",
+                           "offset": [ 4, 5, 6, 8, 9, 10 ]
+                        }
+                     },
+                     {
+                        "type": "InputMoveToDagFloatArray",
+                        "source": {
+                           "name": "FloatArray0",
+                           "atOffset": [ 4, 5, 6 ],
+                           "upOffset": [ 8, 9, 10 ],
+                           "value": [ 0.0, -1.0, 0.0 ],
+                           "keypad": [ "w", "a", "s", "d", "q", "e" ],
+                           "velocity": 1.0
+                        },
+                        "target": {
+                           "name": "FloatArray0",
+                           "offset": [ 0, 1, 2 ]
+                        }
+                     }
+                  ]
+               }
+            }
+         ]
+      }
+   ]
+}

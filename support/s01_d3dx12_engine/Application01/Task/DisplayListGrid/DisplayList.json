@@ -1,0 +1,94 @@
+{
+   "fileArray": [
+      {
+         "file": "ScreenQuad.json",
+         "searchReplace": {
+            "__BASE_NAME__": "ScreenQuad"
+         }
+      }
+   ],
+   "valueArray": [
+      {
+         "name": "FloatArray0",
+         "type": "FloatArray",
+         "data": [
+            0.5, -1.0, 0.5, 0.01,
+            0.0, 1.0, 0.0, 1000.0,
+            0.0, 0.0, 1.0, 1.0,
+            800.0,600.0,120.0,90.0
+         ]
+      }
+   ],
+   "calculateArray": [
+      {
+         "name": "ConstantBufferList",
+         "type": "StackVectorFloat",
+         "stackInput": [
+            "FloatArray0"
+         ]
+      },
+      {
+         "name": "Shader",
+         "type": "Shader",
+         "orderedInput": [
+            "",
+            "ConstantBufferList"
+         ],
+         "data": {
+            "pipelineState": {
+               "inputElementDesc": [
+                  {
+                     "semantic": "POSITION",
+                     "format": "DXGI_FORMAT_R32G32_FLOAT"
+                  },
+                  {
+                     "semantic": "TEXCOORD",
+                     "format": "DXGI_FORMAT_R32G32_FLOAT"
+                  }
+               ],
+               "topologyType": "D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE",
+               "renderTargetFormat": [ "DXGI_FORMAT_B8G8R8A8_UNORM" ]
+            },
+            "constantInfo": [
+               {
+                  "floatCount": 16,
+                  "visiblity": "D3D12_SHADER_VISIBILITY_PIXEL"
+               }
+            ],
+            "vertexShader": "VertexShaderGrid.cso",
+            "pixelShader": "PixelShaderGrid.cso"
+         }
+      },
+      {
+         "name": "GeometryList",
+         "type": "StackGeometry",
+         "stackInput": [
+            "ScreenQuadGeometry"
+         ]
+      },
+      {
+         "name": "Draw0",
+         "type": "Draw",
+         "orderedInput": [
+            "Shader",
+            "GeometryList"
+         ]
+      },
+      {
+         "name": "DrawList0",
+         "type": "StackDraw",
+         "stackInput": [
+            "Draw0"
+         ]
+      },
+      {
+         "name": "_Render",
+         "type": "RenderList",
+         "orderedInput": [
+            "_DrawSystemFrame",
+            "_BackBuffer",
+            "DrawList0"
+         ]
+      }
+   ]
+}

@@ -1,0 +1,7 @@
+{
+   "Factory": "TaskGitCommit",
+   "Skip": false,
+   "Priority": 0,
+   "Dependency": [ "RunUnitTestDebug", "RunApplication01Release", "RunApplication01Debug" ],
+   "Git": "W:\\bin\\Git\\cmd\\git.exe"
+}
