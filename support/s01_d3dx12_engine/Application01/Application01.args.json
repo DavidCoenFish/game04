@@ -11,6 +11,10 @@
       "Command": "MultipleEmptyWindow"
     },
     {
+      "Id": "57de3ba0-c5fa-4610-b6ad-ce6957407612",
+      "Command": "Eye00"
+    },
+    {
       "Id": "53189eee-64de-4198-8a77-1f8c138f3cba",
       "Command": "TestTriangle"
     },

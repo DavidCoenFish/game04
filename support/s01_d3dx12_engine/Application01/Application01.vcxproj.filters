@@ -58,6 +58,9 @@
     <Filter Include="Task\DisplayListGrid">
       <UniqueIdentifier>{92a54fb4-f9b5-4b5e-ac27-41f846790b90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Task\Eye00">
+      <UniqueIdentifier>{29701b13-dccc-4315-9ad1-bd5322c4f306}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ApplicationPCH.h">
@@ -196,6 +199,12 @@
     </CopyFileToFolders>
     <CopyFileToFolders Include="Task\DisplayListGrid\ScreenQuad.json">
       <Filter>Task\DisplayListGrid</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\Eye00\Application.json">
+      <Filter>Task\Eye00</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\Eye00\DisplayList.json">
+      <Filter>Task\Eye00</Filter>
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
@@ -341,6 +350,12 @@
     </FxCompile>
     <FxCompile Include="Task\DisplayListGrid\VertexShaderGrid.hlsl">
       <Filter>Task\DisplayListGrid</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\Eye00\PixelEye00.hlsl">
+      <Filter>Task\Eye00</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\Eye00\VertexEye00.hlsl">
+      <Filter>Task\Eye00</Filter>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
