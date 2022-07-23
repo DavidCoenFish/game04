@@ -1,0 +1,4 @@
+﻿C:\development\game04\support\s01_d3dx12_engine\Application01\Task\ComputeShader\ComputeShader.hlsl(29,1-41): warning X3554: unknown attribute numthreads, or attribute invalid for this statement
+C:\development\game04\support\s01_d3dx12_engine\Application01\Task\ComputeShader\ComputeShader.hlsl(67,4-17): error X3548: in vs_2_0 uints can only be used with known-positive values, use int if possible
+  
+  compilation failed; no code produced

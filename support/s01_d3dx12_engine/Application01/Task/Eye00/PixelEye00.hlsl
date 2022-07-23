@@ -7,6 +7,15 @@
 // Copyright (C) Microsoft Corporation. All rights reserved.
 //--------------------------------------------------------------------------------------
 
+cbuffer PixelConstants : register(b0)
+{
+    float3 m_cameraPos;
+    float3 m_cameraAt;
+    float3 m_cameraUp;
+    float2 m_cameraWidthHeight;
+};
+
+
 struct Interpolant
 {
     float4 position     : SV_Position;

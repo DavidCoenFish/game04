@@ -11,4 +11,8 @@
     <RemoteDebuggerCommandArguments>TestTriangleDag</RemoteDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>Eye00</LocalDebuggerCommandArguments>
+    <RemoteDebuggerCommandArguments>Eye00</RemoteDebuggerCommandArguments>
+  </PropertyGroup>
 </Project>

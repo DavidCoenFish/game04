@@ -1,0 +1,14 @@
+projects
+00 web legendaty quest
+01 jamcc ui
+02 subucuss summon
+04 jamcc world view
+05 erf world
+06 super model food fight
+07 far side shooter
+08 goblins movie
+09 shirow cgi
+
+support technology
+s00 javascript engine (ui framework)
+s01 d3dx12 engine 
