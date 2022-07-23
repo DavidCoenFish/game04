@@ -5,6 +5,9 @@ cls
 
 echo %time% %~nx0 %~1
 
+echo "%~dp0..\..\build\Automatron03\Release\bin\net5.0\Automatron03.exe"
+echo "%~dp0..\..\build\Automatron03\Release\bin\net5.0\Automatron03.dll"
+
 SET MISSING_AUTOMATRON=
 IF NOT EXIST "%~dp0..\..\build\Automatron03\Release\bin\net5.0\Automatron03.exe" SET MISSING_AUTOMATRON=TRUE
 IF NOT EXIST "%~dp0..\..\build\Automatron03\Release\bin\net5.0\Automatron03.dll" SET MISSING_AUTOMATRON=TRUE
