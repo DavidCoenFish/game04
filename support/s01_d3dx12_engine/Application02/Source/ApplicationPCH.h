@@ -4,7 +4,8 @@
 //
 
 #include <Common.h>
-#include <XGameRuntime.h>
+//#include <XGameRuntime.h>
+#include "D3d12.h"
 #include "HostDefine.h"
 
 /*

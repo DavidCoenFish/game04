@@ -19,6 +19,7 @@
       <PrecompiledHeaderFile>ApplicationPCH.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(DscIncludeDir);$(IncludePath)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalUsingDirectories>%WindowsSdkDir\Include%WindowsSDKVersion%\um;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <FxCompile>
       <ObjectFileOutput>$(OutDirFullPath)%(RelativeDir)%(Filename).cso</ObjectFileOutput>
@@ -30,6 +31,13 @@
     <PreBuildEvent>
       <Command>$(ProjectDir)script\prebuild.cmd "$(Configuration)" "$(Platform)" 0 0 "$(ProjectName)" "$(TargetName)"</Command>
     </PreBuildEvent>
+    <Link>
+      <AdditionalLibraryDirectories>%WindowsSdkDir%\Lib%WindowsSDKVersion%\\um\arch;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>D3d12.lib;DXGI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="DscBuildDir">

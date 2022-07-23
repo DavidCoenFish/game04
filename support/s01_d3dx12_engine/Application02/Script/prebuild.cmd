@@ -42,12 +42,6 @@ if %errorlevel% NEQ 0 (
    exit /b %ERRORLEVEL%
    )
 
-::echo call util_make_microsoft_game_config.cmd "%BUILD_VERSION_FILE_PATH%" "%~1" "%~2" "%~5" "%~6"
-call util_make_microsoft_game_config.cmd "%BUILD_VERSION_FILE_PATH%" "%~1" "%~2" "%~5" "%~6"
-if %errorlevel% NEQ 0 (
-   exit /b %ERRORLEVEL%
-   )
-
 ::echo call util_make_resource.cmd "%BUILD_VERSION_FILE_PATH%"
 call util_make_resource.cmd "%BUILD_VERSION_FILE_PATH%"
 if %errorlevel% NEQ 0 (
