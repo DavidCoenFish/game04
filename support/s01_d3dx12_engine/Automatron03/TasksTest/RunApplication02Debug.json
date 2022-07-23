@@ -1,10 +1,10 @@
 {
    "Factory": "TaskRunExeAction",
-   "Skip": false,
+   "Skip": true,
    "Priority": 0,
-   "Dependency": [ "BuildApplication01Release" ],
+   "Dependency": [ "BuildApplication02Debug" ],
    "CommandLine": "TestTriangle",
-   "CommandLineArray": ["Empty", "TestTriangle"],
+   "DisabledCommandLine": "Empty",
    "Actions": [
       {
          "Factory": "Wait",
@@ -17,18 +17,6 @@
       {
          "Factory": "Wait",
          "IntParam0": 1000
-      },
-      {
-         "Factory": "SysKeyDownAlt",
-         "StringParam0": "VK_RETURN"
-      },
-      {
-         "Factory": "Wait",
-         "IntParam0": 1000
-      },
-      {
-         "Factory": "SysKeyDownAlt",
-         "StringParam0": "VK_RETURN"
       },
       {
          "Factory": "Close"

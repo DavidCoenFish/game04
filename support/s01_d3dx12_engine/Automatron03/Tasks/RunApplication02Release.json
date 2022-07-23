@@ -2,7 +2,7 @@
    "Factory": "TaskRunExeAction",
    "Skip": false,
    "Priority": 0,
-   "Dependency": [ "BuildApplication01Release" ],
+   "Dependency": [ "BuildApplication02Release" ],
    "CommandLine": "TestTriangle",
    "CommandLineArray": ["Empty", "TestTriangle"],
    "Actions": [

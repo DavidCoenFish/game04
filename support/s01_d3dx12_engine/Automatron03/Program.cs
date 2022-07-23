@@ -82,6 +82,8 @@
       }
 
       //args = ["G:\dcoen\game02", "G:\dcoen\game02\Automatron03\Tasks", "test commit"]
+      //C:\development\game04
+      //C:\development\game04\support\s01_d3dx12_engine\Automatron03\TasksTest
       static int Main(string[] args)
       {
          System.Console.WriteLine("Automatron03 Start:" + System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
