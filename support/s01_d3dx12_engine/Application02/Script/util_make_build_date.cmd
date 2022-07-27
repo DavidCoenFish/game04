@@ -1,5 +1,4 @@
-::util_make_build_date.cmd <1:date file output path>
-
+::util_make_build_date.cmd <1:date file output path> <2:build date stamp>
 @ECHO OFF
 PUSHD %~dp0
 
@@ -23,8 +22,11 @@ SET _minute=%_minute:~-2%
 SET _second=%_second:~-2%
 
 SET TIMESTAMP=%_yyyy%-%_mm%-%_dd%T%_hour%:%_minute%:%_second%
+echo "%TIMESTAMP%"
 
 > %1 echo "%TIMESTAMP%"
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "./copy_last_write_time.ps1" "%~1" "%~2"
 
 POPD
 exit /b %errorlevel%

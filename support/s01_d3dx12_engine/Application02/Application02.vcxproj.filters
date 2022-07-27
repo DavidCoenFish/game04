@@ -54,8 +54,8 @@
     <None Include="Script\util_make_build_date.cmd">
       <Filter>Script</Filter>
     </None>
-    <None Include="Resources\Application02.rc.template">
-      <Filter>Resources</Filter>
+    <None Include="Script\copy_last_write_time.ps1">
+      <Filter>Script</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -87,29 +87,6 @@
     <ClInclude Include="Resources\resource.h">
       <Filter>Resources</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Source\BuildDescription.txt">
-      <Filter>Source</Filter>
-    </Text>
-    <Text Include="Source\BuildTime.txt">
-      <Filter>Source</Filter>
-    </Text>
-    <Text Include="Source\BuildVersion.txt">
-      <Filter>Source</Filter>
-    </Text>
-    <Text Include="Source\BuildVersionMajor.txt">
-      <Filter>Source</Filter>
-    </Text>
-    <Text Include="Source\BuildVersionMinor.txt">
-      <Filter>Source</Filter>
-    </Text>
-    <Text Include="Source\BuildVersionPatch.txt">
-      <Filter>Source</Filter>
-    </Text>
-    <Text Include="Source\BuildVersionStore.txt">
-      <Filter>Source</Filter>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="Task\Empty\Application.json">

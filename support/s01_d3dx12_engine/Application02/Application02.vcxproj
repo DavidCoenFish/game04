@@ -77,7 +77,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="Props\Application02.props" />
-    <None Include="Resources\Application02.rc.template" />
+    <None Include="Script\copy_last_write_time.ps1" />
     <None Include="Script\prebuild.cmd" />
     <None Include="Script\util_make_build_date.cmd" />
     <None Include="Script\util_make_build_description.cmd" />
@@ -114,36 +114,6 @@
     <ClInclude Include="Source\ApplicationPCH.h" />
     <ClInclude Include="Source\Build.h" />
     <ClInclude Include="Source\HostDefine.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Source\BuildDescription.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Text>
-    <Text Include="Source\BuildTime.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Text>
-    <Text Include="Source\BuildVersion.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Text>
-    <Text Include="Source\BuildVersionMajor.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Text>
-    <Text Include="Source\BuildVersionMinor.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Text>
-    <Text Include="Source\BuildVersionPatch.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Text>
-    <Text Include="Source\BuildVersionStore.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common01\Common01.vcxproj">

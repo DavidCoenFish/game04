@@ -51,8 +51,10 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,0,49,0
- PRODUCTVERSION 0,0,49,0
+ FILEVERSION 
+#include "..\Source\BuildVersionComma.txt"
+ PRODUCTVERSION 
+#include "..\Source\BuildVersionComma.txt"
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,13 +71,16 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "TODO: <Company name>"
             VALUE "FileDescription", "TODO: <File description>"
-            VALUE "FileVersion", "0.0.49.0"
+            VALUE "FileVersion", 
+#include "..\Source\BuildVersion.txt"
             VALUE "InternalName", "Applicat.exe"
             VALUE "LegalCopyright", "Copyright (C) 2021"
             VALUE "OriginalFilename", "Applicat.exe"
             VALUE "ProductName", "TODO: <Product name>"
-            VALUE "ProductVersion", "0.0.49.0"
-        END
+            VALUE "ProductVersion", 
+#include "..\Source\BuildVersion.txt"
+
+    END
     END
     BLOCK "VarFileInfo"
     BEGIN
