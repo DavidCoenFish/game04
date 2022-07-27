@@ -5,6 +5,7 @@
 #include "Common/Application/ApplicationHolder.h"
 #include "Common/Application/ApplicationComputeShader.h"
 #include "Common/Application/ApplicationDisplayList.h"
+#include "Common/Application/ApplicationText.h"
 #include "Common/Application/ApplicationTexture.h"
 #include "Common/Application/ApplicationTextureJson.h"
 #include "Common/Application/ApplicationTextureMove.h"
@@ -67,6 +68,7 @@ const TApplicationFactory GetApplicationFactory(const std::string& factory)
    static std::map<std::string, TApplicationFactory> s_factoryMap({
       {"ComputeShader", ApplicationComputeShader::Factory},
       {"DisplayList", ApplicationDisplayList::Factory},
+      {"Text", ApplicationText::Factory},
       {"Texture", ApplicationTexture::Factory},
       {"TextureJson", ApplicationTextureJson::Factory},
       {"TextureMove", ApplicationTextureMove::Factory},

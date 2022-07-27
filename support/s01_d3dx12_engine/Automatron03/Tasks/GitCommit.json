@@ -2,6 +2,6 @@
    "Factory": "TaskGitCommit",
    "Skip": false,
    "Priority": 0,
-   "Dependency": [ "RunUnitTestDebug", "RunApplication01Release", "RunApplication01Debug" ],
+   "Dependency": [ "RunUnitTestDebug", "RunApplication02Release", "RunApplication02Debug" ],
    "Git": "git.exe"
 }

@@ -10,6 +10,7 @@
 #include "Common/FileSystem/FileSystem.h"
 #include "Common/Log/Log.h"
 #include "Common/Log/LogConsumerConsole.h"
+#include "Common/Log/LogConsumerWriteToFile.h"
 #include "Common/Util/Utf8.h"
 #include "json/json.hpp"
 
@@ -54,7 +55,8 @@ static const TTaskFactory GetTaskFactory(const std::string& taskFactoryKey)
 static const int RunTask(HINSTANCE hInstance, int nCmdShow)
 {
    auto pLog = Log::Factory(std::vector< std::shared_ptr< ILogConsumer >>({ 
-      std::make_shared< LogConsumerConsole >()
+      std::make_shared< LogConsumerConsole >(),
+      std::make_shared< LogConsumerWriteToFile >("log.txt")
       }));
 
    LOG_MESSAGE("Build %s %s %s", Build::GetBuildVersion(), Build::GetBuildTime(), Build::GetBuildDescription());

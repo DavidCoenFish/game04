@@ -46,7 +46,7 @@ namespace CommonFileSystem
          Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreNotEqual(L"", FileSystem::GetModualDir(nullptr).c_str());
       }
 
-      TEST_METHOD(BasicMemory)
+      TEST_METHOD(BasicOverlayFileSystem)
       {
          ProviderMemory::TStaticFileMap staticMapA = {
                {
@@ -94,5 +94,6 @@ namespace CommonFileSystem
          //the dtor of the file system waits for all the jobs to finish
          Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual(true, bFileLoaded.load());
       }
+
    };
 }

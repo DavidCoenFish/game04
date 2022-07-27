@@ -327,6 +327,9 @@
     <ClCompile Include="Source\Common\Application\ApplicationTextureMove.cpp">
       <Filter>Source\Common\Application</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationText.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CommonPCH.h">
@@ -606,6 +609,9 @@
       <Filter>Source\Common\DrawSystem\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Source\Common\Application\ApplicationTextureMove.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationText.h">
       <Filter>Source\Common\Application</Filter>
     </ClInclude>
   </ItemGroup>

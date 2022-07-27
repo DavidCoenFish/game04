@@ -31,6 +31,7 @@
             }
          }
 
+         System.Console.WriteLine();
          System.Console.WriteLine(string.Format("Run task:{0}", task.Name));
          var result = task.Run(dependencyTask);
          task.HasRun = true;

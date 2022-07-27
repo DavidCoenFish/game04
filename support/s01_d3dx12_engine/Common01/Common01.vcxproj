@@ -40,6 +40,7 @@
     </ClCompile>
     <ClCompile Include="Source\Common\Application\ApplicationComputeShader.cpp" />
     <ClCompile Include="Source\Common\Application\ApplicationDisplayList.cpp" />
+    <ClCompile Include="Source\Common\Application\ApplicationText.cpp" />
     <ClCompile Include="Source\Common\Application\ApplicationTexture.cpp" />
     <ClCompile Include="Source\Common\Application\ApplicationTextureJson.cpp" />
     <ClCompile Include="Source\Common\Application\ApplicationTextureMove.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="Source\CommonPCH.h" />
     <ClInclude Include="Source\Common\Application\ApplicationComputeShader.h" />
     <ClInclude Include="Source\Common\Application\ApplicationDisplayList.h" />
+    <ClInclude Include="Source\Common\Application\ApplicationText.h" />
     <ClInclude Include="Source\Common\Application\ApplicationTexture.h" />
     <ClInclude Include="Source\Common\Application\ApplicationTextureJson.h" />
     <ClInclude Include="Source\Common\Application\ApplicationTextureMove.h" />

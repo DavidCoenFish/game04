@@ -1,6 +1,6 @@
 {
    "Factory": "TaskRunExeAction",
-   "Skip": true,
+   "Skip": false,
    "Priority": 0,
    "Dependency": [ "BuildApplication02Debug" ],
    "CommandLine": "TestTriangle",
@@ -16,7 +16,7 @@
       },
       {
          "Factory": "Wait",
-         "IntParam0": 1000
+         "IntParam0": 5000
       },
       {
          "Factory": "Close"

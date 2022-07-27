@@ -5,33 +5,37 @@
    "Dependency": [ "BuildApplication02Release" ],
    "CommandLine": "TestTriangle",
    "CommandLineArray": ["Empty", "TestTriangle"],
-   "Actions": [
-      {
-         "Factory": "Wait",
-         "IntParam0": 1000
-      },
-      {
-         "Factory": "SysKeyDownAlt",
-         "StringParam0": "VK_RETURN"
-      },
-      {
-         "Factory": "Wait",
-         "IntParam0": 1000
-      },
-      {
-         "Factory": "SysKeyDownAlt",
-         "StringParam0": "VK_RETURN"
-      },
-      {
-         "Factory": "Wait",
-         "IntParam0": 1000
-      },
-      {
-         "Factory": "SysKeyDownAlt",
-         "StringParam0": "VK_RETURN"
-      },
-      {
-         "Factory": "Close"
-      }
-   ]
+    "Actions": [
+        {
+            "Factory": "Wait",
+            "IntParam0": 1000
+        },
+        {
+            "Factory": "SysKeyDownAlt",
+            "StringParam0": "VK_RETURN"
+        },
+        {
+            "Factory": "Wait",
+            "IntParam0": 1000
+        },
+        {
+            "Factory": "SysKeyDownAlt",
+            "StringParam0": "VK_RETURN"
+        },
+        {
+            "Factory": "Wait",
+            "IntParam0": 1000
+        },
+        {
+            "Factory": "SysKeyDownAlt",
+            "StringParam0": "VK_RETURN"
+        },
+        {
+            "Factory": "Wait",
+            "IntParam0": 5000
+        },
+        {
+            "Factory": "Close"
+        }
+    ]
 }

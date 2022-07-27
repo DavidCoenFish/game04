@@ -71,7 +71,7 @@ const int WindowHelper(
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
    auto pApplication = reinterpret_cast<IApplication*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
-   //LOG_MESSAGE_DEBUG("WndProc message:%d wParam:%p lParam:%p pApplication:%p", message, wParam, lParam, pApplication);
+   LOG_MESSAGE_DEBUG("WndProc message:%d wParam:%p lParam:%p pApplication:%p", message, wParam, lParam, pApplication);
 
    switch (message)
    {

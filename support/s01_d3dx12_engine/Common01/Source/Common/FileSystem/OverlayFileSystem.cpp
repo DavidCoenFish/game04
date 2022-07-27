@@ -105,7 +105,8 @@ FileSystemInternal::FileSystemInternal(const std::vector<std::shared_ptr< IFileS
 FileSystemInternal::~FileSystemInternal()
 {
    //abort any outstanding work. we have had a request to shutdown
-   m_workerCollection.ClearWork();
+   //or don't abort, we where told to do something?
+   //m_workerCollection.ClearWork();
 }
 
 void FileSystemInternal::SetWeakRefSelf(const std::weak_ptr< IFileSystemVisitorFound >& pFileSystemVisitorFound)

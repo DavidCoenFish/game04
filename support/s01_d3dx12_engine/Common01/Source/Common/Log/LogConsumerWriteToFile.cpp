@@ -34,7 +34,7 @@ void LogConsumerWriteToFile::AddMessage(const LogTopic topic, const std::string&
    if (true == m_file.is_open())
    {
       //warning, does "<< std::endl" flush, and is that ok?
-      m_file << (int)topic << message.c_str() << std::endl;
+      m_file << (int)topic << ":" << message.c_str() << std::endl;
    }
 }
 

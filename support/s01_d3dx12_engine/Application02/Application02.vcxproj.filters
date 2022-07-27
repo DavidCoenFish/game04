@@ -22,6 +22,12 @@
     <Filter Include="Task\TestTriangle">
       <UniqueIdentifier>{209b1046-1d98-4f1f-ab43-daa9740cdf3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Task\TestText">
+      <UniqueIdentifier>{d2ddc1d5-cdf3-4365-b1ed-64255d8f3400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTexture">
+      <UniqueIdentifier>{6b9500cc-3862-440c-a3bb-666ce56222c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Props\Application02.props">
@@ -112,6 +118,12 @@
     <CopyFileToFolders Include="Task\TestTriangle\Application.json">
       <Filter>Task\TestTriangle</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTexture\Application.json">
+      <Filter>Task\TestTexture</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestText\Application.json">
+      <Filter>Task\TestText</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Task\TestTriangle\PixelShader.hlsl">
@@ -119,6 +131,21 @@
     </FxCompile>
     <FxCompile Include="Task\TestTriangle\VertexShader.hlsl">
       <Filter>Task\TestTriangle</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestText\GeometryShader.hlsl">
+      <Filter>Task\TestText</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestText\PixelShader.hlsl">
+      <Filter>Task\TestText</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestText\VertexShader.hlsl">
+      <Filter>Task\TestText</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTexture\PixelShader.hlsl">
+      <Filter>Task\TestTexture</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTexture\VertexShader.hlsl">
+      <Filter>Task\TestTexture</Filter>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>

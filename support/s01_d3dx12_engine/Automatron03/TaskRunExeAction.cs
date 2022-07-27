@@ -131,6 +131,7 @@ namespace Automatron03
       {
          return (System.Diagnostics.Process process) =>
          {
+            System.Console.WriteLine("ActionFactoryWait:{0}", wait);
             System.Threading.Thread.Sleep(wait);
          };
       }
@@ -139,6 +140,7 @@ namespace Automatron03
       {
          return (System.Diagnostics.Process process) =>
          {
+            System.Console.WriteLine("ActionFactoryPostMessage:{0} {1} {2}", Msg, wParam, lParam);
             PostMessage(process.MainWindowHandle, Msg, wParam, lParam);
          };
       }
