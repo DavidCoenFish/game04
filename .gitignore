@@ -38,9 +38,7 @@ obj/
 build/
 
 # version
-BuildDateStamp.dat
-BuildDescription.txt
-BuildTime.txt
+BuildHash.txt
 BuildVersion.txt
 BuildVersionComma.txt
 BuildVersionMajor.txt

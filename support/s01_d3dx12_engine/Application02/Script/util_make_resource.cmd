@@ -14,14 +14,8 @@ call util_search_replace.cmd "..\Resources\Application02.rc.temp" "..\Resources\
 call util_search_replace.cmd "..\Resources\Application02.rc.temp" "..\Resources\Application02.rc.temp" "___FILE_VERSION___" "%VERSION%"
 call util_search_replace.cmd "..\Resources\Application02.rc.temp" "..\Resources\Application02.rc.temp" "___PRODUCT_VERSION___" "%VERSION%"
 
-fc /b "..\Resources\Application02.rc.temp" "..\Resources\Application02.rc" > nul
-if errorlevel 1 goto files_differ
-goto after
-:files_differ
-echo move /Y "..\Resources\Application02.rc.temp" "..\Resources\Application02.rc"
-move /Y "..\Resources\Application02.rc.temp" "..\Resources\Application02.rc"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "./replace_if_different.ps1" "..\Resources\Application02.rc" "..\Resources\Application02.rc.temp"
 
-:after
 
 POPD
 exit /b %ERRORLEVEL%

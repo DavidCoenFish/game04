@@ -77,8 +77,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="Props\Application02.props" />
+    <None Include="Resources\Application02.rc.template" />
     <None Include="Script\copy_last_write_time.ps1" />
     <None Include="Script\prebuild.cmd" />
+    <None Include="Script\replace_if_different.ps1" />
+    <None Include="Script\update_version_if_hash_change.ps1" />
     <None Include="Script\util_make_build_date.cmd" />
     <None Include="Script\util_make_build_description.cmd" />
     <None Include="Script\util_make_build_version.cmd" />

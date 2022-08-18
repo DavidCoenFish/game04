@@ -1,8 +1,8 @@
-::util_make_build_date.cmd <1:date file output path> <2:build date stamp>
+::util_make_build_date.cmd <1:date file output path>
 @ECHO OFF
 PUSHD %~dp0
 
-echo %~nx0 %~1 %~2
+echo %~nx0 %~1
 
 FOR /F "skip=1 tokens=1-6" %%G IN ('WMIC Path Win32_LocalTime Get Day^,Hour^,Minute^,Month^,Second^,Year /Format:table') DO (
    IF "%%~L"=="" goto S_DONE
@@ -24,9 +24,9 @@ SET _second=%_second:~-2%
 SET TIMESTAMP=%_yyyy%-%_mm%-%_dd%T%_hour%:%_minute%:%_second%
 echo "%TIMESTAMP%"
 
-> %1 echo "%TIMESTAMP%"
+> "%~1.temp" echo "%TIMESTAMP%"
 
-powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "./copy_last_write_time.ps1" "%~1" "%~2"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "./replace_if_different.ps1" "%~1" "%~1.temp"
 
 POPD
 exit /b %errorlevel%

@@ -9,46 +9,46 @@
 const char* const Build::GetBuildTime( void )
 {
    return 
-#include "BuildTime.txt"
+#include "..\Version\BuildTime.txt"
       "\n";
 }
 const char* const Build::GetBuildVersion( void )
 {
    return 
-#include "BuildVersion.txt"
+#include "..\Version\BuildVersion.txt"
       "\n";
 }
 const char* const Build::GetBuildDescription( void )
 {
    return 
-#include "BuildDescription.txt"
+#include "..\Version\BuildDescription.txt"
       "\n";
 }
 
 const int Build::GetBuildVersionMajor()
 {
    return 
-#include "BuildVersionMajor.txt"
+#include "..\Version\BuildVersionMajor.txt"
       ;
 }
 
 const int Build::GetBuildVersionMinor()
 {
    return 
-#include "BuildVersionMinor.txt"
+#include "..\Version\BuildVersionMinor.txt"
       ;
 }
 
 const int Build::GetBuildVersionPatch()
 {
    return 
-#include "BuildVersionPatch.txt"
+#include "..\Version\BuildVersionPatch.txt"
       ;
 }
 const int Build::GetBuildVersionStore()
 {
    return 
-#include "BuildVersionStore.txt"
+#include "..\Version\BuildVersionStore.txt"
       ;
 }
 

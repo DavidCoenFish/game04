@@ -57,6 +57,15 @@
     <None Include="Script\copy_last_write_time.ps1">
       <Filter>Script</Filter>
     </None>
+    <None Include="Script\replace_if_different.ps1">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Resources\Application02.rc.template">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="Script\update_version_if_hash_change.ps1">
+      <Filter>Script</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources\Application02.rc">

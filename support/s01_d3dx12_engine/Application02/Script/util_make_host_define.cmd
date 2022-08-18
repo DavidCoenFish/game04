@@ -3,7 +3,7 @@
 @ECHO OFF
 PUSHD %~dp0
 
-echo %~nx0 %~1 %~2
+echo %~nx0 %~1
 
 IF EXIST %1 (
    POPD
@@ -21,7 +21,10 @@ CALL :UCase HOST_NAME UPPER_HOST_NAME
 ECHO.%UPPER_HOST_NAME%
 
 ECHO Write new host define file
-> %1 echo.#define HOST_%UPPER_HOST_NAME% 1
+> "%~1.temp" echo.#define HOST_%UPPER_HOST_NAME% 1
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "./replace_if_different.ps1" "%~1" "%~1.temp"
+
 
 ENDLOCAL
 POPD
