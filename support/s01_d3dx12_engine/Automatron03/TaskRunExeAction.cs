@@ -158,6 +158,12 @@ namespace Automatron03
       {
          System.Console.WriteLine(System.String.Format("ProcessStart: {0} {1}", exePath, armuments));
 
+         /*
+         having a problem with operating system 
+The process cannot access the file because it is being used by another process
+         */
+         System.Threading.Thread.Sleep(500);
+
          var process = new System.Diagnostics.Process();
          process.StartInfo = new System.Diagnostics.ProcessStartInfo(exePath);
          process.StartInfo.UseShellExecute = false;

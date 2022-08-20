@@ -56,6 +56,7 @@ class GitIgnore:
         if parentGitIgnoreOrNone is not None:
             setFilesIgnore = parentGitIgnoreOrNone.setFilesIgnore.copy()
             setFolderIgnore = parentGitIgnoreOrNone.setFolderIgnore.copy()
+
         gitIgnorePath = os.path.join(folder, ".gitignore")
         if True == os.path.exists(gitIgnorePath):
             with open(gitIgnorePath) as file:

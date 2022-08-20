@@ -50,5 +50,6 @@ BuildVersionMajor.txt
 BuildVersionMinor.txt
 BuildVersionPatch.txt
 BuildVersionStore.txt
+*.rc
 
 log.txt
