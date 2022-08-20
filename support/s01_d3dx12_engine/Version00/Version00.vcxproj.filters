@@ -7,6 +7,9 @@
     <Filter Include="Output">
       <UniqueIdentifier>{e19bf25e-88b8-4995-8673-3176e3a65673}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Props">
+      <UniqueIdentifier>{b773904c-9709-4fd3-8124-8f934481ecac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Script\version.py">
@@ -17,6 +20,9 @@
     </None>
     <None Include="Script\build.cmd">
       <Filter>Script</Filter>
+    </None>
+    <None Include="Props\Version00.props">
+      <Filter>Props</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
