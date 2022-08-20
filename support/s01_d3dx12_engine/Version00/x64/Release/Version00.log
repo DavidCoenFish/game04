@@ -1,0 +1,4 @@
+﻿  build.cmd C:\development\game04\support\s01_d3dx12_engine\..\.. support\s01_d3dx12_engine C:\development\game04\support\s01_d3dx12_engine\Version00\Output 0 0 0 0
+  version.exe "C:\development\game04\support\s01_d3dx12_engine\..\.." "support\s01_d3dx12_engine" "C:\development\game04\support\s01_d3dx12_engine\Version00\Output" "0" "0" "0" "0" 
+  8
+  Hash 9642d42a1784b519a20a591f60577595 10d07b78623fa06138766584584599bb version "0.0.97.0"

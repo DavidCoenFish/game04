@@ -4,10 +4,45 @@
     <Filter Include="Script">
       <UniqueIdentifier>{f1f01ce6-5d66-4f4e-9707-ba5b6e87b57a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Output">
+      <UniqueIdentifier>{e19bf25e-88b8-4995-8673-3176e3a65673}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Script\version.py">
       <Filter>Script</Filter>
     </None>
+    <None Include="Script\ScriptToExe.cmd">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="Script\build.cmd">
+      <Filter>Script</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Output\BuildHash.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="Output\BuildVersion.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="Output\BuildVersionComma.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="Output\BuildVersionMajor.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="Output\BuildVersionMinor.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="Output\BuildVersionPatch.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="Output\BuildVersionStore.txt">
+      <Filter>Output</Filter>
+    </Text>
+    <Text Include="Output\BuildHost.txt">
+      <Filter>Output</Filter>
+    </Text>
   </ItemGroup>
 </Project>

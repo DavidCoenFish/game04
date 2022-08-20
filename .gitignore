@@ -7,6 +7,9 @@
 *.o
 *.obj
 
+# python
+*.spec
+
 # Precompiled Headers
 *.gch
 *.pch
@@ -27,7 +30,7 @@
 *.lib
 
 # Executables
-*.exe
+# *.exe
 *.out
 *.app
 
@@ -36,9 +39,11 @@
 bin/
 obj/
 build/
+dist/
 
 # version
 BuildHash.txt
+BuildHost.txt
 BuildVersion.txt
 BuildVersionComma.txt
 BuildVersionMajor.txt

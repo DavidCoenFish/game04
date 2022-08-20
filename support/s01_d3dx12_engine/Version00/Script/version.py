@@ -1,10 +1,11 @@
 # <1:git root (to get ignore)> <2:relative dir from git root to gather hash> <3:output dir>
-#C:\Python310\python.exe C:\development\game04\support\s01_d3dx12_engine\Version00\Script\version.py C:\development\game04 support\s01_d3dx12_engine C:\development\game04\support\s01_d3dx12_engine\Version00\Output
+#C:\Python310\python.exe C:\development\game04\support\s01_d3dx12_engine\Version00\Script\version.py C:\development\game04 support\s01_d3dx12_engine C:\development\game04\support\s01_d3dx12_engine\Version00\Output 0 0 0 0
 
 import sys
 import os
 import re
 import hashlib
+import platform
 
 #os.environ["PYTHONHASHSEED"] = "0"
 
@@ -105,7 +106,7 @@ def WriteStringToFile(filePath, stringData):
     file.write(stringData)
     file.close()
 
-def ReadStringFromFile(filePath, defaultData):
+def ReadStringFromFile(filePath, defaultData = ""):
     #print("ReadStringFromFile {0} {1}".format(filePath, defaultData))
     result = defaultData
     if True == os.path.exists(filePath):
@@ -115,7 +116,12 @@ def ReadStringFromFile(filePath, defaultData):
     #print(bytes(result, 'utf-8'))
     return result
 
-def DealHash(hashValue, outputDir):
+def WriteStringToFileIfDifferent(filePath, stringData):
+    data = ReadStringFromFile(filePath)
+    if (stringData != data):
+        WriteStringToFile(filePath, stringData)
+
+def DealHash(hashValue, outputDir, seedMajor, seedMinor, seedPatch, seedStore):
 
     hashFilePath = os.path.join(outputDir, "BuildHash.txt")
     oldHash = ReadStringFromFile(hashFilePath, "")
@@ -126,20 +132,20 @@ def DealHash(hashValue, outputDir):
 
 
     majorFilePath = os.path.join(outputDir, "BuildVersionMajor.txt")
-    major = int(ReadStringFromFile(majorFilePath, "0").strip())
+    major = int(ReadStringFromFile(majorFilePath, str(seedMajor)).strip())
 
     minorFilePath = os.path.join(outputDir, "BuildVersionMinor.txt")
-    minor = int(ReadStringFromFile(minorFilePath, "0").strip())
+    minor = int(ReadStringFromFile(minorFilePath, str(seedMinor)).strip())
 
     patchFilePath = os.path.join(outputDir, "BuildVersionPatch.txt")
-    patch = int(ReadStringFromFile(patchFilePath, "0").strip())
+    patch = int(ReadStringFromFile(patchFilePath, str(seedPatch)).strip())
 
     storeFilePath = os.path.join(outputDir, "BuildVersionStore.txt")
-    store = int(ReadStringFromFile(storeFilePath, "0").strip())
+    store = int(ReadStringFromFile(storeFilePath, str(seedStore)).strip())
 
     patch += 1
-    version = "{0}.{1}.{2}.{3}".format(major, minor, patch, store)
-    versionComma = "{0},{1},{2},{3}".format(major, minor, patch, store)
+    version = "\"{0}.{1}.{2}.{3}\"".format(major, minor, patch, store)
+    versionComma = "\"{0},{1},{2},{3}\"".format(major, minor, patch, store)
 
     WriteStringToFile(majorFilePath, str(major))
     WriteStringToFile(minorFilePath, str(minor))
@@ -156,14 +162,31 @@ def DealHash(hashValue, outputDir):
 
     print("Hash {0} {1} version {2}".format(hashValue, oldHash, version))
 
+def DealHostName(outputDir):
+    hostFilePath = os.path.join(outputDir, "BuildHost.txt")
+    host = "\"{0}\"".format(platform.node())
+    WriteStringToFileIfDifferent(hostFilePath, host)
 
 def main(*args):
-    if 4 != len(args):
+    #print (len(args))
+    if len(args) < 4:
         print("usage: version.py <1:git root (to get ignore)> <2:relative dir from git root to gather hash> <3:output dir>")
         return
     gitRoot = args[1]
     relativePath = args[2]
     outputDir = args[3]
+    seedMajor = 0
+    if 4 < len(args):
+        seedMajor = int(args[4])
+    seedMinor = 0
+    if 5 < len(args):
+        seedMinor = int(args[5])
+    seedPatch = 0
+    if 6 < len(args):
+        seedPatch = int(args[6])
+    seedStore = 0
+    if 7 < len(args):
+        seedStore = int(args[7])
 
     #ignoreRoot = GitIgnore.Factory(gitRoot)
     relativePathSplit = relativePath.split("\\")
@@ -178,7 +201,8 @@ def main(*args):
         #break
 
     #print(hashValue.hexdigest())
-    DealHash(hashValue.hexdigest(), outputDir)
+    DealHash(hashValue.hexdigest(), outputDir, seedMajor, seedMinor, seedPatch, seedStore)
+    DealHostName(outputDir)
 
 if __name__ == "__main__":
     main(*sys.argv)
