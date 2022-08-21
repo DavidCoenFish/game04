@@ -56,7 +56,7 @@ namespace FreeTypeApi
 
         slot = face->glyph;
 
-        error = FT_Load_Char(face, 'A', FT_LOAD_RENDER);
+        error = FT_Load_Char(face, 'L', FT_LOAD_RENDER);
         Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual(0, error);
 
         Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreNotEqual<int>(0, slot->bitmap.width);

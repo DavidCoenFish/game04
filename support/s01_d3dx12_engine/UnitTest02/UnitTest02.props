@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <DscBuildDir>$(SolutionDir)..\..\build\$(SolutionName)\$(ProjectName)\$(Platform)\$(Configuration)\</DscBuildDir>
-    <DscIncludeDir>$(SolutionDir)SDK\;$(SolutionDir)SDK\FreeType\Include\;$(SolutionDir)Common01\Source\;$(projectDir)Source\</DscIncludeDir>
+    <DscIncludeDir>$(SolutionDir)SDK\;$(SolutionDir)SDK\FreeType\Include\;$(SolutionDir)SDK\HarfBuzz\Include\;$(SolutionDir)Common01\Source\;$(projectDir)Source\</DscIncludeDir>
   </PropertyGroup>
   <PropertyGroup>
     <OutDir>$(DscBuildDir)output\</OutDir>

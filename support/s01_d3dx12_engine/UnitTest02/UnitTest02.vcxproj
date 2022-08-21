@@ -21,6 +21,7 @@
     <ClCompile Include="Source\CommonWorkerJobFinished.cpp" />
     <ClCompile Include="Source\CommonWorkerTask.cpp" />
     <ClCompile Include="Source\FreeTypeApi.cpp" />
+    <ClCompile Include="Source\HarfBuzzApi.cpp" />
     <ClCompile Include="Source\UnitTestGeneral.cpp" />
     <ClCompile Include="Source\UnitTestPCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -36,6 +37,9 @@
     </ProjectReference>
     <ProjectReference Include="..\SDK\FreeType\FreeType.vcxproj">
       <Project>{e571e6af-77d1-47a4-988b-365af9c5b2bc}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SDK\HarfBuzz\HarfBuzz.vcxproj">
+      <Project>{92518a37-172c-4526-920f-ab1fa10f9f07}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
