@@ -22,6 +22,7 @@
     <ClCompile Include="Source\CommonWorkerTask.cpp" />
     <ClCompile Include="Source\FreeTypeApi.cpp" />
     <ClCompile Include="Source\HarfBuzzApi.cpp" />
+    <ClCompile Include="Source\LanguageLambdaSmartpointer.cpp" />
     <ClCompile Include="Source\UnitTestGeneral.cpp" />
     <ClCompile Include="Source\UnitTestPCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
