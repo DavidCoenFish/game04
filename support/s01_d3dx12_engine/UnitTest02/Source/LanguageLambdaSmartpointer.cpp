@@ -25,10 +25,10 @@ namespace LanguageLambdaSmartpointer
 		Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual(2, s_flag.load());
 	}
 
-	TEST_CLASS(Basic)
+	TEST_CLASS(LambdaTakingSmartpointerOwnership)
 	{
 	public: 
-		TEST_METHOD(LambdaTakingSmartpointerOwnership)
+		TEST_METHOD(Join)
 		{
 			s_flag = 0;
 			std::thread thread;
@@ -41,4 +41,6 @@ namespace LanguageLambdaSmartpointer
 			Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual(2, s_flag.load());
 		}
 	};
+
+
 }

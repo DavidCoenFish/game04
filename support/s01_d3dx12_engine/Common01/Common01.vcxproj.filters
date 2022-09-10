@@ -330,6 +330,9 @@
     <ClCompile Include="Source\Common\Application\ApplicationText.cpp">
       <Filter>Source\Common\Application</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\Application\ApplicationMeshShader.cpp">
+      <Filter>Source\Common\Application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CommonPCH.h">
@@ -612,6 +615,9 @@
       <Filter>Source\Common\Application</Filter>
     </ClInclude>
     <ClInclude Include="Source\Common\Application\ApplicationText.h">
+      <Filter>Source\Common\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Application\ApplicationMeshShader.h">
       <Filter>Source\Common\Application</Filter>
     </ClInclude>
   </ItemGroup>

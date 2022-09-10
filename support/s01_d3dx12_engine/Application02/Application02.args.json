@@ -3,6 +3,10 @@
   "Id": "240fc133-78da-4158-b0c7-1be8214f8843",
   "Items": [
     {
+      "Id": "0ee58eed-1be2-43f4-84d7-984572ec2356",
+      "Command": "TestMeshShader"
+    },
+    {
       "Id": "6b6954ed-2cb6-4fea-b1c9-1d94ce8e0cea",
       "Command": "TestText"
     },

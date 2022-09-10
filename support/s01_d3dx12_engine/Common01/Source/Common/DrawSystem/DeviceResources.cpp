@@ -157,6 +157,21 @@ DeviceResources::DeviceResources(
    {
       throw std::exception("CustomCommandFence");
    }
+
+    D3D12_FEATURE_DATA_SHADER_MODEL shaderModel = { D3D_SHADER_MODEL_6_5 };
+    if (FAILED(m_pDevice->CheckFeatureSupport(D3D12_FEATURE_SHADER_MODEL, &shaderModel, sizeof(shaderModel)))
+        || (shaderModel.HighestShaderModel < D3D_SHADER_MODEL_6_5))
+    {
+        LOG_MESSAGE_WARNING("WARNING: Shader Model 6.5 is not supported");
+    }
+
+    D3D12_FEATURE_DATA_D3D12_OPTIONS7 features = {};
+    if (FAILED(m_pDevice->CheckFeatureSupport(D3D12_FEATURE_D3D12_OPTIONS7, &features, sizeof(features)))
+        || (features.MeshShaderTier == D3D12_MESH_SHADER_TIER_NOT_SUPPORTED))
+    {
+        LOG_MESSAGE_WARNING("WARNING: Mesh Shaders aren't supported");
+    }
+
 }
 
 DeviceResources::~DeviceResources()

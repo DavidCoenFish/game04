@@ -28,6 +28,9 @@
     <Filter Include="Task\TestTexture">
       <UniqueIdentifier>{6b9500cc-3862-440c-a3bb-666ce56222c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Task\TestMeshShader">
+      <UniqueIdentifier>{69be5714-15a5-408f-81c0-ca6ac896d62f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Props\Application02.props">
@@ -110,6 +113,9 @@
     <CopyFileToFolders Include="Task\TestText\Application.json">
       <Filter>Task\TestText</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestMeshShader\Application.json">
+      <Filter>Task\TestMeshShader</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Task\TestTriangle\PixelShader.hlsl">
@@ -132,6 +138,12 @@
     </FxCompile>
     <FxCompile Include="Task\TestTexture\VertexShader.hlsl">
       <Filter>Task\TestTexture</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestMeshShader\MeshShader.hlsl">
+      <Filter>Task\TestMeshShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestMeshShader\PixelShader.hlsl">
+      <Filter>Task\TestMeshShader</Filter>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
