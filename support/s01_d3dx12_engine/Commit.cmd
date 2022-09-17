@@ -3,7 +3,7 @@ PUSHD %~dp0
 
 cls
 
-echo %time% %~nx0 %~1
+echo %time% %~nx0 %*
 
 SET AUTOMOTRON_EXE="%~dp0..\..\build\s01_d3dx12_engine\Automatron03\Release\bin\net5.0\Automatron03.exe"
 SET AUTOMOTRON_DLL="%~dp0..\..\build\s01_d3dx12_engine\Automatron03\Release\bin\net5.0\Automatron03.dll"
@@ -24,8 +24,8 @@ IF defined MISSING_AUTOMATRON (
    call %DEVENV% "%~dp0s01_d3dx12_engine.sln" /build "Release|x64" /project Automatron03
    )
 
-echo %AUTOMOTRON_EXE% %~dp0..\..\ %~dp0Automatron03\TasksCommitOnly "%~1"
-call %AUTOMOTRON_EXE% %~dp0..\..\ %~dp0Automatron03\TasksCommitOnly "%~1"
+echo %AUTOMOTRON_EXE% %~dp0..\..\ %~dp0Automatron03\TasksCommitOnly "%*"
+call %AUTOMOTRON_EXE% %~dp0..\..\ %~dp0Automatron03\TasksCommitOnly "%*"
 if %errorlevel% NEQ 0 (
    echo Automatron03.exe exited with %errorlevel%
    exit /b %errorlevel%
