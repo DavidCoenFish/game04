@@ -3,9 +3,7 @@
 #include "json/json.hpp"
 
 class CommandLine;
-
-typedef std::function< void (const int exitCode) > TApplicationExit;
-
+class TaskWindow;
 
 class IApplicationParam
 {
@@ -16,7 +14,8 @@ public:
       const int height,
       const std::shared_ptr< CommandLine >& pCommandLine,
       const std::filesystem::path& rootPath, 
-      const nlohmann::json& json
+      const nlohmann::json& json,
+      TaskWindow* const pTaskWindow
    );
    const bool  m_bFullScreen;
    const int  m_width;
@@ -24,6 +23,7 @@ public:
    const std::shared_ptr< CommandLine >m_pCommandLine;
    const std::filesystem::path m_rootPath;
    const nlohmann::json m_json;
+   TaskWindow* const m_pTaskWindow;
 };
 
 class IApplication
@@ -52,6 +52,8 @@ public:
    const bool GetFullScreen() const { return m_bFullScreen; }
    void SetFullScreen(const bool bFullScreen) { m_bFullScreen = bFullScreen; }
 
+   void Destroy(const int exitCode);
+
 private:
    HWND m_hWnd; 
    int m_defaultWidth;
@@ -61,5 +63,7 @@ private:
    bool m_bInSuspend;
    bool m_bMinimized;
    bool m_bFullScreen;
+
+   TaskWindow* const m_pTaskWindow;
 
 };

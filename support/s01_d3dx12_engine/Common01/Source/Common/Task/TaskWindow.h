@@ -20,11 +20,13 @@ public:
    virtual const int Run() override;
 
    //void RegisterApplication(IApplication* const pApplication);
+   void DestroyApplication(IApplication* pApplication, const int exitCode);
 
 private:
    //is the mutex redundant? message loop must be on main thread?
    //mutable std::mutex m_pApplicationMutex;
    //IApplication* m_pApplication;
-   std::unique_ptr< IApplication > m_pApplication;
-
+   //std::unique_ptr< IApplication > m_pApplication;
+    std::vector< std::shared_ptr< IApplication > > m_pApplicationList;
+    bool m_bContinue;
 };

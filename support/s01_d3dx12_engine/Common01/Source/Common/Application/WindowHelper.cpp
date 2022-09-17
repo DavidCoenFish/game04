@@ -185,7 +185,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
    case WM_DESTROY:
       {
          //WM_QUIT is never sent to window, but you can pull it out of the GetMessage/PeekMessage
-         PostQuitMessage(0);
+         //PostQuitMessage(0);
+         if (nullptr != pApplication)
+         {
+             pApplication->Destroy(0);
+         }
          SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG)0);
       }
       break;

@@ -1,6 +1,7 @@
 #include "CommonPCH.h"
 #include "Common/Application/IApplication.h"
 #include "Common/Log/Log.h"
+#include "Common/Task/TaskWindow.h"
 
 IApplicationParam::IApplicationParam(
    const bool bFullScreen,
@@ -8,7 +9,8 @@ IApplicationParam::IApplicationParam(
    const int height,
    const std::shared_ptr< CommandLine >& pCommandLine,
    const std::filesystem::path& rootPath, 
-   const nlohmann::json& json
+   const nlohmann::json& json,
+   TaskWindow* const pTaskWindow
    )
    : m_bFullScreen(bFullScreen)
    , m_width(width)
@@ -16,6 +18,7 @@ IApplicationParam::IApplicationParam(
    , m_pCommandLine(pCommandLine)
    , m_rootPath(rootPath)
    , m_json(json)
+   , m_pTaskWindow(pTaskWindow) 
 {
    //nop
 }
@@ -28,6 +31,7 @@ IApplication::IApplication(const HWND hWnd, const IApplicationParam& application
    , m_bFullScreen(applicationParam.m_bFullScreen)
    , m_defaultWidth(applicationParam.m_width)
    , m_defaultHeight(applicationParam.m_height)
+   , m_pTaskWindow(applicationParam.m_pTaskWindow)
 {
    LOG_MESSAGE("IApplication ctor %p", this);
 }
@@ -71,3 +75,13 @@ void IApplication::OnResuming()
 {
    return;
 }
+
+void IApplication::Destroy(const int exitCode)
+{
+	if (nullptr != m_pTaskWindow)
+	{
+		m_pTaskWindow->DestroyApplication(this, exitCode);
+	}
+	return;
+}
+

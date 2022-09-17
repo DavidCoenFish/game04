@@ -87,7 +87,8 @@ const std::shared_ptr<TaskWindow> TaskWindow::Factory(
    std::vector<JSONWindow> arrayWindow;
    json.get_to(arrayWindow);
 
-   auto pResult = std::make_shared<TaskWindow>(); 
+   auto pResult = std::make_shared<TaskWindow>();
+   TaskWindow* pRawTaskWindow = pResult.get();
    for (const auto& item : arrayWindow)
    {
       auto applicationParam = IApplicationParam(
@@ -96,14 +97,20 @@ const std::shared_ptr<TaskWindow> TaskWindow::Factory(
          item.height,
          pCommandLine,
          path,
-         item.data
+         item.data,
+         pRawTaskWindow
+         //[=](IApplication* pApplication, const int exitCode){
+         //     pRawTaskWindow->DestroyApplication(pApplication, exitCode);
+         // }
          );
 
       auto applicationFactory = GetApplicationFactory(item.factory);
-      auto applicationFactoryWrapped = [pResult,applicationFactory](const HWND hWnd, const IApplicationParam& param)
+      auto applicationFactoryWrapped = [pRawTaskWindow,applicationFactory](const HWND hWnd, const IApplicationParam& param)
       {
-          pResult->m_pApplication.reset(applicationFactory(hWnd, param));
-          return pResult->m_pApplication.get();
+          IApplication* pApplication = applicationFactory(hWnd, param);
+          std::shared_ptr< IApplication > pApplicationShared(pApplication);
+          pRawTaskWindow->m_pApplicationList.push_back(pApplicationShared);
+          return pApplication;
       };
 
       WindowHelper(
@@ -119,7 +126,7 @@ const std::shared_ptr<TaskWindow> TaskWindow::Factory(
 }
 
 TaskWindow::TaskWindow()
-: m_pApplication(nullptr)
+    : m_bContinue(true)
 {
    return;
 }
@@ -134,7 +141,7 @@ const int TaskWindow::Run()
    //while we have windows, keep pushing messages
    MSG msg = {};
    int exitCode = 0;
-   while (true)
+   while (true == m_bContinue)
    {
       if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
       {
@@ -148,12 +155,26 @@ const int TaskWindow::Run()
       }
       else
       {
-        if (nullptr != m_pApplication)
-        {
-            m_pApplication->Update();
-        }
+          for (auto iter: m_pApplicationList)
+          {
+              iter->Update();
+          }
       }
    }
 
    return exitCode;
+}
+
+void TaskWindow::DestroyApplication(IApplication* pApplication, const int exitCode)
+{
+    m_pApplicationList.erase(
+        std::remove_if(m_pApplicationList.begin(), m_pApplicationList.end(), [=](std::shared_ptr< IApplication >& item){
+        return (pApplication == item.get());
+        }),
+        m_pApplicationList.end());
+    if (0 == m_pApplicationList.size())
+    {
+        PostQuitMessage(exitCode);
+    }
+    return;
 }
