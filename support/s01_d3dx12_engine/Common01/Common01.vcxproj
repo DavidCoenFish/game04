@@ -25,17 +25,10 @@
     </ClCompile>
     <ClCompile Include="Source\Common\Application\ApplicationComputeShader.cpp" />
     <ClCompile Include="Source\Common\Application\ApplicationDisplayList.cpp" />
-    <ClCompile Include="Source\Common\Application\ApplicationMeshShader.cpp" />
-    <ClCompile Include="Source\Common\Application\ApplicationText.cpp" />
     <ClCompile Include="Source\Common\Application\ApplicationTexture.cpp" />
-    <ClCompile Include="Source\Common\Application\ApplicationTextureJson.cpp" />
-    <ClCompile Include="Source\Common\Application\ApplicationTextureMove.cpp" />
     <ClCompile Include="Source\Common\Application\ApplicationTriangle.cpp" />
-    <ClCompile Include="Source\Common\Application\ApplicationTriangleJson.cpp" />
-    <ClCompile Include="Source\Common\Application\ApplicationTriangleMove.cpp" />
     <ClCompile Include="Source\Common\Application\CommandLine.cpp" />
     <ClCompile Include="Source\Common\Application\IApplication.cpp" />
-    <ClCompile Include="Source\Common\Application\ApplicationHolder.cpp" />
     <ClCompile Include="Source\Common\Application\WindowHelper.cpp" />
     <ClCompile Include="Source\Common\DAG\DagCollection.cpp" />
     <ClCompile Include="Source\Common\DAG\DagNodeCalculate.cpp" />
@@ -119,17 +112,10 @@
     <ClInclude Include="Source\CommonPCH.h" />
     <ClInclude Include="Source\Common\Application\ApplicationComputeShader.h" />
     <ClInclude Include="Source\Common\Application\ApplicationDisplayList.h" />
-    <ClInclude Include="Source\Common\Application\ApplicationMeshShader.h" />
-    <ClInclude Include="Source\Common\Application\ApplicationText.h" />
     <ClInclude Include="Source\Common\Application\ApplicationTexture.h" />
-    <ClInclude Include="Source\Common\Application\ApplicationTextureJson.h" />
-    <ClInclude Include="Source\Common\Application\ApplicationTextureMove.h" />
     <ClInclude Include="Source\Common\Application\ApplicationTriangle.h" />
-    <ClInclude Include="Source\Common\Application\ApplicationTriangleJson.h" />
-    <ClInclude Include="Source\Common\Application\ApplicationTriangleMove.h" />
     <ClInclude Include="Source\Common\Application\CommandLine.h" />
     <ClInclude Include="Source\Common\Application\IApplication.h" />
-    <ClInclude Include="Source\Common\Application\ApplicationHolder.h" />
     <ClInclude Include="Source\Common\Application\WindowHelper.h" />
     <ClInclude Include="Source\Common\DAG\DagCollection.h" />
     <ClInclude Include="Source\Common\DAG\DagNodeCalculate.h" />

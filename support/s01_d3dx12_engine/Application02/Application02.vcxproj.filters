@@ -22,14 +22,11 @@
     <Filter Include="Task\TestTriangle">
       <UniqueIdentifier>{209b1046-1d98-4f1f-ab43-daa9740cdf3c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Task\TestText">
-      <UniqueIdentifier>{d2ddc1d5-cdf3-4365-b1ed-64255d8f3400}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Task\TestTexture">
       <UniqueIdentifier>{6b9500cc-3862-440c-a3bb-666ce56222c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Task\TestMeshShader">
-      <UniqueIdentifier>{69be5714-15a5-408f-81c0-ca6ac896d62f}</UniqueIdentifier>
+    <Filter Include="Task\MultipleEmptyWindow">
+      <UniqueIdentifier>{e4e09c1f-e4c1-4008-9385-dbeb7669ee32}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -110,11 +107,8 @@
     <CopyFileToFolders Include="Task\TestTexture\Application.json">
       <Filter>Task\TestTexture</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="Task\TestText\Application.json">
-      <Filter>Task\TestText</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="Task\TestMeshShader\Application.json">
-      <Filter>Task\TestMeshShader</Filter>
+    <CopyFileToFolders Include="Task\MultipleEmptyWindow\Application.json">
+      <Filter>Task\MultipleEmptyWindow</Filter>
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
@@ -124,26 +118,11 @@
     <FxCompile Include="Task\TestTriangle\VertexShader.hlsl">
       <Filter>Task\TestTriangle</Filter>
     </FxCompile>
-    <FxCompile Include="Task\TestText\GeometryShader.hlsl">
-      <Filter>Task\TestText</Filter>
-    </FxCompile>
-    <FxCompile Include="Task\TestText\PixelShader.hlsl">
-      <Filter>Task\TestText</Filter>
-    </FxCompile>
-    <FxCompile Include="Task\TestText\VertexShader.hlsl">
-      <Filter>Task\TestText</Filter>
-    </FxCompile>
     <FxCompile Include="Task\TestTexture\PixelShader.hlsl">
       <Filter>Task\TestTexture</Filter>
     </FxCompile>
     <FxCompile Include="Task\TestTexture\VertexShader.hlsl">
       <Filter>Task\TestTexture</Filter>
-    </FxCompile>
-    <FxCompile Include="Task\TestMeshShader\MeshShader.hlsl">
-      <Filter>Task\TestMeshShader</Filter>
-    </FxCompile>
-    <FxCompile Include="Task\TestMeshShader\PixelShader.hlsl">
-      <Filter>Task\TestMeshShader</Filter>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>

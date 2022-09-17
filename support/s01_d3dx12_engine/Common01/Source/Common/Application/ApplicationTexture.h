@@ -2,7 +2,6 @@
 
 #include "Common/Application/IApplication.h"
 #include "Common/DrawSystem/Geometry/Geometry.h"
-class ApplicationHolder;
 class DrawSystem;
 class Shader;
 class ShaderResource;

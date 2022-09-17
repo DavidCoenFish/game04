@@ -27,10 +27,12 @@ const std::filesystem::path FileSystem::GetTempDir()
 const FileSystem::TFileData FileSystem::SyncReadFile(const std::filesystem::path& absolutePath)
 {
    std::ifstream inFile(absolutePath, std::ios::in | std::ios::binary | std::ios::ate);
+   auto pBlob = std::make_shared< std::vector< uint8_t > >();
    
-   if ((!inFile) || (!inFile.good()))
+   if ((!inFile) || (inFile.fail()))
    {
       throw std::exception("SyncReadFile");
+      return pBlob;
    }
 
    std::streampos len = inFile.tellg();
@@ -39,7 +41,6 @@ const FileSystem::TFileData FileSystem::SyncReadFile(const std::filesystem::path
       throw std::exception("SyncReadFile");
    }
 
-   auto pBlob = std::make_shared< std::vector< uint8_t > >();
    pBlob->resize(size_t(len));
 
    inFile.seekg(0, std::ios::beg);

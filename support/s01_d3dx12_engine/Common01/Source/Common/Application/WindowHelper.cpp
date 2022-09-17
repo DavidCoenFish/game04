@@ -1,6 +1,5 @@
 #include "CommonPCH.h"
 #include "Common/Application/WindowHelper.h"
-#include "Common/Application/ApplicationHolder.h"
 #include "Common/Application/IApplication.h"
 #include "Common/Util/Utf8.h"
 #include "Common/Log/Log.h"
@@ -14,9 +13,6 @@ const int WindowHelper(
    const IApplicationParam& applicationParam,
    HINSTANCE hInstance,
    const std::string& applicationName,
-   //const bool bFullScreen,
-   //const int defaultWidth,
-   //const int defaultHeight,
    const int nCmdShow
    )
 {
@@ -188,16 +184,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
    case WM_DESTROY:
       {
-         if (pApplication)
-         {
-            delete pApplication;
-            pApplication = nullptr;
-         }
-         SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG)0);
+         //WM_QUIT is never sent to window, but you can pull it out of the GetMessage/PeekMessage
          PostQuitMessage(0);
+         SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG)0);
       }
       break;
-
     case WM_SYSKEYDOWN:
       if ((wParam == VK_RETURN && (lParam & 0x60000000) == 0x20000000) && (nullptr != pApplication))
       {

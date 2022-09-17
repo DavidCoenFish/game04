@@ -2,17 +2,10 @@
 
 #include "Common/Task/TaskWindow.h"
 #include "Common/Application/WindowHelper.h"
-#include "Common/Application/ApplicationHolder.h"
 #include "Common/Application/ApplicationComputeShader.h"
 #include "Common/Application/ApplicationDisplayList.h"
-#include "Common/Application/ApplicationMeshShader.h"
-#include "Common/Application/ApplicationText.h"
 #include "Common/Application/ApplicationTexture.h"
-#include "Common/Application/ApplicationTextureJson.h"
-#include "Common/Application/ApplicationTextureMove.h"
 #include "Common/Application/ApplicationTriangle.h"
-#include "Common/Application/ApplicationTriangleJson.h"
-#include "Common/Application/ApplicationTriangleMove.h"
 #include "Common/Application/IApplication.h"
 
 class JSONWindow
@@ -69,14 +62,8 @@ const TApplicationFactory GetApplicationFactory(const std::string& factory)
    static std::map<std::string, TApplicationFactory> s_factoryMap({
       {"ComputeShader", ApplicationComputeShader::Factory},
       {"DisplayList", ApplicationDisplayList::Factory},
-      {"MeshShader", ApplicationMeshShader::Factory},
-      {"Text", ApplicationText::Factory},
       {"Texture", ApplicationTexture::Factory},
-      {"TextureJson", ApplicationTextureJson::Factory},
-      {"TextureMove", ApplicationTextureMove::Factory},
-      {"Triangle", ApplicationTriangle::Factory},
-      {"TriangleJson", ApplicationTriangleJson::Factory},
-      {"TriangleMove", ApplicationTriangleMove::Factory},
+      {"Triangle", ApplicationTriangle::Factory}
       });
    const auto found = s_factoryMap.find(factory);
    if (found != s_factoryMap.end())
@@ -85,7 +72,7 @@ const TApplicationFactory GetApplicationFactory(const std::string& factory)
    }
    return [](const HWND hWnd, const IApplicationParam& param)
    {
-      return new IApplication(hWnd, param);
+       return new IApplication(hWnd, param);
    };
 }
 
@@ -100,11 +87,10 @@ const std::shared_ptr<TaskWindow> TaskWindow::Factory(
    std::vector<JSONWindow> arrayWindow;
    json.get_to(arrayWindow);
 
-   auto pApplicationHolder = std::make_shared<ApplicationHolder>();
+   auto pResult = std::make_shared<TaskWindow>(); 
    for (const auto& item : arrayWindow)
    {
       auto applicationParam = IApplicationParam(
-         pApplicationHolder, 
          item.fullScreen,
          item.width,
          item.height,
@@ -114,8 +100,14 @@ const std::shared_ptr<TaskWindow> TaskWindow::Factory(
          );
 
       auto applicationFactory = GetApplicationFactory(item.factory);
+      auto applicationFactoryWrapped = [pResult,applicationFactory](const HWND hWnd, const IApplicationParam& param)
+      {
+          pResult->m_pApplication.reset(applicationFactory(hWnd, param));
+          return pResult->m_pApplication.get();
+      };
+
       WindowHelper(
-         applicationFactory,
+         applicationFactoryWrapped,
          applicationParam,
          hInstance,
          item.name,
@@ -123,12 +115,11 @@ const std::shared_ptr<TaskWindow> TaskWindow::Factory(
          );
    }
 
-   auto pResult = std::make_shared<TaskWindow>(pApplicationHolder); 
    return pResult;
 }
 
-TaskWindow::TaskWindow(const std::shared_ptr<ApplicationHolder>& pApplicationHolder)
-   : m_pApplicationHolder(pApplicationHolder)
+TaskWindow::TaskWindow()
+: m_pApplication(nullptr)
 {
    return;
 }
@@ -142,18 +133,27 @@ const int TaskWindow::Run()
 {
    //while we have windows, keep pushing messages
    MSG msg = {};
-   while (true == m_pApplicationHolder->HasApplication())
+   int exitCode = 0;
+   while (true)
    {
       if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
       {
+         if (WM_QUIT == msg.message)
+         {
+             exitCode = (int)msg.wParam;
+             break;
+         }
          TranslateMessage(&msg);
          DispatchMessage(&msg);
       }
       else
       {
-         m_pApplicationHolder->Update();
+        if (nullptr != m_pApplication)
+        {
+            m_pApplication->Update();
+        }
       }
    }
 
-   return 0;
+   return exitCode;
 }

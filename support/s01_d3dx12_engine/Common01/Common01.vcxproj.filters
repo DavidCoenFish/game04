@@ -90,9 +90,6 @@
     <ClCompile Include="Source\Common\FileSystem\IFileSystemProvider.cpp">
       <Filter>Source\Common\FileSystem</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\Application\ApplicationHolder.cpp">
-      <Filter>Source\Common\Application</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Common\Application\IApplication.cpp">
       <Filter>Source\Common\Application</Filter>
     </ClCompile>
@@ -291,12 +288,6 @@
     <ClCompile Include="Source\Common\Application\ApplicationTriangle.cpp">
       <Filter>Source\Common\Application</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\Application\ApplicationTriangleJson.cpp">
-      <Filter>Source\Common\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Common\Application\ApplicationTriangleMove.cpp">
-      <Filter>Source\Common\Application</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Common\JSON\JSONConstantBufferInfo.cpp">
       <Filter>Source\Common\JSON</Filter>
     </ClCompile>
@@ -304,9 +295,6 @@
       <Filter>Source\Common\Application</Filter>
     </ClCompile>
     <ClCompile Include="Source\Common\Application\ApplicationTexture.cpp">
-      <Filter>Source\Common\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Common\Application\ApplicationTextureJson.cpp">
       <Filter>Source\Common\Application</Filter>
     </ClCompile>
     <ClCompile Include="Source\Common\JSON\JSONShaderResource.cpp">
@@ -323,15 +311,6 @@
     </ClCompile>
     <ClCompile Include="Source\Common\DrawSystem\Shader\UnorderedAccess.cpp">
       <Filter>Source\Common\DrawSystem\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Common\Application\ApplicationTextureMove.cpp">
-      <Filter>Source\Common\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Common\Application\ApplicationText.cpp">
-      <Filter>Source\Common\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Common\Application\ApplicationMeshShader.cpp">
-      <Filter>Source\Common\Application</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -367,9 +346,6 @@
     </ClInclude>
     <ClInclude Include="Source\Common\FileSystem\IFileSystemProvider.h">
       <Filter>Source\Common\FileSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Common\Application\ApplicationHolder.h">
-      <Filter>Source\Common\Application</Filter>
     </ClInclude>
     <ClInclude Include="Source\Common\Application\IApplication.h">
       <Filter>Source\Common\Application</Filter>
@@ -578,12 +554,6 @@
     <ClInclude Include="Source\Common\Application\ApplicationTriangle.h">
       <Filter>Source\Common\Application</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Common\Application\ApplicationTriangleJson.h">
-      <Filter>Source\Common\Application</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Common\Application\ApplicationTriangleMove.h">
-      <Filter>Source\Common\Application</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Common\JSON\JSONConstantBufferInfo.h">
       <Filter>Source\Common\JSON</Filter>
     </ClInclude>
@@ -591,9 +561,6 @@
       <Filter>Source\Common\Application</Filter>
     </ClInclude>
     <ClInclude Include="Source\Common\Application\ApplicationTexture.h">
-      <Filter>Source\Common\Application</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Common\Application\ApplicationTextureJson.h">
       <Filter>Source\Common\Application</Filter>
     </ClInclude>
     <ClInclude Include="Source\Common\JSON\JSONShaderResource.h">
@@ -610,15 +577,6 @@
     </ClInclude>
     <ClInclude Include="Source\Common\DrawSystem\Shader\UnorderedAccess.h">
       <Filter>Source\Common\DrawSystem\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Common\Application\ApplicationTextureMove.h">
-      <Filter>Source\Common\Application</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Common\Application\ApplicationText.h">
-      <Filter>Source\Common\Application</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Common\Application\ApplicationMeshShader.h">
-      <Filter>Source\Common\Application</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

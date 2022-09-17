@@ -33,14 +33,6 @@ static std::map< std::string, TTaskFactory >& GetTaskFactoryMap()
    return s_map;
 }
 
-//this might not work from static lib? at least not witout something to make sure the code is not marked as dead and ignored
-void RegisterTaskFactory(const std::string& taskFactoryKey, const TTaskFactory& taskFactory)
-{
-   auto& factoryMap = GetTaskFactoryMap();
-   factoryMap[taskFactoryKey] = taskFactory;
-}
-
-//i don't want to have to know all of this in main, add a RegisterApplicationFactory? can that be done in a static lib? lets find out
 static const TTaskFactory GetTaskFactory(const std::string& taskFactoryKey)
 {
    const auto& factoryMap = GetTaskFactoryMap();
@@ -68,11 +60,11 @@ static const int RunTask(HINSTANCE hInstance, int nCmdShow)
    }
 
    int result = 0;
-   std::string task("Empty");
+   std::string taskName("Empty");
 
    if (2 <= pCommandLine->GetParamCount())
    {
-      task = pCommandLine->GetParam(1);
+      taskName = pCommandLine->GetParam(1);
    }
    else
    {
@@ -80,7 +72,7 @@ static const int RunTask(HINSTANCE hInstance, int nCmdShow)
    }
 
    {
-      std::filesystem::path path = FileSystem::GetModualDir(hInstance) / "Task" / task;
+      std::filesystem::path path = FileSystem::GetModualDir(hInstance) / "Task" / taskName;
       std::filesystem::path applicationPath = path / "Application.json";
       auto fileString = FileSystem::DataToString(FileSystem::SyncReadFile(applicationPath));
       auto json = nlohmann::json::parse( fileString );

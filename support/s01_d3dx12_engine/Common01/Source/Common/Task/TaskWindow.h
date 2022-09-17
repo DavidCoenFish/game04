@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Common/Task/ITask.h"
-class ApplicationHolder;
+class IApplication;
 
 class TaskWindow : public ITask
 {
@@ -14,12 +14,17 @@ public:
       const nlohmann::json& json
       );
 
-   TaskWindow(const std::shared_ptr<ApplicationHolder>& pApplicationHolder);
+   TaskWindow();
    virtual ~TaskWindow();
 
    virtual const int Run() override;
 
+   //void RegisterApplication(IApplication* const pApplication);
+
 private:
-   std::shared_ptr<ApplicationHolder> m_pApplicationHolder;
+   //is the mutex redundant? message loop must be on main thread?
+   //mutable std::mutex m_pApplicationMutex;
+   //IApplication* m_pApplication;
+   std::unique_ptr< IApplication > m_pApplication;
 
 };

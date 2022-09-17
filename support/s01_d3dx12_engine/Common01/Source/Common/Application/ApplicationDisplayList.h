@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Common/Application/IApplication.h"
-class ApplicationHolder;
 class DrawSystem;
 class DagCollection;
 class iDagNode;

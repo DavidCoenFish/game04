@@ -2,14 +2,15 @@
 
 #include "json/json.hpp"
 
-class ApplicationHolder;
 class CommandLine;
+
+typedef std::function< void (const int exitCode) > TApplicationExit;
+
 
 class IApplicationParam
 {
 public:
    IApplicationParam(
-      const std::shared_ptr<ApplicationHolder>& pApplicationHolder, 
       const bool bFullScreen,
       const int width,
       const int height,
@@ -17,7 +18,6 @@ public:
       const std::filesystem::path& rootPath, 
       const nlohmann::json& json
    );
-   const std::shared_ptr<ApplicationHolder> m_pApplicationHolder;
    const bool  m_bFullScreen;
    const int  m_width;
    const int  m_height;
@@ -54,7 +54,6 @@ public:
 
 private:
    HWND m_hWnd; 
-   std::shared_ptr<ApplicationHolder> m_pTaskHolder;
    int m_defaultWidth;
    int m_defaultHeight;
 
