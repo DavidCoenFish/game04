@@ -24,8 +24,9 @@ IF defined MISSING_AUTOMATRON (
    call %DEVENV% "%~dp0s01_d3dx12_engine.sln" /build "Release|x64" /project Automatron03
    )
 
-echo %AUTOMOTRON_EXE% %~dp0..\..\ %~dp0Automatron03\TasksCommitOnly "%*"
-call %AUTOMOTRON_EXE% %~dp0..\..\ %~dp0Automatron03\TasksCommitOnly "%*"
+set COMMENT=%*:"=%
+echo %AUTOMOTRON_EXE% %~dp0..\..\ %~dp0Automatron03\TasksCommitOnly "%COMMENT%"
+call %AUTOMOTRON_EXE% %~dp0..\..\ %~dp0Automatron03\TasksCommitOnly "%COMMENT%"
 if %errorlevel% NEQ 0 (
    echo Automatron03.exe exited with %errorlevel%
    exit /b %errorlevel%
