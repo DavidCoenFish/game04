@@ -39,6 +39,7 @@ public:
    virtual void OnDeactivated();
    virtual void OnSuspending();
    virtual void OnResuming();
+   virtual void OnKey(const int vkCode, const int scanCode, const bool repeatFlag, const int repeatCount, bool upFlag);
 
    const int GetDefaultWidth() const { return m_defaultWidth; }
    const int GetDefaultHeight() const { return m_defaultHeight; }

@@ -17,6 +17,7 @@ public:
 private:
    virtual void Update() override;
    virtual void OnWindowSizeChanged(const int width, const int height) override;
+   virtual void OnKey(const int vkCode, const int scanCode, const bool repeatFlag, const int repeatCount, bool upFlag) override;
 
 private:
    std::unique_ptr< DrawSystem > m_pDrawSystem;
@@ -29,5 +30,7 @@ private:
 
    bool m_timePointValid;
    std::chrono::system_clock::time_point m_timePoint;
+
+   //std::vector< std::function<> > m_updateTaskArray;
 
 };

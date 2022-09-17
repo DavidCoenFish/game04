@@ -28,6 +28,15 @@
     <Filter Include="Task\MultipleEmptyWindow">
       <UniqueIdentifier>{e4e09c1f-e4c1-4008-9385-dbeb7669ee32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Task\TestTextureDag">
+      <UniqueIdentifier>{e74adeed-5ace-45a5-8b06-a55543f02b06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\TestTriangleDag">
+      <UniqueIdentifier>{71964b3b-748a-4d3a-a8cc-8537b10b1357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task\DisplayListGrid">
+      <UniqueIdentifier>{1ab305df-c366-47cb-95a4-c171744e9709}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Props\Application02.props">
@@ -65,6 +74,9 @@
     </None>
     <None Include="Script\update_version_if_hash_change.ps1">
       <Filter>Script</Filter>
+    </None>
+    <None Include="Task\DisplayListGrid\Polar.hlsli">
+      <Filter>Task\DisplayListGrid</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +122,27 @@
     <CopyFileToFolders Include="Task\MultipleEmptyWindow\Application.json">
       <Filter>Task\MultipleEmptyWindow</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTextureDag\Application.json">
+      <Filter>Task\TestTextureDag</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTextureDag\Data0.json">
+      <Filter>Task\TestTextureDag</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTriangleDag\Application.json">
+      <Filter>Task\TestTriangleDag</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\TestTriangleDag\Data0.json">
+      <Filter>Task\TestTriangleDag</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListGrid\Application.json">
+      <Filter>Task\DisplayListGrid</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListGrid\DisplayList.json">
+      <Filter>Task\DisplayListGrid</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Task\DisplayListGrid\ScreenQuad.json">
+      <Filter>Task\DisplayListGrid</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Task\TestTriangle\PixelShader.hlsl">
@@ -123,6 +156,24 @@
     </FxCompile>
     <FxCompile Include="Task\TestTexture\VertexShader.hlsl">
       <Filter>Task\TestTexture</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTextureDag\PixelShader.hlsl">
+      <Filter>Task\TestTextureDag</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTextureDag\VertexShader.hlsl">
+      <Filter>Task\TestTextureDag</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangleDag\PixelShader.hlsl">
+      <Filter>Task\TestTriangleDag</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\TestTriangleDag\VertexShader.hlsl">
+      <Filter>Task\TestTriangleDag</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListGrid\PixelShaderGrid.hlsl">
+      <Filter>Task\DisplayListGrid</Filter>
+    </FxCompile>
+    <FxCompile Include="Task\DisplayListGrid\VertexShaderGrid.hlsl">
+      <Filter>Task\DisplayListGrid</Filter>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>

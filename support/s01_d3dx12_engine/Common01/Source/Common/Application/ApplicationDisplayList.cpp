@@ -82,17 +82,19 @@ NLOHMANN_JSON_SERIALIZE_ENUM( JSONApplicationDisplayListUpdateType, {
    {ENUM_TOKEN_PAIR(JSONApplicationDisplayListUpdateType, InputMoveToDagFloatArray            )},
    });
 
-//class JSONApplicationDisplayListUpdate
-//{
-//public:
-//   JSONApplicationDisplayListUpdateType type;
-//   JSONApplicationDisplayListTarget target;
-//};
-//NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
-//   JSONApplicationDisplayListUpdate,
-//   type,
-//   target
-//   );
+class JSONApplicationDisplayListUpdate
+{
+public:
+   JSONApplicationDisplayListUpdateType type;
+   nlohmann::json source;
+   JSONApplicationDisplayListTarget target;
+};
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
+   JSONApplicationDisplayListUpdate,
+   type,
+   source,
+   target
+   );
 
 class JSONHeapWrapperFromRenderTargetData
 {
@@ -113,13 +115,14 @@ class JSONApplicationDisplayList
 public:
    std::string file;
    JSONDrawSystem drawSystem;
-   //std::vector< JSONApplicationDisplayListUpdate > update;
+   std::vector< JSONApplicationDisplayListUpdate > update;
+   //std::vector< nlohmann::json > update;
 };
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
    JSONApplicationDisplayList,
    file,
-   drawSystem//,
-   //update
+   drawSystem,
+   update
    );
 
 std::shared_ptr< std::vector<uint8_t> > LoadFile(const std::filesystem::path& rootPath, const std::string& fileName)
@@ -602,6 +605,38 @@ ApplicationDisplayList::ApplicationDisplayList(const HWND hWnd, const IApplicati
       mapValue, 
       mapCalculate
       );
+
+   //hook up Update array
+   for (auto& item : jsonData.update)
+   {
+       auto pTarget = m_pDagCollection->GetDagNode(item.target.name);
+       if (nullptr == pTarget)
+       {
+           continue;
+       }
+
+       switch (item.type)
+       {
+       default:
+           break;
+       case JSONApplicationDisplayListUpdateType::InputMoveToDagFloatArray:
+           {
+                JSONApplicationDisplayListSourceMove jsonSourceMove;
+                nlohmann::from_json(item.source, jsonSourceMove);
+                auto pSource = m_pDagCollection->GetDagNode(jsonSourceMove.name);
+           }
+           break;
+       case JSONApplicationDisplayListUpdateType::InputRotateToDagFloatArray:
+           {
+                JSONApplicationDisplayListSourceRotate jsonSourceRotate;
+                nlohmann::from_json(item.source, jsonSourceRotate);
+           }
+           break;
+       case JSONApplicationDisplayListUpdateType::SetScreenWidthHeightToDagFloatArray:
+
+           break;
+       }
+   }
 }
 
 ApplicationDisplayList::~ApplicationDisplayList()
@@ -661,4 +696,11 @@ void ApplicationDisplayList::OnWindowSizeChanged(const int width, const int heig
    }
 
    return;
+}
+
+void ApplicationDisplayList::OnKey(const int vkCode, const int scanCode, const bool repeatFlag, const int repeatCount, bool upFlag)
+{
+    LOG_MESSAGE("OnKey %d %d %d %d %d", vkCode, scanCode, repeatFlag, repeatCount, upFlag);
+
+    return;
 }

@@ -193,31 +193,71 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
          SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG)0);
       }
       break;
+
+    //https://learn.microsoft.com/en-us/windows/win32/inputdev/about-keyboard-input#keystroke-message-flags
+    case WM_KEYDOWN:
+    case WM_KEYUP:
     case WM_SYSKEYDOWN:
-      if ((wParam == VK_RETURN && (lParam & 0x60000000) == 0x20000000) && (nullptr != pApplication))
+    case WM_SYSKEYUP:
+      if(nullptr != pApplication)
       {
-         // Implements the classic ALT+ENTER fullscreen toggle
-         if (pApplication->GetFullScreen())
-         {
-            pApplication->SetFullScreen(false);
-            SetWindowLongPtr(hWnd, GWL_STYLE, WS_OVERLAPPEDWINDOW);
-            SetWindowLongPtr(hWnd, GWL_EXSTYLE, 0);
+          if ((wParam == VK_RETURN && (lParam & 0x60000000) == 0x20000000))
+          {
+             // Implements the classic ALT+ENTER fullscreen toggle
+             if (pApplication->GetFullScreen())
+             {
+                pApplication->SetFullScreen(false);
+                SetWindowLongPtr(hWnd, GWL_STYLE, WS_OVERLAPPEDWINDOW);
+                SetWindowLongPtr(hWnd, GWL_EXSTYLE, 0);
 
-            const int width = pApplication ? pApplication->GetDefaultWidth() : 800;
-            const int height = pApplication ? pApplication->GetDefaultHeight() : 600;
+                const int width = pApplication ? pApplication->GetDefaultWidth() : 800;
+                const int height = pApplication ? pApplication->GetDefaultHeight() : 600;
 
-            ShowWindow(hWnd, SW_SHOWNORMAL);
-            SetWindowPos(hWnd, HWND_TOP, 0, 0, width, height, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
-         }
-         else
-         {
-            pApplication->SetFullScreen(true);
-            SetWindowLongPtr(hWnd, GWL_STYLE, WS_POPUP);
-            SetWindowLongPtr(hWnd, GWL_EXSTYLE, WS_EX_TOPMOST);
+                ShowWindow(hWnd, SW_SHOWNORMAL);
+                SetWindowPos(hWnd, HWND_TOP, 0, 0, width, height, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
+             }
+             else
+             {
+                pApplication->SetFullScreen(true);
+                SetWindowLongPtr(hWnd, GWL_STYLE, WS_POPUP);
+                SetWindowLongPtr(hWnd, GWL_EXSTYLE, WS_EX_TOPMOST);
 
-            SetWindowPos(hWnd, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
-            ShowWindow(hWnd, SW_SHOWMAXIMIZED);
-         }
+                SetWindowPos(hWnd, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+                ShowWindow(hWnd, SW_SHOWMAXIMIZED);
+             }
+          }
+          else
+          {
+            WORD vkCode = LOWORD(wParam);                                 // virtual-key code
+            WORD keyFlags = HIWORD(lParam);
+
+            WORD scanCode = LOBYTE(keyFlags);                             // scan code
+            BOOL isExtendedKey = (keyFlags & KF_EXTENDED) == KF_EXTENDED; // extended-key flag, 1 if scancode has 0xE0 prefix
+    
+            if (isExtendedKey)
+            {
+                scanCode = MAKEWORD(scanCode, 0xE0);
+            }
+
+            BOOL repeatFlag = (keyFlags & KF_REPEAT) == KF_REPEAT;        // previous key-state flag, 1 on autorepeat
+            WORD repeatCount = LOWORD(lParam);                            // repeat count, > 0 if several keydown messages was combined into one message
+
+            BOOL upFlag = (keyFlags & KF_UP) == KF_UP;                    // transition-state flag, 1 on keyup
+
+            // if we want to distinguish these keys:
+            switch (vkCode)
+            {
+            default:
+                break;
+            case VK_SHIFT:   // converts to VK_LSHIFT or VK_RSHIFT
+            case VK_CONTROL: // converts to VK_LCONTROL or VK_RCONTROL
+            case VK_MENU:    // converts to VK_LMENU or VK_RMENU
+                vkCode = LOWORD(MapVirtualKeyW(scanCode, MAPVK_VSC_TO_VK_EX));
+                break;
+            }
+
+            pApplication->OnKey(vkCode, scanCode, repeatFlag, repeatCount, upFlag);
+          }
       }
       break;
 

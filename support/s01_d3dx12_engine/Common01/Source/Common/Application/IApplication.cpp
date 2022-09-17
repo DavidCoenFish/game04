@@ -76,6 +76,11 @@ void IApplication::OnResuming()
    return;
 }
 
+void IApplication::OnKey(const int, const int, const bool, const int, bool)
+{
+   return;
+}
+
 void IApplication::Destroy(const int exitCode)
 {
 	if (nullptr != m_pTaskWindow)

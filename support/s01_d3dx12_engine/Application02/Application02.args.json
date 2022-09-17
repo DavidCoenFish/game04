@@ -19,8 +19,20 @@
       "Command": "TestTexture"
     },
     {
+      "Id": "86e5cc13-919e-43fa-aa1d-afc2ccbc133d",
+      "Command": "TestTextureDag"
+    },
+    {
       "Id": "785f3f93-b100-4b0f-adf6-6c7c1c438eb6",
       "Command": "DisplayList"
+    },
+    {
+      "Id": "4db4c99f-11cb-49a5-bf5d-8b9703720716",
+      "Command": "TestTriangleDag"
+    },
+    {
+      "Id": "2ab7a711-e44b-463f-9dc8-e9f4eb0d6cd9",
+      "Command": "DisplayListGrid"
     },
     {
       "Id": "32e17af4-8d98-463f-97d8-5fd3fb5e4b2e",
