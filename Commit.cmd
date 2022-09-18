@@ -36,13 +36,6 @@ IF 0 NEQ %ERRORLEVEL% (
   exit /b -1
 )
 
-::ECHO %GIT% status
-::%GIT% status
-::IF 0 NEQ %ERRORLEVEL% (
-::  ECHO ERRORLEVEL %ERRORLEVEL%
-::  exit /b -1
-::)
-
 ECHO %GIT% add .
 %GIT% add .
 IF 0 NEQ %ERRORLEVEL% (
@@ -60,6 +53,13 @@ IF 0 NEQ %ERRORLEVEL% (
 
 ECHO %GIT% push
 %GIT% push
+IF 0 NEQ %ERRORLEVEL% (
+  ECHO ERRORLEVEL %ERRORLEVEL%
+  exit /b -1
+)
+
+ECHO %GIT% status
+%GIT% status
 IF 0 NEQ %ERRORLEVEL% (
   ECHO ERRORLEVEL %ERRORLEVEL%
   exit /b -1

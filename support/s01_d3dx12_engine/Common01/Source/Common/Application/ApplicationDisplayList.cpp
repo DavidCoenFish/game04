@@ -932,11 +932,6 @@ void ApplicationDisplayList::Update()
 		DagValue<float>::IncrementNode(m_pDagTimeAccumulate, timeDeltaSeconds);
 	}
 
-	for (auto& item : m_updateTaskArray)
-	{
-		item->Update(timeDeltaSeconds);
-	}
-
 	if (m_pDrawSystem)
 	{
 		auto pFrame = m_pDrawSystem->CreateNewFrame();
@@ -944,6 +939,11 @@ void ApplicationDisplayList::Update()
 		DagValue<int>::IncrementNode(m_pDagFrameCount, 1);
 		DagValue<DrawSystemFrame*>::UpdateNode(m_pDagDrawSystemFrame, pFrame.get());
 		DagValue<IRenderTarget*>::UpdateNode(m_pDagBackBuffer, m_pDrawSystem->GetRenderTargetBackBuffer());
+
+		for (auto& item : m_updateTaskArray)
+		{
+			item->Update(timeDeltaSeconds);
+		}
 
 		auto pRender = m_pDagCollection->GetDagNode("_Render");
 		if (pRender)
