@@ -25,9 +25,6 @@ public:
    std::shared_ptr< HeapWrapperItem > GetDepthResourceHeapWrapperItem() const;
    std::shared_ptr< HeapWrapperItem > GetDepthShaderResourceHeapWrapperItem() const;
 
-   const int GetWidth() const;
-   const int GetHeight() const;
-
 private:
    virtual void OnDeviceLost() override;
    virtual void OnDeviceRestored(
@@ -60,6 +57,9 @@ private:
       int& renderTargetViewFormatCount,
       const DXGI_FORMAT*& pRenderTargetViewFormat
       ) const override;
+
+   virtual const int GetWidth() const override;
+   virtual const int GetHeight() const override;
 
 private:
    int m_width;

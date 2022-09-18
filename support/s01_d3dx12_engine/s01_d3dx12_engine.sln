@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CmdHere.cmd = CmdHere.cmd
 		Commit.cmd = Commit.cmd
 		notes.txt = notes.txt
+		..\..\notes\quaternion.js = ..\..\notes\quaternion.js
+		..\..\notes\scan_code.txt = ..\..\notes\scan_code.txt
 		Test.cmd = Test.cmd
 		TestThenCommit.cmd = TestThenCommit.cmd
 	EndProjectSection

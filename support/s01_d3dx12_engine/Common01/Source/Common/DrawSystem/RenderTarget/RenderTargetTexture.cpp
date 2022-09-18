@@ -399,4 +399,3 @@ void RenderTargetTexture::GetFormatData(
    pRenderTargetViewFormat = (DXGI_FORMAT*)(m_targetFormatArray.data());
    return;
 }
-

@@ -182,3 +182,14 @@ void RenderTargetBackBuffer::GetFormatData(
    renderTargetViewFormatCount = 1;
    pRenderTargetViewFormat = &m_targetFormatData.format;
 }
+
+const int RenderTargetBackBuffer::GetWidth() const
+{
+    return m_backBufferWidth;
+}
+
+const int RenderTargetBackBuffer::GetHeight() const
+{
+    return m_backBufferHeight;
+}
+

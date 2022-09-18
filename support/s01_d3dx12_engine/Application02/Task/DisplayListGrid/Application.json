@@ -29,8 +29,12 @@
                      {
                         "type": "InputRotateToDagFloatArray",
                         "source": {
-                           "keypad": [ "arrow_up", "arrow_left", "arrow_down", "arrow_right", "pageup", "pagedown" ],
-                           "velocity": 90.0
+                            "name": "FloatArray0",
+                            "atOffset": [ 4, 5, 6 ],
+                            "upOffset": [ 8, 9, 10 ],
+                            "keypad": [ "arrow_up", "arrow_left", "arrow_down", "arrow_right", "pageup", "pagedown" ],
+                            "scancode": [ 57416, 57419, 57424, 57421, 57417, 57425 ],
+                            "velocity": 1.0
                         },
                         "target": {
                            "name": "FloatArray0",
@@ -40,12 +44,12 @@
                      {
                         "type": "InputMoveToDagFloatArray",
                         "source": {
-                           "name": "FloatArray0",
-                           "atOffset": [ 4, 5, 6 ],
-                           "upOffset": [ 8, 9, 10 ],
-                           "value": [ 0.0, -1.0, 0.0 ],
-                           "keypad": [ "w", "a", "s", "d", "q", "e" ],
-                           "velocity": 1.0
+                            "name": "FloatArray0",
+                            "atOffset": [ 4, 5, 6 ],
+                            "upOffset": [ 8, 9, 10 ],
+                            "keypad": [ "w", "a", "s", "d", "q", "e" ],
+                            "scancode": [ 17, 30, 31, 32, 16, 18 ],
+                            "velocity": 1.0
                         },
                         "target": {
                            "name": "FloatArray0",

@@ -18,4 +18,7 @@ public:
       const DXGI_FORMAT*& pRenderTargetViewFormat
       ) const = 0;
 
+   virtual const int GetWidth() const = 0;
+   virtual const int GetHeight() const = 0;
+
 };

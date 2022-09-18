@@ -79,6 +79,7 @@
     <ClCompile Include="Source\Common\FileSystem\ProviderDisk.cpp" />
     <ClCompile Include="Source\Common\FileSystem\ProviderMemory.cpp" />
     <ClCompile Include="Source\Common\FileSystem\ProviderMods.cpp" />
+    <ClCompile Include="Source\Common\Interface\IUpdate.cpp" />
     <ClCompile Include="Source\Common\JSON\JSONDagCollection.cpp" />
     <ClCompile Include="Source\Common\JSON\JSONDrawSystem.cpp" />
     <ClCompile Include="Source\Common\JSON\JSONDrawSystemEnum.cpp" />
@@ -96,7 +97,11 @@
     <ClCompile Include="Source\Common\Log\LogConsumerWriteToFile.cpp" />
     <ClCompile Include="Source\Common\Log\LogEnum.cpp" />
     <ClCompile Include="Source\Common\Log\LogScope.cpp" />
+    <ClCompile Include="Source\Common\Math\MatrixFloat33.cpp" />
+    <ClCompile Include="Source\Common\Math\QuaternionFloat.cpp" />
+    <ClCompile Include="Source\Common\Math\VectorFloat3.cpp" />
     <ClCompile Include="Source\Common\Math\VectorFloat4.cpp" />
+    <ClCompile Include="Source\Common\Math\VectorMath.cpp" />
     <ClCompile Include="Source\Common\Task\ITask.cpp" />
     <ClCompile Include="Source\Common\Task\TaskWindow.cpp" />
     <ClCompile Include="Source\Common\UISystem\IUISystem.cpp" />
@@ -167,6 +172,7 @@
     <ClInclude Include="Source\Common\FileSystem\ProviderDisk.h" />
     <ClInclude Include="Source\Common\FileSystem\ProviderMemory.h" />
     <ClInclude Include="Source\Common\FileSystem\ProviderMods.h" />
+    <ClInclude Include="Source\Common\Interface\IUpdate.h" />
     <ClInclude Include="Source\Common\JSON\JSONDagCollection.h" />
     <ClInclude Include="Source\Common\JSON\JSONDrawSystem.h" />
     <ClInclude Include="Source\Common\JSON\JSONDrawSystemEnum.h" />
@@ -185,7 +191,11 @@
     <ClInclude Include="Source\Common\Log\LogEnum.h" />
     <ClInclude Include="Source\Common\Log\LogScope.h" />
     <ClInclude Include="Source\Common\Macro.h" />
+    <ClInclude Include="Source\Common\Math\MatrixFloat33.h" />
+    <ClInclude Include="Source\Common\Math\QuaternionFloat.h" />
+    <ClInclude Include="Source\Common\Math\VectorFloat3.h" />
     <ClInclude Include="Source\Common\Math\VectorFloat4.h" />
+    <ClInclude Include="Source\Common\Math\VectorMath.h" />
     <ClInclude Include="Source\Common\Task\ITask.h" />
     <ClInclude Include="Source\Common\Task\TaskWindow.h" />
     <ClInclude Include="Source\Common\UISystem\IUISystem.h" />

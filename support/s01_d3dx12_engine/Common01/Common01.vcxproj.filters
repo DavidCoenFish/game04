@@ -37,9 +37,6 @@
     <Filter Include="Source\Common\DrawSystem\RenderTarget">
       <UniqueIdentifier>{0013fa15-a403-475c-8496-b1ed8b000d00}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Common\DrawSystem\Math">
-      <UniqueIdentifier>{8b2ec63e-b3b9-4cc0-85b3-edfad31a8934}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Common\JSON">
       <UniqueIdentifier>{b91b92c2-545d-4aa0-ae7b-769e864214bd}</UniqueIdentifier>
     </Filter>
@@ -54,6 +51,12 @@
     </Filter>
     <Filter Include="Source\Common\Task">
       <UniqueIdentifier>{3e8fec76-9387-4fca-807e-b15eeb625d45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\Interface">
+      <UniqueIdentifier>{b1830368-17e9-4b92-a39b-f3dafbd712b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\Math">
+      <UniqueIdentifier>{c852caf0-01e3-48f6-8aee-51532768714c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -170,9 +173,6 @@
     </ClCompile>
     <ClCompile Include="Source\Common\DrawSystem\RenderTarget\IRenderTarget.cpp">
       <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Common\Math\VectorFloat4.cpp">
-      <Filter>Source\Common\DrawSystem\Math</Filter>
     </ClCompile>
     <ClCompile Include="Source\Common\JSON\JSONDrawSystemEnum.cpp">
       <Filter>Source\Common\JSON</Filter>
@@ -312,6 +312,24 @@
     <ClCompile Include="Source\Common\DrawSystem\Shader\UnorderedAccess.cpp">
       <Filter>Source\Common\DrawSystem\Shader</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\Interface\IUpdate.cpp">
+      <Filter>Source\Common\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Math\VectorMath.cpp">
+      <Filter>Source\Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Math\VectorFloat4.cpp">
+      <Filter>Source\Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Math\QuaternionFloat.cpp">
+      <Filter>Source\Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Math\VectorFloat3.cpp">
+      <Filter>Source\Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Math\MatrixFloat33.cpp">
+      <Filter>Source\Common\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CommonPCH.h">
@@ -430,9 +448,6 @@
     </ClInclude>
     <ClInclude Include="Source\Common\DrawSystem\RenderTarget\RenderTargetTexture.h">
       <Filter>Source\Common\DrawSystem\RenderTarget</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Common\Math\VectorFloat4.h">
-      <Filter>Source\Common\DrawSystem\Math</Filter>
     </ClInclude>
     <ClInclude Include="Source\Common\JSON\JSONDrawSystemEnum.h">
       <Filter>Source\Common\JSON</Filter>
@@ -577,6 +592,24 @@
     </ClInclude>
     <ClInclude Include="Source\Common\DrawSystem\Shader\UnorderedAccess.h">
       <Filter>Source\Common\DrawSystem\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Interface\IUpdate.h">
+      <Filter>Source\Common\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Math\VectorMath.h">
+      <Filter>Source\Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Math\VectorFloat4.h">
+      <Filter>Source\Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Math\QuaternionFloat.h">
+      <Filter>Source\Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Math\VectorFloat3.h">
+      <Filter>Source\Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Math\MatrixFloat33.h">
+      <Filter>Source\Common\Math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
