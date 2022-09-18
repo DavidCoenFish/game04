@@ -1,1 +1,16 @@
 https://github.com/harfbuzz/harfbuzz-tutorial/blob/master/hello-harfbuzz-freetype.c#L63-L66
+
+
+dag node
+
+what owns the render target the ui dag system uses
+input [width, height] of ui system (from backbuffer render target)
+can ui dag system get it's hands on dag nodes? some form of adaptor for ui system that can add/ remove links to nodes
+
+(value) ui dag system
+(calculate) ui dag system dag collection adaptor? get layout size via this?
+(calculate) ui dag system layout
+(calculate) ui dag system render (output iRenderTarget)
+
+or "ui dag system" has a refernce to the "dag collection"
+
