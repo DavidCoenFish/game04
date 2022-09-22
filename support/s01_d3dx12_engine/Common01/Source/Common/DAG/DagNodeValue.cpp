@@ -1,16 +1,15 @@
 #include "CommonPCH.h"
 #include "Common\dag\dagnodevalue.h"
 
-std::shared_ptr< iDagNode > DagNodeValue::Factory( const std::shared_ptr< iDagValue >& pValue, const bool bMarkDirtyOnSet )
+std::shared_ptr< iDagNode > DagNodeValue::Factory( const std::shared_ptr< iDagValue >& pValue )
 {
-   auto pResult = std::make_shared< DagNodeValue >( pValue, bMarkDirtyOnSet );
+   auto pResult = std::make_shared< DagNodeValue >( pValue );
    return pResult;
 }
 
 
-DagNodeValue::DagNodeValue( const std::shared_ptr< iDagValue >& pValue, const bool bMarkDirtyOnSet ) 
-   : m_bMarkDirtyOnSet(bMarkDirtyOnSet)
-   , m_pValue( pValue )
+DagNodeValue::DagNodeValue( const std::shared_ptr< iDagValue >& pValue ) 
+   : m_pValue( pValue )
 {
    return;
 }
@@ -24,10 +23,7 @@ DagNodeValue::~DagNodeValue()
 void DagNodeValue::SetValue( const std::shared_ptr< iDagValue >& pValue )
 {
    m_pValue = pValue; 
-   if (m_bMarkDirtyOnSet)
-   {
-      OnMarkDirty();
-   }
+   MarkDirty();
    return; 
 }
 
@@ -36,11 +32,11 @@ std::shared_ptr< iDagValue >& DagNodeValue::GetValue( void )
    return m_pValue;
 }
 
-void DagNodeValue::OnMarkDirty()
+void DagNodeValue::MarkDirty()
 {
    for (auto pIter : m_arrayOutput )
    {
-      pIter->OnMarkDirty();
+      pIter->MarkDirty();
    }
 }
 

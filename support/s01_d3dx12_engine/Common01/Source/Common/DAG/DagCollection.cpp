@@ -62,7 +62,7 @@ void DagCollection::LinkPush( iDagNode* const pInput, iDagNode* const pOutput )
    if (nullptr != pOutput)
    {
       pOutput->StackInputPush( pInput );
-      pOutput->OnMarkDirty();
+      pOutput->MarkDirty();
    }
    return;
 }
@@ -72,7 +72,7 @@ void DagCollection::LinkRemove( iDagNode* const pInput, iDagNode* const pOutput 
    if (nullptr != pOutput)
    {
       pOutput->StackInputRemove(pInput);
-      pOutput->OnMarkDirty();
+      pOutput->MarkDirty();
    }
    return;
 }
@@ -82,7 +82,7 @@ void DagCollection::LinkIndex( const int inputIndex, iDagNode* const pInputOrNul
    if (nullptr != pOutput)
    {
       pOutput->OrderedInputSet(inputIndex, pInputOrNullptr);
-      pOutput->OnMarkDirty();
+      pOutput->MarkDirty();
    }
    return;
 }

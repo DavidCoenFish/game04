@@ -2,41 +2,21 @@
 #include "Common/Application/ApplicationDisplayList.h"
 #include "Common/DrawSystem/DrawSystem.h"
 #include "Common/DrawSystem/DrawSystemFrame.h"
+#include "Common/DrawSystem/RenderTarget/IRenderTarget.h"
 #include "Common/DAG/NodeCalculateFactory/NodeCalculateFactoryDefault.h"
 #include "Common/DAG/NodeCalculateFactory/NodeCalculateFactoryRender.h"
+#include "Common/DAG/NodeValueFactory/NodeValueFactoryAxis.h"
 #include "Common/DAG/NodeValueFactory/NodeValueFactoryDefault.h"
 #include "Common/DAG/NodeValueFactory/NodeValueFactoryRender.h"
 #include "Common/DAG/DagCollection.h"
 #include "Common/DAG/DagNodeValue.h"
+#include "Common/DAG/DagNodeRef.h"
 #include "Common/FileSystem/FileSystem.h"
+#include "Common/Interface/IUpdate.h"
 #include "Common/JSON/JSONDagCollection.h"
 #include "Common/JSON/JSONDrawSystem.h"
 #include "Common/Log/Log.h"
 #include "json/json.hpp"
-
-/*
-#include "Common/DAG/DagValue.h"
-#include "Common/DAG/DagNodeCalculate.h"
-#include "Common/DAG/iDagNode.h"
-#include "Common/DrawSystem/CustomCommandList.h"
-#include "Common/DrawSystem/Shader/ShaderPipelineStateData.h"
-#include "Common/DrawSystem/Geometry/GeometryGeneric.h"
-#include "Common/DrawSystem/Shader/Shader.h"
-#include "Common/DrawSystem/Shader/ShaderResource.h"
-#include "Common/DrawSystem/RenderTarget/RenderTargetTexture.h"
-#include "Common/DrawSystem/DrawSystemFrame.h"
-#include "Common/Interface/IUpdate.h"
-#include "Common/JSON/JSONShader.h"
-#include "Common/JSON/JSONShaderResource.h"
-#include "Common/JSON/JSONGeometry.h"
-#include "Common/JSON/JSONRenderTarget.h"
-#include "Common/Math/MatrixFloat33.h"
-#include "Common/Math/QuaternionFloat.h"
-#include "Common/Math/VectorFloat3.h"
-#include "Common/Math/VectorFloat4.h"
-#include "Common/Math/VectorMath.h"
-*/
-
 
 class JSONApplicationDisplayList
 {
@@ -50,22 +30,24 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
 	drawSystem
 );
 
-
 IApplication* const ApplicationDisplayList::Factory(const HWND hWnd, const IApplicationParam& applicationParam)
 {
 	return new ApplicationDisplayList(hWnd, applicationParam);
 }
-
 
 namespace
 {
 	typedef std::function<std::shared_ptr< iDagNode >(const nlohmann::json& data)> NodeValueFactory;
 	typedef std::function<std::shared_ptr< iDagNode >(const nlohmann::json& data)> NodeCalculateFactory;
 
-	const std::map<std::string, NodeValueFactory> FactoryMapValue(DrawSystem* pDrawSystem)
+	const std::map<std::string, NodeValueFactory> FactoryMapValue(
+		DrawSystem* pDrawSystem,
+		std::vector< std::shared_ptr< IUpdate > >* pUpdatableObjects
+		)
 	{
 		std::map<std::string, NodeValueFactory> mapValue;
 
+		NodeValueFactoryAxis::Append(mapValue, pUpdatableObjects);
 		NodeValueFactoryDefault::Append(mapValue);
 		NodeValueFactoryRender::Append(mapValue, pDrawSystem);
 
@@ -95,19 +77,24 @@ ApplicationDisplayList::ApplicationDisplayList(const HWND hWnd, const IApplicati
 
 	m_pDrawSystem = DrawSystem::Factory(hWnd, jsonData.drawSystem);
 
-	m_pDagDrawSystemFrame = DagNodeValue::Factory(
-		DagValue<DrawSystemFrame*>::Factory(nullptr),
-		false
-	);
-	m_pDagBackBuffer = DagNodeValue::Factory(DagValue<IRenderTarget*>::Factory(nullptr));
+	//a NodeRef rather than NodeValue, as it should not set the graph dirty on being set
+	m_pDagDrawSystemFrame = DagNodeRef::Factory(DagValue<DrawSystemFrame*>::Factory(nullptr));
+	//a NodeRef rather than NodeValue, as it should not set the graph dirty on being set
+	m_pDagBackBuffer = DagNodeRef::Factory(DagValue<IRenderTarget*>::Factory(nullptr));
+
+	//NodeValue, change of these mark dependants dirty
+	m_pDagLayoutWidth = DagNodeValue::Factory(DagValue<float>::Factory((float)applicationParam.m_width)); 
+	m_pDagLayoutHeight = DagNodeValue::Factory(DagValue<float>::Factory((float)applicationParam.m_height)); 
 	m_pDagTimeAccumulate = DagNodeValue::Factory(DagValue<float>::Factory(0));
 
-	auto mapValue = FactoryMapValue(m_pDrawSystem.get());
+	auto mapValue = FactoryMapValue(m_pDrawSystem.get(), &m_updatableObjects);
 	auto mapCalculate = FactoryMapCalculate(m_pDrawSystem.get(), applicationParam);
 
 	std::vector< std::pair< std::string, std::shared_ptr< iDagNode > > > inbuiltDagValues{
 		{ "_DrawSystemFrame", m_pDagDrawSystemFrame },
 		{ "_BackBuffer", m_pDagBackBuffer },
+		{ "_LayoutWidth", m_pDagLayoutWidth },
+		{ "_LayoutHeight", m_pDagLayoutHeight },
 		{ "_TimeAccumulate", m_pDagTimeAccumulate }
 	};
 
@@ -157,12 +144,20 @@ void ApplicationDisplayList::Update()
 		DagValue<float>::IncrementNode(m_pDagTimeAccumulate, timeDeltaSeconds);
 	}
 
+	for (auto& item: m_updatableObjects)
+	{
+		item->Update(timeDeltaSeconds);
+	}
+
 	if (m_pDrawSystem)
 	{
 		auto pFrame = m_pDrawSystem->CreateNewFrame();
 
 		DagValue<DrawSystemFrame*>::UpdateNode(m_pDagDrawSystemFrame, pFrame.get());
-		DagValue<IRenderTarget*>::UpdateNode(m_pDagBackBuffer, m_pDrawSystem->GetRenderTargetBackBuffer());
+		auto pBackBuffer = m_pDrawSystem->GetRenderTargetBackBuffer();
+		DagValue<IRenderTarget*>::UpdateNode(m_pDagBackBuffer, pBackBuffer);
+		DagValue<float>::UpdateNode(m_pDagLayoutWidth, (float)(pBackBuffer ? pBackBuffer->GetWidth() : 0.0f));
+		DagValue<float>::UpdateNode(m_pDagLayoutHeight, (float)(pBackBuffer ? pBackBuffer->GetHeight() : 0.0f));
 
 		auto pRender = m_pDagCollection->GetDagNode("_Render");
 		if (pRender)

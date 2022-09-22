@@ -148,14 +148,15 @@ void RenderTargetTexture::Resize(
 	OnDeviceRestored(pCommandList, pDevice);
 }
 
-//const int RenderTargetTexture::GetWidth() const
-//{
-//   return m_width;
-//}
-//const int RenderTargetTexture::GetHeight() const
-//{
-//   return m_height;
-//}
+const int RenderTargetTexture::GetWidth() const
+{
+	return m_width;
+}
+
+const int RenderTargetTexture::GetHeight() const
+{
+	return m_height;
+}
 
 void RenderTargetTexture::OnDeviceLost()
 {

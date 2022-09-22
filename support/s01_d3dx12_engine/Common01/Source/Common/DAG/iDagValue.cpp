@@ -6,4 +6,10 @@ iDagValue::~iDagValue()
    return;
 }
 
+const bool iDagValue::IsZero() const
+{
+	return false;
+}
+
+
 

@@ -351,6 +351,15 @@
     <ClCompile Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryRender.cpp">
       <Filter>Source\Common\DAG\NodeCalculateFactory</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\DAG\DagNodeRef.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\DagNodeAxis.cpp">
+      <Filter>Source\Common\DAG</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryAxis.cpp">
+      <Filter>Source\Common\DAG\NodeValueFactory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CommonPCH.h">
@@ -646,6 +655,15 @@
     </ClInclude>
     <ClInclude Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryRender.h">
       <Filter>Source\Common\DAG\NodeCalculateFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\DagNodeRef.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\DagNodeAxis.h">
+      <Filter>Source\Common\DAG</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryAxis.h">
+      <Filter>Source\Common\DAG\NodeValueFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

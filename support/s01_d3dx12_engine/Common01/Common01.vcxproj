@@ -31,7 +31,9 @@
     <ClCompile Include="Source\Common\Application\IApplication.cpp" />
     <ClCompile Include="Source\Common\Application\WindowHelper.cpp" />
     <ClCompile Include="Source\Common\DAG\DagCollection.cpp" />
+    <ClCompile Include="Source\Common\DAG\DagNodeAxis.cpp" />
     <ClCompile Include="Source\Common\DAG\DagNodeCalculate.cpp" />
+    <ClCompile Include="Source\Common\DAG\DagNodeRef.cpp" />
     <ClCompile Include="Source\Common\DAG\DagNodeValue.cpp" />
     <ClCompile Include="Source\Common\DAG\DagValue.cpp" />
     <ClCompile Include="Source\Common\DAG\DagValueVariant.cpp" />
@@ -39,6 +41,7 @@
     <ClCompile Include="Source\Common\DAG\iDagValue.cpp" />
     <ClCompile Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryDefault.cpp" />
     <ClCompile Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryRender.cpp" />
+    <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryAxis.cpp" />
     <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryDefault.cpp" />
     <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryRender.cpp" />
     <ClCompile Include="Source\Common\DirectXTK12\DirectXHelpers.cpp" />
@@ -128,7 +131,9 @@
     <ClInclude Include="Source\Common\Application\IApplication.h" />
     <ClInclude Include="Source\Common\Application\WindowHelper.h" />
     <ClInclude Include="Source\Common\DAG\DagCollection.h" />
+    <ClInclude Include="Source\Common\DAG\DagNodeAxis.h" />
     <ClInclude Include="Source\Common\DAG\DagNodeCalculate.h" />
+    <ClInclude Include="Source\Common\DAG\DagNodeRef.h" />
     <ClInclude Include="Source\Common\DAG\DagNodeValue.h" />
     <ClInclude Include="Source\Common\DAG\DagValue.h" />
     <ClInclude Include="Source\Common\DAG\DagValueVariant.h" />
@@ -136,6 +141,7 @@
     <ClInclude Include="Source\Common\DAG\iDagValue.h" />
     <ClInclude Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryDefault.h" />
     <ClInclude Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryRender.h" />
+    <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryAxis.h" />
     <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryDefault.h" />
     <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryRender.h" />
     <ClInclude Include="Source\Common\DirectXTK12\DirectXHelpers.h" />
