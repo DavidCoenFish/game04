@@ -300,7 +300,7 @@ ApplicationComputeShader::ApplicationComputeShader(const HWND hWnd, const IAppli
 
 }
 
-ApplicationComputeShader ::~ApplicationComputeShader ()
+ApplicationComputeShader::~ApplicationComputeShader ()
 {
    if (m_pDrawSystem)
    {
@@ -332,7 +332,7 @@ struct CBuffer
    float _pad2;
 };
 
-void ApplicationComputeShader ::Update()
+void ApplicationComputeShader::Update()
 {
    BaseType::Update();
 
@@ -380,7 +380,7 @@ void ApplicationComputeShader ::Update()
    }
 }
 
-void ApplicationComputeShader ::OnWindowSizeChanged(const int width, const int height)
+void ApplicationComputeShader::OnWindowSizeChanged(const int width, const int height)
 {
    BaseType::OnWindowSizeChanged(width, height);
    if (m_pDrawSystem)

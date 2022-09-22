@@ -15,8 +15,7 @@ public:
       ID3D12Device2* const pDevice
       ) = 0;
 
-   virtual void OnResizeBefore();
-   virtual void OnResizeAfter(
+   virtual void OnResize(
       ID3D12GraphicsCommandList* const pCommandList,
       ID3D12Device2* const pDevice,
       const int screenWidth,

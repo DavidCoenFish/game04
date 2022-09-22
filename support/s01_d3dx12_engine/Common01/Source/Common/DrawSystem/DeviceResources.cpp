@@ -229,9 +229,14 @@ void DeviceResources::WaitForCustomCommand() //make sure any outstanding command
 	}
 }
 
-void DeviceResources::OnResize(DrawSystem* const pDrawSystem, const HWND hWnd)
+const bool DeviceResources::OnResize(
+	DrawSystem* const pDrawSystem, 
+	const HWND hWnd, 
+	int& out_width,
+	int& out_height
+	)
 {
-	CreateWindowSizeDependentResources(pDrawSystem, hWnd);
+	return CreateWindowSizeDependentResources(pDrawSystem, hWnd, &out_width, &out_height);
 }
 
 const int DeviceResources::GetBackBufferIndex() const
@@ -306,9 +311,12 @@ void DeviceResources::GetAdapter(IDXGIAdapter1** ppAdapter, const D3D_FEATURE_LE
 	*ppAdapter = adapter.Detach();
 }
 
-void DeviceResources::CreateWindowSizeDependentResources(
+//return true if size changed
+const bool DeviceResources::CreateWindowSizeDependentResources(
 	DrawSystem* const pDrawSystem,
-	const HWND hWnd
+	const HWND hWnd,
+	int* out_pWidth,
+	int* out_pHeight
 )
 {
 	RECT rc;
@@ -316,12 +324,21 @@ void DeviceResources::CreateWindowSizeDependentResources(
 	const int width = rc.right - rc.left;
 	const int height = rc.bottom - rc.top;
 
+	if (nullptr != out_pWidth)
+	{
+		*out_pWidth = width;
+	}
+	if (nullptr != out_pHeight)
+	{
+		*out_pHeight = height;
+	}
+
 	//if we don't need to resize, then don't
 	if ((nullptr != m_pScreenSizeResources) &&
 		(width == m_pScreenSizeResources->GetWidth()) &&
 		(height == m_pScreenSizeResources->GetHeight()))
 	{
-		return;
+		return false;
 	}
 
 	WaitForGpu();
@@ -348,6 +365,8 @@ void DeviceResources::CreateWindowSizeDependentResources(
 		m_targetFormatData,
 		m_targetDepthData
 		);
+
+	return true;
 }
 
 void DeviceResources::MoveToNextFrame()

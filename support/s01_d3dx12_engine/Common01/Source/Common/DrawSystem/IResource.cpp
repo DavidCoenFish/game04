@@ -20,11 +20,7 @@ IResource::~IResource()
    }
 }
 
-void IResource::OnResizeBefore()
-{
-   return;
-}
-void IResource::OnResizeAfter(
+void IResource::OnResize(
    ID3D12GraphicsCommandList* const,
    ID3D12Device2* const,
    const int,

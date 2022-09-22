@@ -31,8 +31,8 @@ private:
       const DXGI_FORMAT*& pRenderTargetViewFormat
       ) const override;
 
-   virtual const int GetWidth() const override;
-   virtual const int GetHeight() const override;
+   //virtual const int GetWidth() const override;
+   //virtual const int GetHeight() const override;
 
 private:
    int m_bufferIndex;

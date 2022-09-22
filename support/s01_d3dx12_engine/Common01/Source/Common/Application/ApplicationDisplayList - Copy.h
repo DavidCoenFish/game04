@@ -18,19 +18,25 @@ public:
 private:
    virtual void Update() override;
    virtual void OnWindowSizeChanged(const int width, const int height) override;
+   virtual void OnKey(const int vkCode, const int scanCode, const bool repeatFlag, const int repeatCount, bool upFlag) override;
+
+   void AppendScanCodeArray( const std::vector<int>& scanCodeArray);
+   void ZeroRepeatScanCodeMap();
 
 private:
+   std::unique_ptr< DrawSystem > m_pDrawSystem;
+   std::shared_ptr< DagCollection > m_pDagCollection;
+   std::shared_ptr< iDagNode > m_pDagTimeAccumulate;
+   std::shared_ptr< iDagNode > m_pDagFrameCount;
+   std::shared_ptr< iDagNode > m_pDagBackBuffer;
+   std::shared_ptr< iDagNode > m_pDagDrawSystemFrame;
+   std::shared_ptr< iDagNode > m_pDagRender;
+
    bool m_timePointValid;
    std::chrono::system_clock::time_point m_timePoint;
 
-   std::unique_ptr< DrawSystem > m_pDrawSystem;
-   std::shared_ptr< DagCollection > m_pDagCollection;
+   std::vector< std::shared_ptr<IUpdate> > m_updateTaskArray;
 
-   std::shared_ptr< iDagNode > m_pDagTimeAccumulate;
-   std::shared_ptr< iDagNode > m_pDagBackBuffer;
-   std::shared_ptr< iDagNode > m_pDagLayoutSize; //this is not directly pulled from the backbuffer as difficult to know when the backbuffer has changed
-   std::shared_ptr< iDagNode > m_pDagDrawSystemFrame;
-   std::shared_ptr< iDagNode > m_pDagRender; //output
-
+   std::map<int, int> m_scanCodeRepeatMap;
 
 };

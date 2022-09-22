@@ -37,6 +37,10 @@
     <ClCompile Include="Source\Common\DAG\DagValueVariant.cpp" />
     <ClCompile Include="Source\Common\DAG\iDagNode.cpp" />
     <ClCompile Include="Source\Common\DAG\iDagValue.cpp" />
+    <ClCompile Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryDefault.cpp" />
+    <ClCompile Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryRender.cpp" />
+    <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryDefault.cpp" />
+    <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryRender.cpp" />
     <ClCompile Include="Source\Common\DirectXTK12\DirectXHelpers.cpp" />
     <ClCompile Include="Source\Common\DirectXTK12\GraphicsMemory.cpp" />
     <ClCompile Include="Source\Common\DirectXTK12\LinearAllocator.cpp" />
@@ -99,6 +103,7 @@
     <ClCompile Include="Source\Common\Log\LogScope.cpp" />
     <ClCompile Include="Source\Common\Math\MatrixFloat33.cpp" />
     <ClCompile Include="Source\Common\Math\QuaternionFloat.cpp" />
+    <ClCompile Include="Source\Common\Math\VectorFloat2.cpp" />
     <ClCompile Include="Source\Common\Math\VectorFloat3.cpp" />
     <ClCompile Include="Source\Common\Math\VectorFloat4.cpp" />
     <ClCompile Include="Source\Common\Math\VectorMath.cpp" />
@@ -129,6 +134,10 @@
     <ClInclude Include="Source\Common\DAG\DagValueVariant.h" />
     <ClInclude Include="Source\Common\DAG\iDagNode.h" />
     <ClInclude Include="Source\Common\DAG\iDagValue.h" />
+    <ClInclude Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryDefault.h" />
+    <ClInclude Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryRender.h" />
+    <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryDefault.h" />
+    <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryRender.h" />
     <ClInclude Include="Source\Common\DirectXTK12\DirectXHelpers.h" />
     <ClInclude Include="Source\Common\DirectXTK12\GraphicsMemory.h" />
     <ClInclude Include="Source\Common\DirectXTK12\LinearAllocator.h" />
@@ -193,6 +202,7 @@
     <ClInclude Include="Source\Common\Macro.h" />
     <ClInclude Include="Source\Common\Math\MatrixFloat33.h" />
     <ClInclude Include="Source\Common\Math\QuaternionFloat.h" />
+    <ClInclude Include="Source\Common\Math\VectorFloat2.h" />
     <ClInclude Include="Source\Common\Math\VectorFloat3.h" />
     <ClInclude Include="Source\Common\Math\VectorFloat4.h" />
     <ClInclude Include="Source\Common\Math\VectorMath.h" />

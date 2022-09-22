@@ -58,6 +58,12 @@
     <Filter Include="Source\Common\Math">
       <UniqueIdentifier>{c852caf0-01e3-48f6-8aee-51532768714c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Common\DAG\NodeValueFactory">
+      <UniqueIdentifier>{71598b5e-e338-4619-bd72-21520fbe9144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Common\DAG\NodeCalculateFactory">
+      <UniqueIdentifier>{f245fc28-0d72-4e7d-bc68-2fb3c38555fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Common01.props" />
@@ -329,6 +335,21 @@
     </ClCompile>
     <ClCompile Include="Source\Common\Math\MatrixFloat33.cpp">
       <Filter>Source\Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryRender.cpp">
+      <Filter>Source\Common\DAG\NodeValueFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryDefault.cpp">
+      <Filter>Source\Common\DAG\NodeValueFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Math\VectorFloat2.cpp">
+      <Filter>Source\Common\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryDefault.cpp">
+      <Filter>Source\Common\DAG\NodeCalculateFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryRender.cpp">
+      <Filter>Source\Common\DAG\NodeCalculateFactory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -610,6 +631,21 @@
     </ClInclude>
     <ClInclude Include="Source\Common\Math\MatrixFloat33.h">
       <Filter>Source\Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryRender.h">
+      <Filter>Source\Common\DAG\NodeValueFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryDefault.h">
+      <Filter>Source\Common\DAG\NodeValueFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Math\VectorFloat2.h">
+      <Filter>Source\Common\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryDefault.h">
+      <Filter>Source\Common\DAG\NodeCalculateFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG\NodeCalculateFactory\NodeCalculateFactoryRender.h">
+      <Filter>Source\Common\DAG\NodeCalculateFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

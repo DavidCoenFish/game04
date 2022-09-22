@@ -14,3 +14,10 @@ can ui dag system get it's hands on dag nodes? some form of adaptor for ui syste
 
 or "ui dag system" has a refernce to the "dag collection"
 
+
+dag and input.
+end goal, have keyboard input move render camera.
+some variation on a value node that only sets dependants dirty if it is not zero, ie, if there is input (input axis float 0 ... 1.0, 0 ... -1.0)
+
+
+
