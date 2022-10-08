@@ -14,6 +14,7 @@
     <ClCompile Include="Source\CommonApplicationCommandLine.cpp" />
     <ClCompile Include="Source\CommonComponentFileMap.cpp" />
     <ClCompile Include="Source\CommonDag.cpp" />
+    <ClCompile Include="Source\CommonDag2.cpp" />
     <ClCompile Include="Source\CommonFileSystem.cpp" />
     <ClCompile Include="Source\CommonLog.cpp" />
     <ClCompile Include="Source\CommonUtilUtf8.cpp" />

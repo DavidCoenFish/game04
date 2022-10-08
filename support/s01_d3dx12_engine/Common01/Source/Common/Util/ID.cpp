@@ -1,0 +1,9 @@
+#include "CommonPCH.h"
+
+#include "Common/Util/ID.h"
+
+const int ID::GetID()
+{
+	static int s_trace = 0;
+	return ++s_trace;
+}

@@ -64,6 +64,9 @@
     <Filter Include="Source\Common\DAG\NodeCalculateFactory">
       <UniqueIdentifier>{f245fc28-0d72-4e7d-bc68-2fb3c38555fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Common\DAG2">
+      <UniqueIdentifier>{9d4b3e7b-f7c4-419a-9e45-a773b3bd253c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Common01.props" />
@@ -359,6 +362,30 @@
     </ClCompile>
     <ClCompile Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryAxis.cpp">
       <Filter>Source\Common\DAG\NodeValueFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG2\Dag2Collection.cpp">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG2\Dag2NodeVariable.cpp">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG2\iDag2Node.cpp">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG2\Dag2NodeCalculate.cpp">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG2\iDag2Value.cpp">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG2\Dag2Value.cpp">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Util\ID.cpp">
+      <Filter>Source\Common\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DAG2\Dag2.cpp">
+      <Filter>Source\Common\DAG2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -664,6 +691,33 @@
     </ClInclude>
     <ClInclude Include="Source\Common\DAG\NodeValueFactory\NodeValueFactoryAxis.h">
       <Filter>Source\Common\DAG\NodeValueFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\Dag2Collection.h">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\Dag2NodeCalculate.h">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\Dag2NodeVariable.h">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\iDag2Node.h">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\iDag2Value.h">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\Dag2Value.h">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Util\ID.h">
+      <Filter>Source\Common\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\Dag2.h">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\Dag2ValueHelper.h">
+      <Filter>Source\Common\DAG2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
