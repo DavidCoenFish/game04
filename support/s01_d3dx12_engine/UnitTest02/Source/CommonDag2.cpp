@@ -4,6 +4,7 @@
 #include "Common\DAG2\Dag2.h"
 #include "Common\DAG2\Dag2ValueHelper.h"
 #include "Common\DAG2\Dag2NodeCalculate.h"
+#include "Common\DAG2\Dag2NodeHelper.h"
 #include "Common\DAG2\Dag2NodeVariable.h"
 #include "Common\DAG2\iDag2Node.h"
 #include "Common\DAG2\iDag2Value.h"
@@ -17,19 +18,15 @@ namespace CommonDag2
 	public:
 		static void CalculateStackSum(
 			std::shared_ptr< iDag2Value >& pResult,
-			const std::vector< iDag2Node* >& arrayStack, 
-			const std::vector< iDag2Node* >& //arrayValue
+			const std::vector< iDag2Value* >& arrayStack, 
+			const std::vector< iDag2Value* >& //arrayValue
 			)
 		{
 			int sum = 0;
 			for (auto iter : arrayStack)
 			{
-				auto pValue = iter->GetValue();
-				auto pValueType = dynamic_cast< Dag2Value<int>* >(pValue);
-				if (pValueType)
-				{
-					sum += pValueType->Get();
-				}
+				sum += Dag2ValueHelper::Get<int>(iter);
+				//Dag2ValueHelper::Get<int>(iter->GetValue());
 			}
 
 			Dag2ValueHelper::Assign(pResult, sum);
@@ -37,7 +34,7 @@ namespace CommonDag2
 			return;
 		}
 
-		TEST_METHOD(SanityCreation0)
+		TEST_METHOD(Creation0)
 		{
 			auto pCollection = std::make_shared< Dag2Collection >();
 			Assert::IsNotNull( pCollection.get() );
@@ -49,7 +46,7 @@ namespace CommonDag2
 			pCollection.reset();
 		}
 
-		TEST_METHOD(SanityCreation1)
+		TEST_METHOD(Sum0)
 		{
 			auto pCollection = std::make_shared< Dag2Collection >();
 			Assert::IsNotNull( pCollection.get() );
@@ -63,7 +60,7 @@ namespace CommonDag2
 				pCollection->AddNode( "n1", pNode );
 			}
 			{
-				auto pNode = Dag2Calculate::Factory(&CalculateStackSum);
+				auto pNode = Dag2NodeCalculate::Factory(&CalculateStackSum);
 				pCollection->AddNode( "n2", pNode );
 			}
 
@@ -72,8 +69,52 @@ namespace CommonDag2
 
 			auto pResultNode = pCollection->GetNode("n2");
 			Assert::IsNotNull( pResultNode );
-			auto result = Dag2ValueHelper::Get<int>(pResultNode->GetValue());
+			//auto result = Dag2ValueHelper::Get<int>(pResultNode->GetValue());
+			auto result = Dag2NodeHelper::GetNodeValue<int>(pResultNode);
 			Assert::AreEqual(8, result );
+
+			pCollection.reset();
+		}
+
+		TEST_METHOD(Dirty0)
+		{
+			auto pCollection = std::make_shared< Dag2Collection >();
+			Assert::IsNotNull( pCollection.get() );
+
+			iDag2Node* pInputNode = nullptr;
+			{
+				auto pNode = Dag2NodeVariable::Factory<int>(3, Dag2::DirtyCase::ValueChanged);
+				pInputNode = pNode.get();
+				pCollection->AddNode( "n0", pNode );
+			}
+			Dag2NodeCalculate* pCalculateNode = nullptr;
+			{
+				auto pNode1 = Dag2NodeCalculate::Factory(&CalculateStackSum);
+				pCalculateNode = pNode1.get();
+				pCollection->AddNode( "n2", pNode1 );
+			}
+
+			pCollection->AddLinkStack(pInputNode, pCalculateNode); 
+
+			Assert::AreEqual( true, pCalculateNode->GetDirty() );
+
+			{
+				auto result = Dag2NodeHelper::GetNodeValue<int>(pCalculateNode);
+				Assert::AreEqual(3, result );
+			}
+
+			Assert::AreEqual( false, pCalculateNode->GetDirty() );
+
+			Dag2NodeHelper::SetNodeValue(pInputNode, 2);
+
+			Assert::AreEqual( true, pCalculateNode->GetDirty() );
+
+			{
+				auto result = Dag2NodeHelper::GetNodeValue<int>(pCalculateNode);
+				Assert::AreEqual(2, result );
+			}
+
+			Assert::AreEqual( false, pCalculateNode->GetDirty() );
 
 			pCollection.reset();
 		}

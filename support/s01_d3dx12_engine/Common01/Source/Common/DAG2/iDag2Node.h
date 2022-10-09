@@ -15,5 +15,7 @@ public:
 	virtual iDag2Value* GetValue() = 0;
 
 	virtual void MarkDirty() = 0;
+	
+	//virtual const bool GetDirty() const = 0;
 
 };

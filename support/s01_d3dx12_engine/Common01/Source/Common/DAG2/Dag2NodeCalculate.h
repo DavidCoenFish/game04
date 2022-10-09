@@ -4,29 +4,31 @@
 
 class iDag2Value;
 
-class Dag2Calculate : public iDag2Node
+class Dag2NodeCalculate : public iDag2Node
 {
 public:
 	//array stack, array indexed, value
 	typedef std::function< void (
 		std::shared_ptr< iDag2Value >&,
-		const std::vector< iDag2Node* >&, 
-		const std::vector< iDag2Node* >&
+		const std::vector< iDag2Value* >&, 
+		const std::vector< iDag2Value* >&
 		) > CalculateFunction;
 
-	static std::shared_ptr< Dag2Calculate > Factory(
+	static std::shared_ptr< Dag2NodeCalculate > Factory(
 		const CalculateFunction& pCalculateCallback
 		)
 	{
-		auto pResult = std::make_shared< Dag2Calculate >(
+		auto pResult = std::make_shared< Dag2NodeCalculate >(
 			pCalculateCallback
 			);
 
 		return pResult;
 	}
 
-	Dag2Calculate(const CalculateFunction& pCalculateCallback);
-	~Dag2Calculate();
+	Dag2NodeCalculate(const CalculateFunction& pCalculateCallback);
+	~Dag2NodeCalculate();
+
+	const bool GetDirty() const { return m_dirty; }
 
 private:
 	virtual void SetOutput(iDag2Node* const pNode) override;

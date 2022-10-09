@@ -141,6 +141,7 @@
     <ClInclude Include="Source\Common\DAG2\Dag2.h" />
     <ClInclude Include="Source\Common\DAG2\Dag2Collection.h" />
     <ClInclude Include="Source\Common\DAG2\Dag2NodeCalculate.h" />
+    <ClInclude Include="Source\Common\DAG2\Dag2NodeHelper.h" />
     <ClInclude Include="Source\Common\DAG2\Dag2NodeVariable.h" />
     <ClInclude Include="Source\Common\DAG2\Dag2Value.h" />
     <ClInclude Include="Source\Common\DAG2\Dag2ValueHelper.h" />

@@ -719,5 +719,8 @@
     <ClInclude Include="Source\Common\DAG2\Dag2ValueHelper.h">
       <Filter>Source\Common\DAG2</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Common\DAG2\Dag2NodeHelper.h">
+      <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

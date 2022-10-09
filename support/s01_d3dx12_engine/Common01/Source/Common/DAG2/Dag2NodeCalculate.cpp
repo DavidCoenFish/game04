@@ -4,19 +4,19 @@
 #include "Common/DAG2/iDag2Node.h"
 #include "Common/DAG2/iDag2Value.h"
 
-Dag2Calculate::Dag2Calculate(const CalculateFunction& pCalculateCallback)
+Dag2NodeCalculate::Dag2NodeCalculate(const CalculateFunction& pCalculateCallback)
 	: m_pCalculateCallback(pCalculateCallback)
 	, m_dirty(false)
 {
 	return;
 }
 
-Dag2Calculate::~Dag2Calculate()
+Dag2NodeCalculate::~Dag2NodeCalculate()
 {
 	return;
 }
 
-void Dag2Calculate::SetOutput(iDag2Node* const pNode)
+void Dag2NodeCalculate::SetOutput(iDag2Node* const pNode)
 {
 	if (nullptr != pNode)
 	{
@@ -24,12 +24,12 @@ void Dag2Calculate::SetOutput(iDag2Node* const pNode)
 	}
 }
 
-void Dag2Calculate::RemoveOutput(iDag2Node* const pNode)
+void Dag2NodeCalculate::RemoveOutput(iDag2Node* const pNode)
 {
 	m_arrayOutput.erase(std::remove(m_arrayOutput.begin(), m_arrayOutput.end(), pNode), m_arrayOutput.end());
 }
 
-void Dag2Calculate::AddInputStack(iDag2Node* const pNode)
+void Dag2NodeCalculate::AddInputStack(iDag2Node* const pNode)
 {
 	if (nullptr != pNode)
 	{
@@ -39,7 +39,7 @@ void Dag2Calculate::AddInputStack(iDag2Node* const pNode)
 	return;
 }
 
-void Dag2Calculate::RemoveInputStack(iDag2Node* const pNode)
+void Dag2NodeCalculate::RemoveInputStack(iDag2Node* const pNode)
 {
 	if (nullptr == pNode)
 	{
@@ -52,7 +52,7 @@ void Dag2Calculate::RemoveInputStack(iDag2Node* const pNode)
 	return;
 }
 
-void Dag2Calculate::SetInputIndex(iDag2Node* const pNodeOrNullptr, const int index)
+void Dag2NodeCalculate::SetInputIndex(iDag2Node* const pNodeOrNullptr, const int index)
 {
 	assert(0 <= index);
 	if (m_arrayInputIndex.size() <= index)
@@ -75,21 +75,43 @@ void Dag2Calculate::SetInputIndex(iDag2Node* const pNodeOrNullptr, const int ind
 	return;
 }
 
-iDag2Value* Dag2Calculate::GetValue()
+iDag2Value* Dag2NodeCalculate::GetValue()
 {
 	if ((true == m_dirty) && (nullptr != m_pCalculateCallback))
 	{
 		m_dirty = false;
+#if 0
 		m_pCalculateCallback(
 			m_pValue, 
 			m_arrayInputStack, 
 			m_arrayInputIndex
 			);
+#else
+		std::vector<iDag2Value*> arrayInputStack; 
+		for(auto iter: m_arrayInputStack)
+		{
+			iDag2Value* pValue = iter ? iter->GetValue() : nullptr;
+			arrayInputStack.push_back(pValue);
+		}
+		std::vector<iDag2Value*> arrayInputIndex; 
+		for(auto iter: m_arrayInputIndex)
+		{
+			iDag2Value* pValue = iter ? iter->GetValue() : nullptr;
+			arrayInputIndex.push_back(pValue);
+		}
+
+		m_pCalculateCallback(
+			m_pValue, 
+			arrayInputStack, 
+			arrayInputIndex
+			);
+
+#endif
 	}
 	return m_pValue.get();
 }
 
-void Dag2Calculate::MarkDirty()
+void Dag2NodeCalculate::MarkDirty()
 {
 	if (true != m_dirty)
 	{
