@@ -39,8 +39,10 @@
 #include <DirectXMath.h>
 #include <DirectXColors.h>
 
+//std library includes
 #include <algorithm>
 #include <array>
+#include <bitset>
 #include <cstdint>
 #include <exception>
 #include <filesystem>

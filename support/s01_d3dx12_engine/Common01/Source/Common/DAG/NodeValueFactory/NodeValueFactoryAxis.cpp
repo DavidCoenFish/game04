@@ -37,18 +37,19 @@ public:
 private:
 	virtual void Update(const float in_timeDeltaSeconds) override
 	{
-		const SHORT state = GetKeyState(m_virtualKey);
-		const bool bDown = (0 != (state & 0x8000));
-		//const bool bToggle = (0 != (state & 0x0001));
-		const int value = bDown ? m_value : 0.0f;
-		if (nullptr != m_pDagValue)
-		{
-			m_pDagValue->Set(value);
-		}
-		if (nullptr != m_pDagNode)
-		{
-			m_pDagNode->MarkDirty();
-		}
+		in_timeDeltaSeconds;
+	//	const SHORT state = GetKeyState(m_virtualKey);
+	//	const bool bDown = (0 != (state & 0x8000));
+	//	//const bool bToggle = (0 != (state & 0x0001));
+	//	const int value = bDown ? m_value : 0.0f;
+	//	if (nullptr != m_pDagValue)
+	//	{
+	//		m_pDagValue->Set(value);
+	//	}
+	//	if (nullptr != m_pDagNode)
+	//	{
+	//		m_pDagNode->MarkDirty();
+	//	}
 	}
 private:
 	int m_virtualKey;

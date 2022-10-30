@@ -67,6 +67,9 @@
     <Filter Include="Source\Common\DAG2">
       <UniqueIdentifier>{9d4b3e7b-f7c4-419a-9e45-a773b3bd253c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Common\PathTile">
+      <UniqueIdentifier>{1648369e-eef4-4485-9858-efb79f4f238b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Common01.props" />
@@ -386,6 +389,18 @@
     </ClCompile>
     <ClCompile Include="Source\Common\DAG2\Dag2.cpp">
       <Filter>Source\Common\DAG2</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PathTile\PathTileMap.cpp">
+      <Filter>Source\Common\PathTile</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PathTile\PathTilePathTile.cpp">
+      <Filter>Source\Common\PathTile</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PathTile\PathTileRenderTile.cpp">
+      <Filter>Source\Common\PathTile</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PathTile\PathTileLocation.cpp">
+      <Filter>Source\Common\PathTile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -721,6 +736,18 @@
     </ClInclude>
     <ClInclude Include="Source\Common\DAG2\Dag2NodeHelper.h">
       <Filter>Source\Common\DAG2</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\PathTile\PathTileMap.h">
+      <Filter>Source\Common\PathTile</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\PathTile\PathTilePathTile.h">
+      <Filter>Source\Common\PathTile</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\PathTile\PathTileRenderTile.h">
+      <Filter>Source\Common\PathTile</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\PathTile\PathTileLocation.h">
+      <Filter>Source\Common\PathTile</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

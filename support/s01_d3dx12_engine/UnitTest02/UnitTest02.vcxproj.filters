@@ -54,6 +54,9 @@
     <ClCompile Include="Source\CommonDag2.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CommonPathTilePathTile.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\UnitTestPCH.h">

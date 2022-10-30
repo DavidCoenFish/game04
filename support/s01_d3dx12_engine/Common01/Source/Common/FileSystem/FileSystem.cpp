@@ -32,7 +32,7 @@ const FileSystem::TFileData FileSystem::SyncReadFile(const std::filesystem::path
    if ((!inFile) || (inFile.fail()))
    {
       throw std::exception("SyncReadFile");
-      return pBlob;
+      //return pBlob;
    }
 
    std::streampos len = inFile.tellg();
