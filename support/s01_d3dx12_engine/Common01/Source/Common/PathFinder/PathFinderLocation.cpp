@@ -1,6 +1,6 @@
 #include "CommonPCH.h"
 
-#include "Common/PathTile/PathTileLocation.h"
+#include "Common/PathFinder/PathFinderLocation.h"
 
 namespace
 {
@@ -11,7 +11,7 @@ namespace
 	};
 };
 
-const PathTile::Location PathTile::PackLocation(const short x, const short y)
+const PathFinder::Location PathFinder::PackLocation(const short x, const short y)
 {
 	DataPacker dataPacker;
 	dataPacker.s[0] = x;
@@ -19,7 +19,7 @@ const PathTile::Location PathTile::PackLocation(const short x, const short y)
 	return dataPacker.i;
 }
 
-void PathTile::UnPackLocation(PASS_LOCATION_CONST input, short& x, short& y)
+void PathFinder::UnPackLocation(PASS_LOCATION_CONST input, short& x, short& y)
 {
 	DataPacker dataPacker;
 	dataPacker.i = input;
@@ -28,7 +28,7 @@ void PathTile::UnPackLocation(PASS_LOCATION_CONST input, short& x, short& y)
 	return;
 }
 
-void PathTile::UnPackLocationMinus(PASS_LOCATION_CONST input, PASS_LOCATION_CONST delta, short& x, short& y)
+void PathFinder::UnPackLocationMinus(PASS_LOCATION_CONST input, PASS_LOCATION_CONST delta, short& x, short& y)
 {
 	DataPacker dataPackerInput;
 	DataPacker dataPackerDelta;

@@ -67,8 +67,8 @@
     <Filter Include="Source\Common\DAG2">
       <UniqueIdentifier>{9d4b3e7b-f7c4-419a-9e45-a773b3bd253c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Common\PathTile">
-      <UniqueIdentifier>{1648369e-eef4-4485-9858-efb79f4f238b}</UniqueIdentifier>
+    <Filter Include="Source\Common\PathFinder">
+      <UniqueIdentifier>{a813899b-1271-4687-b995-cfb7f06a4804}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -390,17 +390,23 @@
     <ClCompile Include="Source\Common\DAG2\Dag2.cpp">
       <Filter>Source\Common\DAG2</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\PathTile\PathTileMap.cpp">
-      <Filter>Source\Common\PathTile</Filter>
+    <ClCompile Include="Source\Common\PathFinder\PathFinderMap.cpp">
+      <Filter>Source\Common\PathFinder</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\PathTile\PathTilePathTile.cpp">
-      <Filter>Source\Common\PathTile</Filter>
+    <ClCompile Include="Source\Common\PathFinder\PathFinderPath.cpp">
+      <Filter>Source\Common\PathFinder</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\PathTile\PathTileRenderTile.cpp">
-      <Filter>Source\Common\PathTile</Filter>
+    <ClCompile Include="Source\Common\PathFinder\PathFinderPathManager.cpp">
+      <Filter>Source\Common\PathFinder</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\PathTile\PathTileLocation.cpp">
-      <Filter>Source\Common\PathTile</Filter>
+    <ClCompile Include="Source\Common\PathFinder\PathFinderPathTile.cpp">
+      <Filter>Source\Common\PathFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PathFinder\PathFinderRenderTile.cpp">
+      <Filter>Source\Common\PathFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PathFinder\PathFinderLocation.cpp">
+      <Filter>Source\Common\PathFinder</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -737,17 +743,23 @@
     <ClInclude Include="Source\Common\DAG2\Dag2NodeHelper.h">
       <Filter>Source\Common\DAG2</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Common\PathTile\PathTileMap.h">
-      <Filter>Source\Common\PathTile</Filter>
+    <ClInclude Include="Source\Common\PathFinder\PathFinderLocation.h">
+      <Filter>Source\Common\PathFinder</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Common\PathTile\PathTilePathTile.h">
-      <Filter>Source\Common\PathTile</Filter>
+    <ClInclude Include="Source\Common\PathFinder\PathFinderMap.h">
+      <Filter>Source\Common\PathFinder</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Common\PathTile\PathTileRenderTile.h">
-      <Filter>Source\Common\PathTile</Filter>
+    <ClInclude Include="Source\Common\PathFinder\PathFinderPath.h">
+      <Filter>Source\Common\PathFinder</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Common\PathTile\PathTileLocation.h">
-      <Filter>Source\Common\PathTile</Filter>
+    <ClInclude Include="Source\Common\PathFinder\PathFinderPathManager.h">
+      <Filter>Source\Common\PathFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\PathFinder\PathFinderPathTile.h">
+      <Filter>Source\Common\PathFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\PathFinder\PathFinderRenderTile.h">
+      <Filter>Source\Common\PathFinder</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

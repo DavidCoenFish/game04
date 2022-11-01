@@ -4,7 +4,7 @@
 #define PASS_LOCATION_CONST const Location
 //#define PASS_LOCATION_CONST const Location&
 
-namespace PathTile
+namespace PathFinder
 {
 	typedef int Location;
 	const Location PackLocation(const short x, const short y);

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Common/PathTile/PathTileLocation.h"
+#include "Common/PathFinder/PathFinderLocation.h"
 
-namespace PathTile
+namespace PathFinder
 {
 	template <int WIDTH, int HEIGHT>
 	class RenderTile
