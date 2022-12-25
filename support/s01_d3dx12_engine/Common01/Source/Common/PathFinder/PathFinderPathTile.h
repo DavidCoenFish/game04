@@ -49,7 +49,8 @@ namespace PathFinder
 			m_traversalChangeID += 1;
 			return true;
 		}
-
+		const int GetTraversalChangeID() const { return m_traversalChangeID; }
+		const int GetRegionEdgeMaskChangeId() const { return m_regionEdgeMaskChangeId; }
 		//accessors are not const as may need to trigger a lazy init on data
 
 		const int GetRegion(PASS_LOCATION_CONST location)
@@ -164,6 +165,18 @@ namespace PathFinder
 				UnPackLocation(trace, x, y);
 			}
 		}
+
+		//for the bit index of a edge mask, make a loncation
+		/*
+		0  1  2  3  _		4 _ _ _ _		_  _  _  _  _		_ _ _ _ 12
+		_  _  _  _  _		5 _ _ _ _		_  _  _  _  _		_ _ _ _ 13
+		_  _  _  _  _		6 _ _ _ _		_  _  _  _  _		_ _ _ _ 14
+		_  _  _  _  _		7 _ _ _ _		_  _  _  _  _		_ _ _ _ 15
+		_  _  _  _			_ _ _ _			8  9  10 11			_ _ _ _
+
+
+		
+		*/
 		Location MakeLocationForBit(const int bitIndex)
 		{
 			short dx = 0;
@@ -192,6 +205,7 @@ namespace PathFinder
 			DSC_ASSERT_ALWAYS;
 			return 0;
 		}
+
 	private:
 		const TDataArray& GetDistanceMap(PASS_LOCATION_CONST location)
 		{
@@ -467,7 +481,7 @@ namespace PathFinder
 		std::array< DistanceMapData, (((WIDTH + 1) * (HEIGHT + 1)) - 1)> m_distanceMapData;
 
 		int m_regionEdgeMaskChangeId;
-		TIntEdgeArray m_regionEdgeMask;
+		TIntEdgeArray m_regionEdgeMask; //for each region, a bit mask for which cells touch the edge for that ragion
 
 	};
 };

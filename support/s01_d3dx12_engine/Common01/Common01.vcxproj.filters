@@ -408,6 +408,12 @@
     <ClCompile Include="Source\Common\PathFinder\PathFinderLocation.cpp">
       <Filter>Source\Common\PathFinder</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\PathFinder\PathFinderRegion.cpp">
+      <Filter>Source\Common\PathFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PathFinder\PathFinderPathInstance.cpp">
+      <Filter>Source\Common\PathFinder</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CommonPCH.h">
@@ -759,6 +765,12 @@
       <Filter>Source\Common\PathFinder</Filter>
     </ClInclude>
     <ClInclude Include="Source\Common\PathFinder\PathFinderRenderTile.h">
+      <Filter>Source\Common\PathFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\PathFinder\PathFinderRegion.h">
+      <Filter>Source\Common\PathFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\PathFinder\PathFinderPathInstance.h">
       <Filter>Source\Common\PathFinder</Filter>
     </ClInclude>
   </ItemGroup>

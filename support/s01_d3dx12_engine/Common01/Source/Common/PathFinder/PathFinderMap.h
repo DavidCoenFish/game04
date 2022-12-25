@@ -2,6 +2,7 @@
 
 #include "Common/PathFinder/PathFinderLocation.h"
 #include "Common/PathFinder/PathFinderLocation.h"
+#include "Common/Macro.h"
 
 namespace PathFinder
 {

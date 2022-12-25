@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,0,285,0
- PRODUCTVERSION 0,0,285,0
+ FILEVERSION 0,0,288,0
+ PRODUCTVERSION 0,0,288,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +69,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "TODO: <Company name>"
             VALUE "FileDescription", "TODO: <File description>"
-            VALUE "FileVersion", "0.0.285.0"
+            VALUE "FileVersion", "0.0.288.0"
             VALUE "InternalName", "Applicat.exe"
             VALUE "LegalCopyright", "Copyright (C) 2021"
             VALUE "OriginalFilename", "Applicat.exe"
             VALUE "ProductName", "TODO: <Product name>"
-            VALUE "ProductVersion", "0.0.285.0"
+            VALUE "ProductVersion", "0.0.288.0"
         END
     END
     BLOCK "VarFileInfo"

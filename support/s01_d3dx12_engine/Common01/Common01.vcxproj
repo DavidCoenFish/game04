@@ -120,8 +120,10 @@
     <ClCompile Include="Source\Common\PathFinder\PathFinderLocation.cpp" />
     <ClCompile Include="Source\Common\PathFinder\PathFinderMap.cpp" />
     <ClCompile Include="Source\Common\PathFinder\PathFinderPath.cpp" />
+    <ClCompile Include="Source\Common\PathFinder\PathFinderPathInstance.cpp" />
     <ClCompile Include="Source\Common\PathFinder\PathFinderPathManager.cpp" />
     <ClCompile Include="Source\Common\PathFinder\PathFinderPathTile.cpp" />
+    <ClCompile Include="Source\Common\PathFinder\PathFinderRegion.cpp" />
     <ClCompile Include="Source\Common\PathFinder\PathFinderRenderTile.cpp" />
     <ClCompile Include="Source\Common\Task\ITask.cpp" />
     <ClCompile Include="Source\Common\Task\TaskWindow.cpp" />
@@ -238,8 +240,10 @@
     <ClInclude Include="Source\Common\PathFinder\PathFinderLocation.h" />
     <ClInclude Include="Source\Common\PathFinder\PathFinderMap.h" />
     <ClInclude Include="Source\Common\PathFinder\PathFinderPath.h" />
+    <ClInclude Include="Source\Common\PathFinder\PathFinderPathInstance.h" />
     <ClInclude Include="Source\Common\PathFinder\PathFinderPathManager.h" />
     <ClInclude Include="Source\Common\PathFinder\PathFinderPathTile.h" />
+    <ClInclude Include="Source\Common\PathFinder\PathFinderRegion.h" />
     <ClInclude Include="Source\Common\PathFinder\PathFinderRenderTile.h" />
     <ClInclude Include="Source\Common\Task\ITask.h" />
     <ClInclude Include="Source\Common\Task\TaskWindow.h" />
